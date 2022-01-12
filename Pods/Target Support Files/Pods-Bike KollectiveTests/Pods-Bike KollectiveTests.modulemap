@@ -1,0 +1,6 @@
+framework module Pods_Bike_KollectiveTests {
+  umbrella header "Pods-Bike KollectiveTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

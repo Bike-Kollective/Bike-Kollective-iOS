@@ -1,0 +1,6 @@
+framework module Pods_Bike_Kollective {
+  umbrella header "Pods-Bike Kollective-umbrella.h"
+
+  export *
+  module * { export * }
+}

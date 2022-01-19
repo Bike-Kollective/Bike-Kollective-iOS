@@ -7,6 +7,7 @@ target 'Bike Kollective' do
 
   # Pods for Bike Kollective
   pod 'AlamofireImage'
+  pod 'GoogleMaps', '6.0.1'
 
   target 'Bike KollectiveTests' do
     inherit! :search_paths

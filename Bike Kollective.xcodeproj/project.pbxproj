@@ -8,6 +8,12 @@
 
 /* Begin PBXBuildFile section */
 		7D9BCFF1561147C312D5C207 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A345360B3AFE7C554DE66E23 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */; };
+		BF5B6B192797B396000BFFF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B182797B396000BFFF5 /* LoginViewController.swift */; };
+		BF5B6B1B2797B3B7000BFFF5 /* AddBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */; };
+		BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */; };
+		BF5B6B1F2797B3D7000BFFF5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */; };
+		BF5B6B212797B3EA000BFFF5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */; };
+		BF5B6B232797B3FF000BFFF5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */; };
 		BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF73F278E1F61004B80EB /* AppDelegate.swift */; };
 		BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF741278E1F61004B80EB /* SceneDelegate.swift */; };
 		BFBAF744278E1F61004B80EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF743278E1F61004B80EB /* ViewController.swift */; };
@@ -47,6 +53,12 @@
 		91270AC8D034E54125C95991 /* Pods_Bike_Kollective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		959F5D8A64CF507087BCB6E0 /* Pods-Bike Kollective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective.debug.xcconfig"; path = "Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective.debug.xcconfig"; sourceTree = "<group>"; };
 		A345360B3AFE7C554DE66E23 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective_Bike_KollectiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF5B6B182797B396000BFFF5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBikeViewController.swift; sourceTree = "<group>"; };
+		BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeDetailViewController.swift; sourceTree = "<group>"; };
+		BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		BFBAF73C278E1F61004B80EB /* Bike Kollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bike Kollective.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBAF73F278E1F61004B80EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBAF741278E1F61004B80EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,8 +113,21 @@
 				0AE13823124896B96B139712 /* Pods-Bike KollectiveTests.debug.xcconfig */,
 				7A107A8875D5BC03E34681CB /* Pods-Bike KollectiveTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		BF5B6B172797B355000BFFF5 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				BFBAF743278E1F61004B80EB /* ViewController.swift */,
+				BF5B6B182797B396000BFFF5 /* LoginViewController.swift */,
+				BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */,
+				BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */,
+				BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */,
+				BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */,
+				BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 		BFBAF733278E1F61004B80EB = {
@@ -130,9 +155,9 @@
 		BFBAF73E278E1F61004B80EB /* Bike Kollective */ = {
 			isa = PBXGroup;
 			children = (
+				BF5B6B172797B355000BFFF5 /* Views */,
 				BFBAF73F278E1F61004B80EB /* AppDelegate.swift */,
 				BFBAF741278E1F61004B80EB /* SceneDelegate.swift */,
-				BFBAF743278E1F61004B80EB /* ViewController.swift */,
 				BFBAF745278E1F61004B80EB /* Main.storyboard */,
 				BFBAF748278E1F63004B80EB /* Assets.xcassets */,
 				BFBAF74A278E1F64004B80EB /* LaunchScreen.storyboard */,
@@ -180,6 +205,7 @@
 				BFBAF739278E1F61004B80EB /* Frameworks */,
 				BFBAF73A278E1F61004B80EB /* Resources */,
 				271FC8375EF885FA10AF25DF /* [CP] Embed Pods Frameworks */,
+				9FD2BB254FA9C54EBA3FE1A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -218,6 +244,7 @@
 				BFBAF759278E1F64004B80EB /* Frameworks */,
 				BFBAF75A278E1F64004B80EB /* Resources */,
 				3D82806D58C95A87A9B4CAAC /* [CP] Embed Pods Frameworks */,
+				C5BE4C88BC419DFC01B0DE66 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -334,6 +361,23 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		9FD2BB254FA9C54EBA3FE1A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		C5ACF277C1AF7ACC7CD3880E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -354,6 +398,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C5BE4C88BC419DFC01B0DE66 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		DC7B89C38028F1A4D1A07039 /* [CP] Check Pods Manifest.lock */ = {
@@ -407,9 +468,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BF5B6B1B2797B3B7000BFFF5 /* AddBikeViewController.swift in Sources */,
+				BF5B6B192797B396000BFFF5 /* LoginViewController.swift in Sources */,
 				BFBAF744278E1F61004B80EB /* ViewController.swift in Sources */,
 				BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */,
+				BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */,
 				BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */,
+				BF5B6B232797B3FF000BFFF5 /* ProfileViewController.swift in Sources */,
+				BF5B6B212797B3EA000BFFF5 /* ListViewController.swift in Sources */,
+				BF5B6B1F2797B3D7000BFFF5 /* MapViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,6 +25,7 @@
 		BFBAF763278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */; };
 		D5A4957F088E2562F20270FB /* Pods_Bike_KollectiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3714CDB63462359C4A7EB4 /* Pods_Bike_KollectiveTests.framework */; };
 		E14FCFDF43679C78B4BF921E /* Pods_Bike_Kollective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91270AC8D034E54125C95991 /* Pods_Bike_Kollective.framework */; };
+		FE4C8157279B6081000DDB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +74,7 @@
 		BFBAF760278E1F64004B80EB /* Bike_KollectiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITests.swift; sourceTree = "<group>"; };
 		BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		C2C798E3B90ADEC242DA3179 /* Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig"; path = "Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				BFBAF748278E1F63004B80EB /* Assets.xcassets */,
 				BFBAF74A278E1F64004B80EB /* LaunchScreen.storyboard */,
 				BFBAF74D278E1F64004B80EB /* Info.plist */,
+				FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */,
 			);
 			path = "Bike Kollective";
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBAF74C278E1F64004B80EB /* LaunchScreen.storyboard in Resources */,
+				FE4C8157279B6081000DDB56 /* GoogleService-Info.plist in Resources */,
 				BFBAF749278E1F63004B80EB /* Assets.xcassets in Resources */,
 				BFBAF747278E1F61004B80EB /* Main.storyboard in Resources */,
 			);

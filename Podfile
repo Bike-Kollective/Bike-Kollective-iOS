@@ -8,7 +8,10 @@ target 'Bike Kollective' do
   # Pods for Bike Kollective
   pod 'AlamofireImage'
   pod 'GoogleMaps', '6.0.1'
-
+  pod 'Firebase/Core'
+  pod 'Firebase/Firestore'
+  pod 'Firebase/Auth'
+  
   target 'Bike KollectiveTests' do
     inherit! :search_paths
     # Pods for testing

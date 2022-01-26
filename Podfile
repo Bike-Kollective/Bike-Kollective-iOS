@@ -11,6 +11,7 @@ target 'Bike Kollective' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
+  pod 'Firebase/Database'
   
   target 'Bike KollectiveTests' do
     inherit! :search_paths

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7D9BCFF1561147C312D5C207 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A345360B3AFE7C554DE66E23 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */; };
+		1BF2D5F1701CFCADB7685969 /* Pods_Bike_Kollective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB053D87B2756C98814475C /* Pods_Bike_Kollective.framework */; };
+		764A526E872D5B0011335982 /* Pods_Bike_KollectiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580AE6589FA5FDE7D159D485 /* Pods_Bike_KollectiveTests.framework */; };
 		BF5B6B192797B396000BFFF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B182797B396000BFFF5 /* LoginViewController.swift */; };
 		BF5B6B1B2797B3B7000BFFF5 /* AddBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */; };
 		BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */; };
@@ -23,8 +24,7 @@
 		BFBAF757278E1F64004B80EB /* Bike_KollectiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF756278E1F64004B80EB /* Bike_KollectiveTests.swift */; };
 		BFBAF761278E1F64004B80EB /* Bike_KollectiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF760278E1F64004B80EB /* Bike_KollectiveUITests.swift */; };
 		BFBAF763278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */; };
-		D5A4957F088E2562F20270FB /* Pods_Bike_KollectiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5E3714CDB63462359C4A7EB4 /* Pods_Bike_KollectiveTests.framework */; };
-		E14FCFDF43679C78B4BF921E /* Pods_Bike_Kollective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91270AC8D034E54125C95991 /* Pods_Bike_Kollective.framework */; };
+		C04FCC0CFE8DEE8AF7E90BCE /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */; };
 		FE4C8157279B6081000DDB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
@@ -46,14 +46,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		07AF57D97A281221BD36FF47 /* Pods-Bike Kollective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective.release.xcconfig"; path = "Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective.release.xcconfig"; sourceTree = "<group>"; };
-		0AE13823124896B96B139712 /* Pods-Bike KollectiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike KollectiveTests.debug.xcconfig"; path = "Target Support Files/Pods-Bike KollectiveTests/Pods-Bike KollectiveTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5E3714CDB63462359C4A7EB4 /* Pods_Bike_KollectiveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_KollectiveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A107A8875D5BC03E34681CB /* Pods-Bike KollectiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike KollectiveTests.release.xcconfig"; path = "Target Support Files/Pods-Bike KollectiveTests/Pods-Bike KollectiveTests.release.xcconfig"; sourceTree = "<group>"; };
-		8BD6AA0C032BA90F821A6824 /* Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig"; path = "Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig"; sourceTree = "<group>"; };
-		91270AC8D034E54125C95991 /* Pods_Bike_Kollective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		959F5D8A64CF507087BCB6E0 /* Pods-Bike Kollective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective.debug.xcconfig"; path = "Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective.debug.xcconfig"; sourceTree = "<group>"; };
-		A345360B3AFE7C554DE66E23 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective_Bike_KollectiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		01CD74374BE33A46F52F5BFA /* Pods-Bike KollectiveTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike KollectiveTests.debug.xcconfig"; path = "Target Support Files/Pods-Bike KollectiveTests/Pods-Bike KollectiveTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1FB053D87B2756C98814475C /* Pods_Bike_Kollective.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2195E1404C2AA3D90311237A /* Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig"; path = "Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		580AE6589FA5FDE7D159D485 /* Pods_Bike_KollectiveTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_KollectiveTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		99716E313B835826C4D39B81 /* Pods-Bike Kollective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective.debug.xcconfig"; path = "Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective.debug.xcconfig"; sourceTree = "<group>"; };
+		9D97D8F2179F2B353F91655F /* Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig"; path = "Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig"; sourceTree = "<group>"; };
+		A20631FD1C85C400611FDED4 /* Pods-Bike Kollective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective.release.xcconfig"; path = "Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective.release.xcconfig"; sourceTree = "<group>"; };
 		BF5B6B182797B396000BFFF5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBikeViewController.swift; sourceTree = "<group>"; };
 		BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeDetailViewController.swift; sourceTree = "<group>"; };
@@ -73,7 +72,8 @@
 		BFBAF75C278E1F64004B80EB /* Bike KollectiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bike KollectiveUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBAF760278E1F64004B80EB /* Bike_KollectiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITests.swift; sourceTree = "<group>"; };
 		BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		C2C798E3B90ADEC242DA3179 /* Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig"; path = "Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective_Bike_KollectiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F972A83EB351DE00922D7BEE /* Pods-Bike KollectiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike KollectiveTests.release.xcconfig"; path = "Target Support Files/Pods-Bike KollectiveTests/Pods-Bike KollectiveTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,7 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E14FCFDF43679C78B4BF921E /* Pods_Bike_Kollective.framework in Frameworks */,
+				1BF2D5F1701CFCADB7685969 /* Pods_Bike_Kollective.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -90,7 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D5A4957F088E2562F20270FB /* Pods_Bike_KollectiveTests.framework in Frameworks */,
+				764A526E872D5B0011335982 /* Pods_Bike_KollectiveTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -98,22 +98,32 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7D9BCFF1561147C312D5C207 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */,
+				C04FCC0CFE8DEE8AF7E90BCE /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		74348C80C7625C9E3D0B4F45 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1FB053D87B2756C98814475C /* Pods_Bike_Kollective.framework */,
+				F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */,
+				580AE6589FA5FDE7D159D485 /* Pods_Bike_KollectiveTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		AF1FF22A0A03162061255F51 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				959F5D8A64CF507087BCB6E0 /* Pods-Bike Kollective.debug.xcconfig */,
-				07AF57D97A281221BD36FF47 /* Pods-Bike Kollective.release.xcconfig */,
-				C2C798E3B90ADEC242DA3179 /* Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig */,
-				8BD6AA0C032BA90F821A6824 /* Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig */,
-				0AE13823124896B96B139712 /* Pods-Bike KollectiveTests.debug.xcconfig */,
-				7A107A8875D5BC03E34681CB /* Pods-Bike KollectiveTests.release.xcconfig */,
+				99716E313B835826C4D39B81 /* Pods-Bike Kollective.debug.xcconfig */,
+				A20631FD1C85C400611FDED4 /* Pods-Bike Kollective.release.xcconfig */,
+				2195E1404C2AA3D90311237A /* Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig */,
+				9D97D8F2179F2B353F91655F /* Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig */,
+				01CD74374BE33A46F52F5BFA /* Pods-Bike KollectiveTests.debug.xcconfig */,
+				F972A83EB351DE00922D7BEE /* Pods-Bike KollectiveTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -140,7 +150,7 @@
 				BFBAF75F278E1F64004B80EB /* Bike KollectiveUITests */,
 				BFBAF73D278E1F61004B80EB /* Products */,
 				AF1FF22A0A03162061255F51 /* Pods */,
-				C49F71677D145396C8E9A327 /* Frameworks */,
+				74348C80C7625C9E3D0B4F45 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -186,16 +196,6 @@
 			path = "Bike KollectiveUITests";
 			sourceTree = "<group>";
 		};
-		C49F71677D145396C8E9A327 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				91270AC8D034E54125C95991 /* Pods_Bike_Kollective.framework */,
-				A345360B3AFE7C554DE66E23 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */,
-				5E3714CDB63462359C4A7EB4 /* Pods_Bike_KollectiveTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -203,12 +203,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFBAF766278E1F64004B80EB /* Build configuration list for PBXNativeTarget "Bike Kollective" */;
 			buildPhases = (
-				C5ACF277C1AF7ACC7CD3880E /* [CP] Check Pods Manifest.lock */,
+				CDD1FB201E238943DED38826 /* [CP] Check Pods Manifest.lock */,
 				BFBAF738278E1F61004B80EB /* Sources */,
 				BFBAF739278E1F61004B80EB /* Frameworks */,
 				BFBAF73A278E1F61004B80EB /* Resources */,
-				271FC8375EF885FA10AF25DF /* [CP] Embed Pods Frameworks */,
-				9FD2BB254FA9C54EBA3FE1A5 /* [CP] Copy Pods Resources */,
+				0763F7EBB014DFE513F3C17E /* [CP] Embed Pods Frameworks */,
+				9827616565686DCF5EC0CFB4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -223,7 +223,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFBAF769278E1F64004B80EB /* Build configuration list for PBXNativeTarget "Bike KollectiveTests" */;
 			buildPhases = (
-				DC7B89C38028F1A4D1A07039 /* [CP] Check Pods Manifest.lock */,
+				1CF202B8F8E5CA0B3489CEA3 /* [CP] Check Pods Manifest.lock */,
 				BFBAF74E278E1F64004B80EB /* Sources */,
 				BFBAF74F278E1F64004B80EB /* Frameworks */,
 				BFBAF750278E1F64004B80EB /* Resources */,
@@ -242,12 +242,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BFBAF76C278E1F64004B80EB /* Build configuration list for PBXNativeTarget "Bike KollectiveUITests" */;
 			buildPhases = (
-				E78838ACC7C3D6ABACB9FB3B /* [CP] Check Pods Manifest.lock */,
+				0306EDA80978BA33EA402283 /* [CP] Check Pods Manifest.lock */,
 				BFBAF758278E1F64004B80EB /* Sources */,
 				BFBAF759278E1F64004B80EB /* Frameworks */,
 				BFBAF75A278E1F64004B80EB /* Resources */,
-				3D82806D58C95A87A9B4CAAC /* [CP] Embed Pods Frameworks */,
-				C5BE4C88BC419DFC01B0DE66 /* [CP] Copy Pods Resources */,
+				3814757DB9C9CCF9EB318AFD /* [CP] Embed Pods Frameworks */,
+				9AC9030EA70FFCD13FCE14D2 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -331,7 +331,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		271FC8375EF885FA10AF25DF /* [CP] Embed Pods Frameworks */ = {
+		0306EDA80978BA33EA402283 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Bike Kollective-Bike KollectiveUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		0763F7EBB014DFE513F3C17E /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -348,80 +370,7 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3D82806D58C95A87A9B4CAAC /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		9FD2BB254FA9C54EBA3FE1A5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C5ACF277C1AF7ACC7CD3880E /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Bike Kollective-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C5BE4C88BC419DFC01B0DE66 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		DC7B89C38028F1A4D1A07039 /* [CP] Check Pods Manifest.lock */ = {
+		1CF202B8F8E5CA0B3489CEA3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -443,7 +392,58 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E78838ACC7C3D6ABACB9FB3B /* [CP] Check Pods Manifest.lock */ = {
+		3814757DB9C9CCF9EB318AFD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9827616565686DCF5EC0CFB4 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9AC9030EA70FFCD13FCE14D2 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CDD1FB201E238943DED38826 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -458,7 +458,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Bike Kollective-Bike KollectiveUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Bike Kollective-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -654,13 +654,13 @@
 		};
 		BFBAF767278E1F64004B80EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 959F5D8A64CF507087BCB6E0 /* Pods-Bike Kollective.debug.xcconfig */;
+			baseConfigurationReference = 99716E313B835826C4D39B81 /* Pods-Bike Kollective.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GZP2CMCCN6;
+				DEVELOPMENT_TEAM = S8N6A6B9WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bike Kollective/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -683,13 +683,13 @@
 		};
 		BFBAF768278E1F64004B80EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 07AF57D97A281221BD36FF47 /* Pods-Bike Kollective.release.xcconfig */;
+			baseConfigurationReference = A20631FD1C85C400611FDED4 /* Pods-Bike Kollective.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GZP2CMCCN6;
+				DEVELOPMENT_TEAM = S8N6A6B9WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bike Kollective/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -712,7 +712,7 @@
 		};
 		BFBAF76A278E1F64004B80EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0AE13823124896B96B139712 /* Pods-Bike KollectiveTests.debug.xcconfig */;
+			baseConfigurationReference = 01CD74374BE33A46F52F5BFA /* Pods-Bike KollectiveTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -738,7 +738,7 @@
 		};
 		BFBAF76B278E1F64004B80EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A107A8875D5BC03E34681CB /* Pods-Bike KollectiveTests.release.xcconfig */;
+			baseConfigurationReference = F972A83EB351DE00922D7BEE /* Pods-Bike KollectiveTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -764,7 +764,7 @@
 		};
 		BFBAF76D278E1F64004B80EB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C2C798E3B90ADEC242DA3179 /* Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig */;
+			baseConfigurationReference = 2195E1404C2AA3D90311237A /* Pods-Bike Kollective-Bike KollectiveUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -788,7 +788,7 @@
 		};
 		BFBAF76E278E1F64004B80EB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8BD6AA0C032BA90F821A6824 /* Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig */;
+			baseConfigurationReference = 9D97D8F2179F2B353F91655F /* Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

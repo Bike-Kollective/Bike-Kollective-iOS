@@ -15,6 +15,8 @@
 		BF5B6B1F2797B3D7000BFFF5 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */; };
 		BF5B6B212797B3EA000BFFF5 /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */; };
 		BF5B6B232797B3FF000BFFF5 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */; };
+		BF5C8A0E27A0EBA200C6868F /* BikeListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C8A0D27A0EBA200C6868F /* BikeListTableViewController.swift */; };
+		BF5C8A1227A0ECED00C6868F /* BikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C8A1127A0ECED00C6868F /* BikeCell.swift */; };
 		BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF73F278E1F61004B80EB /* AppDelegate.swift */; };
 		BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF741278E1F61004B80EB /* SceneDelegate.swift */; };
 		BFBAF744278E1F61004B80EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF743278E1F61004B80EB /* ViewController.swift */; };
@@ -59,6 +61,8 @@
 		BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		BF5C8A0D27A0EBA200C6868F /* BikeListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeListTableViewController.swift; sourceTree = "<group>"; };
+		BF5C8A1127A0ECED00C6868F /* BikeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeCell.swift; sourceTree = "<group>"; };
 		BFBAF73C278E1F61004B80EB /* Bike Kollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bike Kollective.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBAF73F278E1F61004B80EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBAF741278E1F61004B80EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -131,11 +135,13 @@
 		BF5B6B172797B355000BFFF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				BF5C8A1127A0ECED00C6868F /* BikeCell.swift */,
 				BFBAF743278E1F61004B80EB /* ViewController.swift */,
 				BF5B6B182797B396000BFFF5 /* LoginViewController.swift */,
 				BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */,
 				BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */,
 				BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */,
+				BF5C8A0D27A0EBA200C6868F /* BikeListTableViewController.swift */,
 				BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */,
 				BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */,
 			);
@@ -475,7 +481,9 @@
 				BF5B6B1B2797B3B7000BFFF5 /* AddBikeViewController.swift in Sources */,
 				BF5B6B192797B396000BFFF5 /* LoginViewController.swift in Sources */,
 				BFBAF744278E1F61004B80EB /* ViewController.swift in Sources */,
+				BF5C8A1227A0ECED00C6868F /* BikeCell.swift in Sources */,
 				BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */,
+				BF5C8A0E27A0EBA200C6868F /* BikeListTableViewController.swift in Sources */,
 				BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */,
 				BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */,
 				BF5B6B232797B3FF000BFFF5 /* ProfileViewController.swift in Sources */,

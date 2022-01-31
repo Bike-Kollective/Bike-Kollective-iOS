@@ -21,11 +21,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>The Bike Kollective needs access to your camera to take a photo of the bike</string>
 	<key>LSApplicationQueriesSchemes</key>
-		<array>
-    			<string>googlechromes</string>
-    			<string>comgooglemaps</string>
-		</array>
-
+	<array>
+		<string>googlechromes</string>
+		<string>comgooglemaps</string>
+	</array>
 </dict>
 </plist>

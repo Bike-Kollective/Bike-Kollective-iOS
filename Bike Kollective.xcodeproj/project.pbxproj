@@ -18,7 +18,6 @@
 		BF5C8A1227A0ECED00C6868F /* BikeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5C8A1127A0ECED00C6868F /* BikeCell.swift */; };
 		BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF73F278E1F61004B80EB /* AppDelegate.swift */; };
 		BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF741278E1F61004B80EB /* SceneDelegate.swift */; };
-		BFBAF744278E1F61004B80EB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF743278E1F61004B80EB /* ViewController.swift */; };
 		BFBAF747278E1F61004B80EB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBAF745278E1F61004B80EB /* Main.storyboard */; };
 		BFBAF749278E1F63004B80EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BFBAF748278E1F63004B80EB /* Assets.xcassets */; };
 		BFBAF74C278E1F64004B80EB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BFBAF74A278E1F64004B80EB /* LaunchScreen.storyboard */; };
@@ -69,7 +68,6 @@
 		BFBAF73C278E1F61004B80EB /* Bike Kollective.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Bike Kollective.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBAF73F278E1F61004B80EB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BFBAF741278E1F61004B80EB /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		BFBAF743278E1F61004B80EB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BFBAF746278E1F61004B80EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BFBAF748278E1F63004B80EB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BFBAF74B278E1F64004B80EB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -132,7 +130,6 @@
 				FE94815927A347600081F6DD /* EmailSignUpViewController.swift */,
 				FE94815727A345130081F6DD /* LoginFieldViewControler.swift */,
 				BF5C8A1127A0ECED00C6868F /* BikeCell.swift */,
-				BFBAF743278E1F61004B80EB /* ViewController.swift */,
 				BF5B6B182797B396000BFFF5 /* LoginViewController.swift */,
 				BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */,
 				BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */,
@@ -487,7 +484,6 @@
 				BF5B6B1B2797B3B7000BFFF5 /* AddBikeViewController.swift in Sources */,
 				BF5B6B192797B396000BFFF5 /* LoginViewController.swift in Sources */,
 				FE94815A27A347610081F6DD /* EmailSignUpViewController.swift in Sources */,
-				BFBAF744278E1F61004B80EB /* ViewController.swift in Sources */,
 				BF5C8A1227A0ECED00C6868F /* BikeCell.swift in Sources */,
 				FE94815827A345130081F6DD /* LoginFieldViewControler.swift in Sources */,
 				BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */,

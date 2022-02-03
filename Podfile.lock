@@ -373,7 +373,7 @@ DEPENDENCIES:
   - Firebase/Core
   - Firebase/Firestore
   - GoogleMaps (= 6.0.1)
-  - GoogleSignIn
+  - GoogleSignIn (= 6.1.0)
 
 SPEC REPOS:
   trunk:
@@ -428,6 +428,6 @@ SPEC CHECKSUMS:
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: 262eb75264a245807290f72c169d73526315ad96
+PODFILE CHECKSUM: 79e42fac3568be08d7183b72755fe445eed753d6
 
 COCOAPODS: 1.11.2

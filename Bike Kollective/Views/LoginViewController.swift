@@ -6,13 +6,19 @@
 //
 
 import UIKit
+import GoogleSignIn
+// import FirebaseCore
+// import FirebaseAuth
+
 
 class LoginViewController: UIViewController {
 
+    // button for google sign in - need to set button class as GIDSignInButton
+    @IBOutlet weak var signInButton: GIDSignInButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
     
 
@@ -25,5 +31,4 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
 }

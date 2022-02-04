@@ -29,6 +29,7 @@
 		FE4C8157279B6081000DDB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */; };
 		FE94815827A345130081F6DD /* LoginFieldViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94815727A345130081F6DD /* LoginFieldViewControler.swift */; };
 		FE94815A27A347610081F6DD /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94815927A347600081F6DD /* EmailSignUpViewController.swift */; };
+		FED11A3527AD8AB8002C67F6 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FED11A3427AD8AB7002C67F6 /* SettingsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +82,7 @@
 		FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE94815727A345130081F6DD /* LoginFieldViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFieldViewControler.swift; sourceTree = "<group>"; };
 		FE94815927A347600081F6DD /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		FED11A3427AD8AB7002C67F6 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = "/Users/kiwonnam/Documents/OregonStatePostBacc/CS467/Bike-Kollective-iOS/Bike Kollective/Views/SettingsViewController.swift"; sourceTree = "<absolute>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +129,7 @@
 		BF5B6B172797B355000BFFF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FED11A3427AD8AB7002C67F6 /* SettingsViewController.swift */,
 				FE94815927A347600081F6DD /* EmailSignUpViewController.swift */,
 				FE94815727A345130081F6DD /* LoginFieldViewControler.swift */,
 				BF5C8A1127A0ECED00C6868F /* BikeCell.swift */,
@@ -491,6 +494,7 @@
 				BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */,
 				BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */,
 				BF5B6B232797B3FF000BFFF5 /* ProfileViewController.swift in Sources */,
+				FED11A3527AD8AB8002C67F6 /* SettingsViewController.swift in Sources */,
 				BF5B6B212797B3EA000BFFF5 /* ListViewController.swift in Sources */,
 				BF5B6B1F2797B3D7000BFFF5 /* MapViewController.swift in Sources */,
 			);

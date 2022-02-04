@@ -1,3 +1,21 @@
+# v8.11.0
+- [changed] Added a `X-Firebase-GMPID` header to network requests. (#9046)
+- [fixed] Added multi-tenancy support to generic OAuth providers. (#7990)
+- [fixed] macOS Extension access to Shared Keychain by adding kSecUseDataProtectionKeychain recommended key (#6876)
+
+# 8.9.0
+- [changed] Improved error logging. (#8704)
+- [added] Added MFA support for email link sign-in. (#8705)
+
+# 8.8.0
+- [fixed] Fall back to reCAPTCHA for phone auth app verification if the push notification is not received before the timeout. (#8653)
+
+# 8.6.0
+- [fixed] Annotated platform-level availability using `API_UNAVAILABLE` instead of conditionally compiling certain methods with `#if` directives. (#8451)
+
+# 8.5.0
+- [fixed] Fixed an analyze issue introduced in Xcode 12.5. (#8411)
+
 # 8.2.0
 - [fixed] Fixed analyze issues introduced in Xcode 12.5. (#8210)
 - [fixed] Fixed a bug in the link with email link, Game Center, and phone auth flows. (#8196)

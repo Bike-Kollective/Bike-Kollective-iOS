@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Wgi-Fi-PdN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="dfi-8S-NZZ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
@@ -25,21 +25,8 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="jXe-Jm-7Mf">
                                 <rect key="frame" x="40" y="353" width="334" height="190"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmr-HA-R7M">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="48Q-IJ-LDr"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Email Sign Up">
-                                            <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
-                                        </buttonConfiguration>
-                                        <connections>
-                                            <segue destination="PM4-XF-kaK" kind="show" id="oby-Ei-gK8"/>
-                                        </connections>
-                                    </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uOk-Vb-8hq">
-                                        <rect key="frame" x="0.0" y="70" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="aD5-fZ-ED9"/>
                                         </constraints>
@@ -52,12 +39,28 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ez1-vc-PBF" customClass="GIDSignInButton">
-                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
+                                        <rect key="frame" x="0.0" y="70" width="334" height="50"/>
                                         <color key="backgroundColor" systemColor="linkColor"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="bcI-hx-BZe"/>
                                         </constraints>
+                                        <connections>
+                                            <action selector="handleGoogleLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1p8-oh-WAt"/>
+                                        </connections>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xmr-HA-R7M">
+                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="48Q-IJ-LDr"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Email Sign Up">
+                                            <color key="baseBackgroundColor" systemColor="systemGreenColor"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <segue destination="PM4-XF-kaK" kind="show" id="oby-Ei-gK8"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -72,9 +75,6 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J1w-1l-ECR"/>
-                    <connections>
-                        <outlet property="signInButton" destination="ez1-vc-PBF" id="p8G-EO-xd3"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -161,7 +161,7 @@
             </objects>
             <point key="canvasLocation" x="-1191" y="-1037"/>
         </scene>
-        <!--Profile-->
+        <!--Profile View Controller-->
         <scene sceneID="UYk-HJ-Wjh">
             <objects>
                 <viewController id="4bD-vZ-jNn" customClass="ProfileViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
@@ -238,11 +238,39 @@
                             <constraint firstItem="w1x-7h-v5O" firstAttribute="top" secondItem="7OE-w7-Gcn" secondAttribute="top" constant="40" id="qT7-1L-gby"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="niU-SS-KyF"/>
+                    <navigationItem key="navigationItem" id="c0S-1s-Xfk">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="JnL-fC-pIq">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" id="Z7T-e8-Shr">
+                                <rect key="frame" x="302" y="5" width="92" height="34.5"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Button"/>
+                            </button>
+                            <connections>
+                                <segue destination="PFc-Pv-ajg" kind="show" id="8Wb-Gs-ld6"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQb-ad-zb2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2571.0144927536235" y="249.77678571428569"/>
+            <point key="canvasLocation" x="3481.1594202898555" y="249.77678571428569"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="DJf-32-i8x">
+            <objects>
+                <viewController id="PFc-Pv-ajg" customClass="SettingsViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Z0k-gc-DxI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="m1v-hy-jcl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nHH-6D-MzH"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="W0r-Bp-TNx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4281" y="250"/>
         </scene>
         <!--Bikes-->
         <scene sceneID="xzk-vF-qlR">
@@ -433,7 +461,7 @@
                     </tabBar>
                     <connections>
                         <segue destination="hMl-nX-dbk" kind="relationship" relationship="viewControllers" id="tcp-ra-YsD"/>
-                        <segue destination="4bD-vZ-jNn" kind="relationship" relationship="viewControllers" id="f90-rW-4BB"/>
+                        <segue destination="vlg-H0-Paf" kind="relationship" relationship="viewControllers" id="f90-rW-4BB"/>
                         <segue destination="WRr-kl-6BW" kind="relationship" relationship="viewControllers" id="gTB-fU-VaE"/>
                     </connections>
                 </tabBarController>
@@ -539,6 +567,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5y-sp-82G" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1191" y="-326"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="1Oh-6S-5Dq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vlg-H0-Paf" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="niU-SS-KyF"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tdj-mi-7ex">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="4bD-vZ-jNn" kind="relationship" relationship="rootViewController" id="8G2-gJ-y5L"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4FI-Wp-hzd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2571.0144927536235" y="249.77678571428569"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>

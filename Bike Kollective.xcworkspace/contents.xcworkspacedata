@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:Bike Kollective/Views/SettingsViewController.swift">
+   </FileRef>
+   <FileRef
       location = "group:Bike Kollective.xcodeproj">
    </FileRef>
    <FileRef

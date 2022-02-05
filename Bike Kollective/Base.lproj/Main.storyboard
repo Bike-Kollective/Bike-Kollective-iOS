@@ -552,57 +552,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uCh-hK-hgd">
-                                <rect key="frame" x="0.0" y="88" width="414" height="250.5"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="269"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZJ-uq-dBj">
-                                <rect key="frame" x="16" y="394" width="382" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="54" id="nTs-jq-3Fc"/>
-                                </constraints>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YZJ-uq-dBj">
+                                <rect key="frame" x="20.5" y="431" width="373" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
                                     <action selector="takePhotoTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="KhR-pd-hRY"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Bike Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a47-gF-0eL" userLabel="Bike Make">
-                                <rect key="frame" x="20.5" y="419.5" width="373" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="bikeMakeChanged:" destination="Dg3-Xg-l2y" eventType="editingChanged" id="zWN-f0-n3t"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="o48-PN-sdW">
-                                <rect key="frame" x="16" y="436" width="382" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="ndh-pi-md2"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                                <connections>
-                                    <action selector="bikeModelChanged:" destination="Dg3-Xg-l2y" eventType="editingChanged" id="Lvk-LI-55L"/>
-                                </connections>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Location" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1H3-oy-cOl">
-                                <rect key="frame" x="16" y="478" width="382" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="Sx3-jd-HKV"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KFL-v6-xhY">
-                                <rect key="frame" x="16" y="520" width="382" height="34"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="DYx-R0-siz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl2-tl-bQQ">
-                                <rect key="frame" x="20.5" y="346.5" width="373" height="54"/>
+                                <rect key="frame" x="20.5" y="365" width="373" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="Zbj-rR-2EY"/>
                                 </constraints>
@@ -612,15 +574,42 @@
                                     <action selector="bikeLockCodeChanged:" destination="Dg3-Xg-l2y" eventType="editingChanged" id="ufV-sw-6pu"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FD-t6-j7u">
-                                <rect key="frame" x="19.666666666666671" y="590" width="68" height="20.333333333333371"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FD-t6-j7u" userLabel="Bike Make Error">
+                                <rect key="frame" x="20.5" y="473" width="68" height="20"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtr-JQ-y8J">
-                                <rect key="frame" x="20.5" y="579" width="373" height="70"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qg3-So-vom" userLabel="Enter Model">
+                                <rect key="frame" x="20.5" y="501" width="373" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="takePhotoTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="aO1-0p-deV"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdS-Hh-Nwy" userLabel="Bike Model Error">
+                                <rect key="frame" x="20.5" y="543" width="68" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wM-OR-ZiO" userLabel="Enter Bike Lock Code">
+                                <rect key="frame" x="20.5" y="571" width="373" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <action selector="takePhotoTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="vvs-aY-xmg"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-Ae-y4N" userLabel="Bike Lock Code Error">
+                                <rect key="frame" x="20.5" y="613" width="68" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtr-JQ-y8J">
+                                <rect key="frame" x="20.5" y="683" width="373" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="xXP-ZO-wMh"/>
                                 </constraints>
@@ -634,32 +623,44 @@
                         <viewLayoutGuide key="safeArea" id="vDI-os-Je5"/>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="top" secondItem="a47-gF-0eL" secondAttribute="bottom" constant="10" id="4Rb-JZ-Xve"/>
-                            <constraint firstItem="a47-gF-0eL" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="7yQ-EB-6aM"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="BRS-Oh-hCv"/>
+                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="0MC-53-0Qn"/>
+                            <constraint firstItem="Qg3-So-vom" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="5lJ-Zk-ymf"/>
                             <constraint firstItem="uCh-hK-hgd" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="BhM-Id-1Tf"/>
+                            <constraint firstItem="4FD-t6-j7u" firstAttribute="leading" secondItem="YZJ-uq-dBj" secondAttribute="leading" id="Cdr-r9-Hed"/>
                             <constraint firstItem="Xl2-tl-bQQ" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="FwN-cG-swf"/>
+                            <constraint firstItem="UdS-Hh-Nwy" firstAttribute="top" secondItem="Qg3-So-vom" secondAttribute="bottom" constant="8" symbolic="YES" id="JF7-7f-Y1w"/>
                             <constraint firstItem="Xl2-tl-bQQ" firstAttribute="top" secondItem="uCh-hK-hgd" secondAttribute="bottom" constant="8" symbolic="YES" id="KQ2-EG-gXt"/>
                             <constraint firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Men-HU-5i4"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="top" secondItem="5wM-OR-ZiO" secondAttribute="bottom" constant="78" id="PVo-pu-oMy"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="RpL-Q7-jXZ"/>
+                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Uue-8h-Wy2"/>
+                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="top" secondItem="Qg3-So-vom" secondAttribute="bottom" constant="36" id="X2n-3K-set"/>
                             <constraint firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Yu4-7k-hal"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Zxc-HC-Hod"/>
-                            <constraint firstAttribute="top" secondItem="a47-gF-0eL" secondAttribute="bottom" constant="33" id="czt-Wd-CUD"/>
-                            <constraint firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="ePj-ya-hFL"/>
-                            <constraint firstItem="a47-gF-0eL" firstAttribute="top" secondItem="Xl2-tl-bQQ" secondAttribute="bottom" constant="19" id="epr-YA-yH2"/>
-                            <constraint firstAttribute="leading" secondItem="a47-gF-0eL" secondAttribute="leading" id="fod-3y-7fc"/>
+                            <constraint firstItem="4FD-t6-j7u" firstAttribute="top" secondItem="YZJ-uq-dBj" secondAttribute="bottom" constant="8" symbolic="YES" id="a0l-wd-TqZ"/>
+                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="b0a-Da-ZcJ"/>
+                            <constraint firstItem="cYc-Ae-y4N" firstAttribute="leading" secondItem="5wM-OR-ZiO" secondAttribute="leading" id="bq3-Q0-rVU"/>
+                            <constraint firstItem="Qg3-So-vom" firstAttribute="top" secondItem="YZJ-uq-dBj" secondAttribute="bottom" constant="36" id="e2L-nD-eqx"/>
+                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="top" secondItem="Xl2-tl-bQQ" secondAttribute="bottom" constant="12" id="f6z-WQ-DKt"/>
+                            <constraint firstItem="cYc-Ae-y4N" firstAttribute="top" secondItem="5wM-OR-ZiO" secondAttribute="bottom" constant="8" symbolic="YES" id="gYQ-ii-Ybl"/>
                             <constraint firstItem="Xl2-tl-bQQ" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="ho5-Xf-QuN"/>
+                            <constraint firstItem="UdS-Hh-Nwy" firstAttribute="leading" secondItem="Qg3-So-vom" secondAttribute="leading" id="ick-av-wEe"/>
+                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="ihN-6Z-7Op"/>
                             <constraint firstItem="uCh-hK-hgd" firstAttribute="top" secondItem="vDI-os-Je5" secondAttribute="top" id="izU-dc-vwc"/>
-                            <constraint firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="jwL-nf-yl2"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="height" secondItem="tCQ-Im-Ob5" secondAttribute="height" multiplier="0.279621" id="npf-Cw-9GU"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="kJ0-Ds-TuF"/>
+                            <constraint firstItem="Qg3-So-vom" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="lXb-eh-GJA"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="height" secondItem="tCQ-Im-Ob5" secondAttribute="height" multiplier="0.3" id="npf-Cw-9GU"/>
                             <constraint firstItem="uCh-hK-hgd" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="xTg-Uc-kk2"/>
-                            <constraint firstItem="a47-gF-0eL" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="xkQ-XA-11x"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IyR-GE-zLs"/>
                     <connections>
                         <outlet property="addBikeImage" destination="uCh-hK-hgd" id="ZNw-9k-qdR"/>
-                        <outlet property="bikeLockCodeError" destination="4FD-t6-j7u" id="NJL-4X-K1C"/>
-                        <outlet property="bikeMakeField" destination="a47-gF-0eL" id="R0t-aS-rWW"/>
+                        <outlet property="bikeCodeField" destination="5wM-OR-ZiO" id="cmD-v3-FXd"/>
+                        <outlet property="bikeLockCodeError" destination="cYc-Ae-y4N" id="0wa-1Z-msB"/>
+                        <outlet property="bikeMakeError" destination="4FD-t6-j7u" id="0Lk-da-LiB"/>
+                        <outlet property="bikeMakeField" destination="YZJ-uq-dBj" id="ZTN-F5-PfN"/>
+                        <outlet property="bikeModelError" destination="UdS-Hh-Nwy" id="6tp-yt-Jik"/>
+                        <outlet property="bikeModelField" destination="Qg3-So-vom" id="xtQ-oa-R8g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYH-3B-wDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

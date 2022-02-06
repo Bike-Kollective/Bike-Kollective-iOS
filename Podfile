@@ -12,6 +12,7 @@ target 'Bike Kollective' do
   pod 'Firebase/Firestore'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'Firebase/Storage'
   
   target 'Bike KollectiveTests' do
     inherit! :search_paths

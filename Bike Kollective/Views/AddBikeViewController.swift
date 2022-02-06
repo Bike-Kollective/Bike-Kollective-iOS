@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseStorage
+
 
 class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
 
@@ -13,16 +16,13 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var addBikeImage: UIImageView!
     @IBOutlet weak var bikeMakeField: UITextField!
     @IBOutlet weak var bikeModelField: UITextField!
-    @IBOutlet weak var bikeLocationField: UITextField!
     @IBOutlet weak var bikeCodeField: UITextField!
     
     //Error messages
     @IBOutlet weak var bikeMakeError: UILabel!
     @IBOutlet weak var bikeModelError: UILabel!
     @IBOutlet weak var bikeLockCodeError: UILabel!
-    
-    
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -151,6 +151,63 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     @IBAction func addBikeTapped(_ sender: Any) {
+        
+        let database = Firestore.firestore()
+        let imageStorage = Storage.storage()
+        
+        guard let photoInfo = self.addBikeImage.image?.jpegData(compressionQuality: 0.5) else {
+            print("ERROR: Image couldn't be converted")
+            return
+        }
+        
+        // create metatdate of the file
+        let metaData = StorageMetadata()
+        metaData.contentType = "image/jpeg"
+        
+        // Create a new file name
+        let documentID = UUID().uuidString
+        
+        // Create a storage reference to upload the image.
+        let imageStorageRef = imageStorage.reference()
+        let newImageStorageRef = imageStorageRef.child("bikes/").child(documentID)
+        
+        // Upload the image to Firebase Storage
+        let uploadTask = newImageStorageRef.putData(photoInfo, metadata: metaData) { (metadata, error) in if let error = error {
+                print("ERROR: Putting data in storage")
+                print(error)
+                return
+            }
+        }
+        
+        // observe the upload and print out success or failure
+        uploadTask.observe(.success) { (snapshot) in
+            print("Upload Success")
+            
+            var uploadImageURL = ""
+            
+            
+            newImageStorageRef.downloadURL { (imageURL, error) in guard let downloadURL = imageURL else {
+                print("ERROR: Couldn't get image URL")
+                print(error)
+                return
+                }
+                print("TEST IMAGE URL")
+                print(imageURL)
+                
+                uploadImageURL = imageURL!.absoluteString
+            }
+        
+            
+            print("IMAGE URL STRING")
+            print(uploadImageURL)
+            
+        }
+        
+        uploadTask.observe(.failure) { (snapshot) in
+            if let error = snapshot.error {
+                print("ERROR: Upload Failure \(error)")
+            }
+        }
     }
     
     /*

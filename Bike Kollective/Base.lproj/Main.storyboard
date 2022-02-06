@@ -535,7 +535,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="takePhotoTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="KhR-pd-hRY"/>
+                                    <action selector="bikeMakeChanged:" destination="Dg3-Xg-l2y" eventType="editingChanged" id="K9E-ax-LX2"/>
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xl2-tl-bQQ">
@@ -546,7 +546,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Take Photo"/>
                                 <connections>
-                                    <action selector="bikeLockCodeChanged:" destination="Dg3-Xg-l2y" eventType="editingChanged" id="ufV-sw-6pu"/>
+                                    <action selector="takePhotoTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="yx7-P3-OJf"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4FD-t6-j7u" userLabel="Bike Make Error">
@@ -555,12 +555,12 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qg3-So-vom" userLabel="Enter Model">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qg3-So-vom" userLabel="Enter Model">
                                 <rect key="frame" x="20.5" y="501" width="373" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="takePhotoTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="aO1-0p-deV"/>
+                                    <action selector="bikeModelChanged:" destination="Dg3-Xg-l2y" eventType="editingChanged" id="sJh-LO-mxt"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UdS-Hh-Nwy" userLabel="Bike Model Error">
@@ -569,12 +569,12 @@
                                 <color key="textColor" systemColor="systemRedColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wM-OR-ZiO" userLabel="Enter Bike Lock Code">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Lock Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5wM-OR-ZiO" userLabel="Enter Bike Lock Code">
                                 <rect key="frame" x="20.5" y="571" width="373" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <connections>
-                                    <action selector="takePhotoTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="vvs-aY-xmg"/>
+                                    <action selector="bikeLockCodeChanged:" destination="Dg3-Xg-l2y" eventType="editingChanged" id="nU2-Ir-0N9"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cYc-Ae-y4N" userLabel="Bike Lock Code Error">
@@ -631,10 +631,10 @@
                     <connections>
                         <outlet property="addBikeImage" destination="uCh-hK-hgd" id="ZNw-9k-qdR"/>
                         <outlet property="bikeCodeField" destination="5wM-OR-ZiO" id="cmD-v3-FXd"/>
-                        <outlet property="bikeLockCodeError" destination="cYc-Ae-y4N" id="0wa-1Z-msB"/>
-                        <outlet property="bikeMakeError" destination="4FD-t6-j7u" id="0Lk-da-LiB"/>
+                        <outlet property="bikeLockCodeError" destination="cYc-Ae-y4N" id="0D9-yL-8D6"/>
+                        <outlet property="bikeMakeError" destination="4FD-t6-j7u" id="xB3-CS-P82"/>
                         <outlet property="bikeMakeField" destination="YZJ-uq-dBj" id="ZTN-F5-PfN"/>
-                        <outlet property="bikeModelError" destination="UdS-Hh-Nwy" id="6tp-yt-Jik"/>
+                        <outlet property="bikeModelError" destination="UdS-Hh-Nwy" id="k8d-0l-oP0"/>
                         <outlet property="bikeModelField" destination="Qg3-So-vom" id="xtQ-oa-R8g"/>
                     </connections>
                 </viewController>

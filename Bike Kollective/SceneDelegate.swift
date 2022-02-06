@@ -37,7 +37,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         // change the root view controller to your specific view controller
         window.rootViewController = vc
+        
+        // add animation
+        UIView.transition(with: window,
+                          duration: 0.6,
+                          options: .transitionCrossDissolve,
+                          animations: nil
+        )
     }
+
 
     func sceneDidDisconnect(_ scene: UIScene) {
         // Called as the scene is being released by the system.

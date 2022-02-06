@@ -1636,8 +1636,6 @@ SOFTWARE.
 --------------------------
 FirestoreEncoder
 --------------------------
-<<<<<<< HEAD
-=======
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/
@@ -2073,7 +2071,6 @@ FirestoreEncoder
 		<dict>
 			<key>FooterText</key>
 			<string>
->>>>>>> main
                                  Apache License
                            Version 2.0, January 2004
                         http://www.apache.org/licenses/

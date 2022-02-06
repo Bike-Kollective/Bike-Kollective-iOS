@@ -45,6 +45,7 @@ class LoginViewController: UIViewController {
             Auth.auth().signIn(with: credential) { (authResult, error) in
                 if let error = error {
                     print("Authentication Error: \(error.localizedDescription)")
+                    // return
                 }
                 
             }

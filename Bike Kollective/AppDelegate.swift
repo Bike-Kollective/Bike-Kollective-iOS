@@ -23,6 +23,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         
+        // attempts to restore any previous log in so that user does not have to sign in each time they open app
+        
+        
         return true
     }
     

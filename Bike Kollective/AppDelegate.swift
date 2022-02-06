@@ -23,6 +23,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         
+        // attempts to restore any previous log in so that user does not have to sign in each time they open app
+        GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
+            if error != nil || user == nil {
+            // Show the app's signed-out state.
+            } else {
+                // User was signed in previously before, so show the tab bar controller, i.e. the user state
+                let storyboard = UIStoryboard(name: "Main", bundle: nil)
+                let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                    
+                // This is to get the SceneDelegate object from your view controller
+                // then call the change root view controller function to change to main tab bar
+                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+            }
+        }
+        
         return true
     }
     

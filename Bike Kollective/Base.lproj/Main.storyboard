@@ -656,7 +656,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="Lcw-Zo-M7h">
             <objects>
-                <tabBarController id="Wgi-Fi-PdN" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" id="Wgi-Fi-PdN" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2IF-Sh-O11">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -692,7 +692,7 @@
         <!--Navigation Controller-->
         <scene sceneID="CxF-CZ-Wo2">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dfi-8S-NZZ" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="LoginNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="dfi-8S-NZZ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="IF6-Pg-bMK">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>

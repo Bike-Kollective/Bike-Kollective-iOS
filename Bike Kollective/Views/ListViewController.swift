@@ -64,7 +64,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.modelLabel.text = "\(item.make) \(item.model)"
         cell.tagsLabel.text = item.tags.joined(separator: " ")
         let sumRating = item.rating.reduce(0, +)
-        let avgRating : Double = Double(sumRating / item.rating.count)
+        let avgRating : Double = 0.0 // Double = Double(sumRating / item.rating.count)
         switch avgRating {
         case 0..<0.5:
             cell.ratingView.image = UIImage(named: "regular_0")

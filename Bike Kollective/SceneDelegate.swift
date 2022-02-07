@@ -20,16 +20,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let storyboard = UIStoryboard(name : "Main", bundle: nil)
         
+        /*
         if let loggedIn = UserDefaults.standard.string(forKey: "email"){
             let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
             window?.rootViewController = mainTabBarController
         }   else {
                 let loginNavController = storyboard.instantiateViewController(identifier: "LoginNavigationController")
                 window?.rootViewController = loginNavController
-        }
-            
+        }*/
     }
-    
+            
+        
     func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
         guard let window = self.window else {
             return

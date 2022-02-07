@@ -1,8 +1,8 @@
 //
 //  SettingsViewController.swift
-//  
+//  Bike Kollective
 //
-//  Created by Kiwon Nam on 2/4/22.
+//  Created by Kiwon Nam on 2/6/22.
 //
 
 import UIKit

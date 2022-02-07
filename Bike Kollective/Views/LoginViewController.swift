@@ -30,7 +30,7 @@ class LoginViewController: UIViewController {
             // guard let user = user else { return }
             
             if let error = error {
-                print("error")
+                print("Sign In error")
                 return
             }
             
@@ -49,10 +49,9 @@ class LoginViewController: UIViewController {
                 }
                 
             }
-            // let emailAddress = user.profile?.email
             
-            // let firstName = user.profile?.givenName
-            // let lastName = user.profile?.familyName
+            // create User in database
+            // Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##((AuthDataResult?, Error?) -> Void)?##((AuthDataResult?, Error?) -> Void)?##(AuthDataResult?, Error?) -> Void#>)
             
             // let prof
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

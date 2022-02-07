@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>The Bike Kollective needs access to your location.</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -39,10 +41,5 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>The Bike Kollective needs access to your camera to take a photo of the bike</string>
-	<key>LSApplicationQueriesSchemes</key>
-	<array>
-		<string>googlechromes</string>
-		<string>comgooglemaps</string>
-	</array>
 </dict>
 </plist>

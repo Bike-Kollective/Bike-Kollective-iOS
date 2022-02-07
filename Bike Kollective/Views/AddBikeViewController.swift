@@ -152,25 +152,35 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func addBikeTapped(_ sender: Any) {
         
+        // Check to see if their is the proper inputs in the required fields
+        let makeEmpty = checkValidInput(self.bikeMakeField.text!)
+        let modelEmpty = checkValidInput(self.bikeModelField.text!)
+        let bikeCodeEmpty = checkValidInput(self.bikeCodeField.text!)
+        
+        if(makeEmpty == false || modelEmpty == false || bikeCodeEmpty == false) {
+            print("ERROR: Not all needed valid inputs")
+            return
+        }
+        
         let database = Firestore.firestore()
         let imageStorage = Storage.storage()
-        
+                
         guard let photoInfo = self.addBikeImage.image?.jpegData(compressionQuality: 0.5) else {
             print("ERROR: Image couldn't be converted")
             return
         }
-        
+
         // create metatdate of the file
         let metaData = StorageMetadata()
         metaData.contentType = "image/jpeg"
-        
+
         // Create a new file name
         let documentID = UUID().uuidString
-        
+
         // Create a storage reference to upload the image.
         let imageStorageRef = imageStorage.reference()
         let newImageStorageRef = imageStorageRef.child("bikes/").child(documentID)
-        
+
         // Upload the image to Firebase Storage
         let uploadTask = newImageStorageRef.putData(photoInfo, metadata: metaData) { (metadata, error) in if let error = error {
                 print("ERROR: Putting data in storage")
@@ -178,35 +188,59 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
                 return
             }
         }
-        
+
         // observe the upload and print out success or failure
         uploadTask.observe(.success) { (snapshot) in
             print("Upload Success")
-            
+
             var uploadImageURL = ""
-            
-            
-            newImageStorageRef.downloadURL { (imageURL, error) in guard let downloadURL = imageURL else {
-                print("ERROR: Couldn't get image URL")
-                print(error)
-                return
-                }
-                print("TEST IMAGE URL")
-                print(imageURL)
                 
-                uploadImageURL = imageURL!.absoluteString
+            newImageStorageRef.downloadURL{ url, error in
+                guard let url = url, error == nil else {
+                    print("ERROR: Couldn't get image URL")
+                    print(error)
+                    return
+                }
+                
+                let urlString = url.absoluteString
+                print("Download URL: \(urlString)")
+                uploadImageURL = urlString
             }
-        
+                
+            let ratingArray = [Int]()
+            let tagsArray = [String]()
             
+            // Send the rest of the information on the bile
+            database.collection("Bikes").document(documentID).setData(["checked_out": false, "location": nil, "make": self.bikeMakeField.text, "model": self.bikeModelField.text, "bike_lock_code": self.bikeCodeField.text, "missing": false, "rating": ratingArray, "tags": tagsArray, "imageURL": uploadImageURL]) {
+                error in if let error = error {
+                    print("ERROR: \(error)")
+                } else {
+                    print("Document successfuly sent")
+                }
+                
+            }
+            
+
             print("IMAGE URL STRING")
             print(uploadImageURL)
-            
+
         }
-        
+
         uploadTask.observe(.failure) { (snapshot) in
             if let error = snapshot.error {
                 print("ERROR: Upload Failure \(error)")
             }
+        }
+    }
+
+    
+    // Checks to see if the value input is empty or not.
+    func checkValidInput(_ value: String) -> Bool {
+        
+        if value.count == 0 {
+            return false
+        } else {
+            return true
         }
     }
     

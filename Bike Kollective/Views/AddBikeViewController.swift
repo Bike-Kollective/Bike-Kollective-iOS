@@ -8,9 +8,11 @@
 import UIKit
 import Firebase
 import FirebaseStorage
+import CoreLocation
+import FirebaseFirestore
 
 
-class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate {
+class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextFieldDelegate, CLLocationManagerDelegate {
 
     // input fields
     @IBOutlet weak var addBikeImage: UIImageView!
@@ -22,6 +24,10 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var bikeMakeError: UILabel!
     @IBOutlet weak var bikeModelError: UILabel!
     @IBOutlet weak var bikeLockCodeError: UILabel!
+    
+    let manager = CLLocationManager()
+    var currentLatitude: Double?
+    var currentLongitude: Double?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +41,13 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillChangeFrameNotification, object: nil)
+        
+        //Set up location enabling
+//        manager = CLLocationManager()
+        manager.delegate = self
+        manager.desiredAccuracy = kCLLocationAccuracyBest
+        manager.requestWhenInUseAuthorization()
+        manager.startUpdatingLocation()
         
     }
     
@@ -162,6 +175,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
         
+        // create Firestore and Firestore Storage
         let database = Firestore.firestore()
         let imageStorage = Storage.storage()
                 
@@ -206,12 +220,23 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
                 print("Download URL: \(urlString)")
                 uploadImageURL = urlString
             }
+            
                 
             let ratingArray = [Int]()
             let tagsArray = [String]()
             
+            let currentLocation = GeoPoint(latitude: self.currentLatitude!, longitude: self.currentLongitude!)
+            
             // Send the rest of the information on the bile
-            database.collection("Bikes").document(documentID).setData(["checked_out": false, "location": nil, "make": self.bikeMakeField.text, "model": self.bikeModelField.text, "bike_lock_code": self.bikeCodeField.text, "missing": false, "rating": ratingArray, "tags": tagsArray, "imageURL": uploadImageURL]) {
+            database.collection("Bikes").document(documentID).setData([
+                "checked_out": false,
+                "location": currentLocation,
+                "make": self.bikeMakeField.text!,
+                "model": self.bikeModelField.text!,
+                "bike_lock_code": self.bikeCodeField.text!,
+                "missing": false, "rating": ratingArray,
+                "tags": tagsArray,
+                "imageURL": uploadImageURL]) {
                 error in if let error = error {
                     print("ERROR: \(error)")
                 } else {
@@ -242,6 +267,21 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         } else {
             return true
         }
+    }
+
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let first = locations.first else {
+            print("ERROR: No Locations")
+            return
+        }
+//
+//        print("COORDINATES TEST")
+//        print("\(first.coordinate.longitude) | \(first.coordinate.latitude)")
+        
+        currentLatitude = first.coordinate.latitude
+        currentLongitude = first.coordinate.longitude
+        
     }
     
     /*

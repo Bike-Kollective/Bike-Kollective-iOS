@@ -50,8 +50,15 @@ class LoginViewController: UIViewController {
                 
             }
             
-            // create User in database
-            // Auth.auth().createUser(withEmail: <#T##String#>, password: <#T##String#>, completion: <#T##((AuthDataResult?, Error?) -> Void)?##((AuthDataResult?, Error?) -> Void)?##(AuthDataResult?, Error?) -> Void#>)
+            // unwrap optional type of GIDGoogleUser
+            /*
+            guard
+                let userProfile = user?.profile
+            else { return }
+            
+            let fullName = userProfile.name
+            
+            print("user full name is \(fullName)")*/
             
             // let prof
             let storyboard = UIStoryboard(name: "Main", bundle: nil)

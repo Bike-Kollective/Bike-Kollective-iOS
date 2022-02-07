@@ -209,45 +209,42 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
 
             var uploadImageURL = ""
                 
-            newImageStorageRef.downloadURL{ url, error in
+            newImageStorageRef.downloadURL(completion: { url, error in
                 guard let url = url, error == nil else {
                     print("ERROR: Couldn't get image URL")
-                    print(error)
+                    print(error!)
                     return
                 }
                 
                 let urlString = url.absoluteString
                 print("Download URL: \(urlString)")
                 uploadImageURL = urlString
-            }
-            
                 
-            let ratingArray = [Int]()
-            let tagsArray = [String]()
-            
-            let currentLocation = GeoPoint(latitude: self.currentLatitude!, longitude: self.currentLongitude!)
-            
-            // Send the rest of the information on the bile
-            database.collection("Bikes").document(documentID).setData([
-                "checked_out": false,
-                "location": currentLocation,
-                "make": self.bikeMakeField.text!,
-                "model": self.bikeModelField.text!,
-                "bike_lock_code": self.bikeCodeField.text!,
-                "missing": false, "rating": ratingArray,
-                "tags": tagsArray,
-                "imageURL": uploadImageURL]) {
-                error in if let error = error {
-                    print("ERROR: \(error)")
-                } else {
-                    print("Document successfuly sent")
+                // Create the array for ratings and tags
+                let ratingArray = [Int]()
+                let tagsArray = [String]()
+                
+                // Get the current location
+                let currentLocation = GeoPoint(latitude: self.currentLatitude!, longitude: self.currentLongitude!)
+                
+                // Send the rest of the information on the bile
+                database.collection("Bikes").document(documentID).setData([
+                    "checked_out": false,
+                    "location": currentLocation,
+                    "make": self.bikeMakeField.text!,
+                    "model": self.bikeModelField.text!,
+                    "bike_lock_code": self.bikeCodeField.text!,
+                    "missing": false, "rating": ratingArray,
+                    "tags": tagsArray,
+                    "imageURL": uploadImageURL]) {
+                    error in if let error = error {
+                        print("ERROR: \(error)")
+                    } else {
+                        print("Document successfuly sent")
+                    }
                 }
                 
-            }
-            
-
-            print("IMAGE URL STRING")
-            print(uploadImageURL)
+            })
 
         }
 
@@ -283,15 +280,5 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         currentLongitude = first.coordinate.longitude
         
     }
-    
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

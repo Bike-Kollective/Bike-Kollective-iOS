@@ -6,8 +6,9 @@
 //
 
 import UIKit
+import CoreLocation
 import Firebase
-import AlamofireImage
+import FirebaseStorage
 
 struct Bike {
     let name: String
@@ -15,15 +16,19 @@ struct Bike {
     let model: String
     let rating: [Int]
     let tags: [String]
+    let location: CLLocation
 }
 
-class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate {
      
 
     @IBOutlet weak var listView: UITableView!
     
     var db: Firestore!
     var bikes = [Bike]()
+    var locationManager : CLLocationManager?
+    var currentLocation : CLLocation?
+    var storage : Storage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,6 +37,9 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         listView.dataSource = self
         // Do any additional setup after loading the view.
         db = Firestore.firestore()
+        locationManager = CLLocationManager()
+        locationManager?.delegate = self
+        storage = Storage.storage()
         loadData()
     }
 
@@ -43,12 +51,26 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                             } else {
                                 for doc in query!.documents {
                                     let data = doc.data()
-                                    let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String])
-                                    print(type(of: data["location"]))
+                                    var locale = CLLocation()
+                                    if let coords = data["location"] {
+                                                    let point = coords as! GeoPoint
+                                                    locale = CLLocation(latitude: point.latitude, longitude: point.longitude)
+                                                }
+                                    let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale)
                                     self.bikes.append(bike)
                                 }
                                 self.listView.reloadData()
                             }
+        }
+    }
+    
+    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        switch manager.authorizationStatus {
+        case .authorizedAlways, .authorizedWhenInUse:
+            manager.startUpdatingLocation()
+            currentLocation = manager.location
+        default:
+            return
         }
     }
     
@@ -62,9 +84,39 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = listView.dequeueReusableCell(withIdentifier: "BikeCell") as! BikeCell
         let item = bikes[indexPath.row]
         cell.modelLabel.text = "\(item.make) \(item.model)"
-        cell.tagsLabel.text = item.tags.joined(separator: " ")
+        cell.tagsLabel.text = item.tags.joined(separator: ", ")
+        var curAddress : String = ""
+        let ceo : CLGeocoder = CLGeocoder()
+        ceo.reverseGeocodeLocation(item.location, completionHandler:
+            {(placemarks, error) in
+                if (error != nil)
+                {
+                    print("reverse geodcode fail: \(error!.localizedDescription)")
+                }
+                let pm = placemarks! as [CLPlacemark]
+
+                if pm.count > 0 {
+                    let pm = placemarks![0]
+                    let town = pm.locality!
+                    curAddress = curAddress + town
+                    cell.distanceLabel.text = curAddress
+              }
+        })
+        storage!.reference(forURL: "gs://bike-kollective-cs467.appspot.com/bikes/aPt0uIVDdhcHQzJgnVLm.jpg").getData(maxSize: 1048576, completion: { (data, error) in
+
+            guard let imageData = data, error == nil else {
+                return
+            }
+            cell.picView.image = UIImage(data: imageData)
+
+        })
         let sumRating = item.rating.reduce(0, +)
-        let avgRating : Double = Double(sumRating / item.rating.count)
+        let avgRating : Double
+        if sumRating == 0 {
+           avgRating = 0
+        } else {
+            avgRating = Double(sumRating / item.rating.count)
+        }
         switch avgRating {
         case 0..<0.5:
             cell.ratingView.image = UIImage(named: "regular_0")

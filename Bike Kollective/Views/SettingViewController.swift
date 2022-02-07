@@ -8,7 +8,6 @@
 import UIKit
 import FirebaseAuth
 import GoogleSignIn
-import Alamofire
 
 class SettingViewController: UIViewController {
 

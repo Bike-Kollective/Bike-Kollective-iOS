@@ -6,10 +6,10 @@ target 'Bike Kollective' do
   use_frameworks!
 
   # Pods for Bike Kollective
-  pod 'AlamofireImage'
   pod 'GoogleMaps', '6.0.1'
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
+  pod 'Firebase/Storage'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
   pod 'Firebase/Storage'
@@ -24,3 +24,4 @@ target 'Bike Kollective' do
   end
 
 end
+

@@ -39,6 +39,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         db = Firestore.firestore()
         locationManager = CLLocationManager()
         locationManager?.delegate = self
+        locationManager?.requestWhenInUseAuthorization()
+        if locationManager?.authorizationStatus == .authorizedWhenInUse {
+            locationManager?.startUpdatingLocation()
+            currentLocation = locationManager?.location
+            print("Coords: \(String(describing: currentLocation))")
+        }
+        else if locationManager?.authorizationStatus == .authorizedAlways {
+            locationManager?.startUpdatingLocation()
+            currentLocation = locationManager?.location
+            print("Coords: \(String(describing: currentLocation))")
+        } else {
+            currentLocation = CLLocation(latitude: 41.8781, longitude: 87.6298)
+        }
         storage = Storage.storage()
         loadData()
     }
@@ -64,16 +77,6 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
-        switch manager.authorizationStatus {
-        case .authorizedAlways, .authorizedWhenInUse:
-            manager.startUpdatingLocation()
-            currentLocation = manager.location
-        default:
-            return
-        }
-    }
-    
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return bikes.count
@@ -85,26 +88,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         let item = bikes[indexPath.row]
         cell.modelLabel.text = "\(item.make) \(item.model)"
         cell.tagsLabel.text = item.tags.joined(separator: ", ")
-        var curAddress : String = ""
-        let ceo : CLGeocoder = CLGeocoder()
-        ceo.reverseGeocodeLocation(item.location, completionHandler:
-            {(placemarks, error) in
-                if (error != nil)
-                {
-                    print("reverse geodcode fail: \(error!.localizedDescription)")
-                }
-                let pm = placemarks! as [CLPlacemark]
-
-                if pm.count > 0 {
-                    let pm = placemarks![0]
-                    let town = pm.locality!
-                    curAddress = curAddress + town
-                    cell.distanceLabel.text = curAddress
-              }
-        })
-        storage!.reference(forURL: "gs://bike-kollective-cs467.appspot.com/bikes/aPt0uIVDdhcHQzJgnVLm.jpg").getData(maxSize: 1048576, completion: { (data, error) in
+        let distance = currentLocation?.distance(from: item.location) ?? 160900
+        let milesAway = round((distance / 1609) * 10) / 10.0
+        cell.distanceLabel.text = "\(milesAway)mi. away"
+        storage!.reference(forURL: "gs://bike-kollective-cs467.appspot.com/bikes/\(item.name).jpg").getData(maxSize: 1048576, completion: { (data, error) in
 
             guard let imageData = data, error == nil else {
+                self.storage!.reference(forURL: "gs://bike-kollective-cs467.appspot.com/bikes/\(item.name)").getData(maxSize: 1048576, completion: { (data, error) in
+
+                    guard let imageData = data, error == nil else {
+                        return
+                    }
+                    cell.picView.image = UIImage(data: imageData)
+                    
+                })
                 return
             }
             cell.picView.image = UIImage(data: imageData)

@@ -6,16 +6,47 @@
 //
 
 import UIKit
+import Alamofire
+import AlamofireImage
+import FirebaseAuth
+import Foundation
 
 class ProfileViewController: UIViewController {
 
+    @IBOutlet weak var profilePhoto: UIImageView!
+    @IBOutlet weak var fullName: UILabel!
+    @IBOutlet weak var memberSince: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        displayUserInfo()
+        
+        
     }
     
-
+    private func displayUserInfo() {
+        // get the user information - set name, memberSince and profile photo
+        let firebaseUser = Auth.auth().currentUser
+        
+        guard
+            let name = firebaseUser?.displayName,
+            let dateJoined = firebaseUser?.metadata.creationDate,
+            let profilePicURL = firebaseUser?.photoURL
+        else { return }
+        
+        
+        // format the firebase date
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MM/dd/YYYY"
+        // display the user's name, membership date and photo
+        fullName.text = name
+        memberSince.text = dateFormatter.string(from: dateJoined)
+        
+        profilePhoto.af.setImage(withURL: profilePicURL, filter: RoundedCornersFilter(radius: 15.0))
+    }
+    
     /*
     // MARK: - Navigation
 

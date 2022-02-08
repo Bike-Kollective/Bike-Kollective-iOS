@@ -391,7 +391,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aGE-Ui-K7d">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aGE-Ui-K7d">
                                                     <rect key="frame" x="10" y="10" width="110" height="110"/>
                                                     <color key="backgroundColor" systemColor="labelColor"/>
                                                     <constraints>
@@ -479,8 +479,19 @@
                     <view key="view" contentMode="scaleToFill" id="nfM-xd-tCL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ngb-UO-H9l">
+                                <rect key="frame" x="0.0" y="90" width="414" height="716"/>
+                            </mapView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="e2i-Rw-ASA"/>
-                        <color key="backgroundColor" systemColor="systemIndigoColor"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Ngb-UO-H9l" firstAttribute="top" secondItem="nfM-xd-tCL" secondAttribute="top" constant="90" id="9dP-Er-Y72"/>
+                            <constraint firstItem="Ngb-UO-H9l" firstAttribute="leading" secondItem="e2i-Rw-ASA" secondAttribute="leading" id="FYt-ix-0Kn"/>
+                            <constraint firstAttribute="bottom" secondItem="Ngb-UO-H9l" secondAttribute="bottom" constant="90" id="Iom-Oq-Bgb"/>
+                            <constraint firstItem="Ngb-UO-H9l" firstAttribute="trailing" secondItem="e2i-Rw-ASA" secondAttribute="trailing" id="b83-5a-Zto"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HF7-fA-9Kd">
                         <barButtonItem key="rightBarButtonItem" title="Add Bike" id="ti5-Xt-5OD">
@@ -492,7 +503,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joY-6g-6XC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="940"/>
+            <point key="canvasLocation" x="1418.840579710145" y="939.50892857142856"/>
         </scene>
         <!--Bike Detail View Controller-->
         <scene sceneID="xG7-QM-M7W">
@@ -858,7 +869,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Dcd-mx-0Gy"/>
+        <segue reference="zoT-Wl-uEf"/>
     </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="labelColor">
@@ -869,9 +880,6 @@
         </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-        <systemColor name="systemIndigoColor">
-            <color red="0.34509803921568627" green="0.33725490196078434" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

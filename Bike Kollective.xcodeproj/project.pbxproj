@@ -25,10 +25,10 @@
 		BFBAF761278E1F64004B80EB /* Bike_KollectiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF760278E1F64004B80EB /* Bike_KollectiveUITests.swift */; };
 		BFBAF763278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */; };
 		C04FCC0CFE8DEE8AF7E90BCE /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */; };
-		FE4C8157279B6081000DDB56 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */; };
 		FE94815827A345130081F6DD /* LoginFieldViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94815727A345130081F6DD /* LoginFieldViewControler.swift */; };
 		FE94815A27A347610081F6DD /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94815927A347600081F6DD /* EmailSignUpViewController.swift */; };
 		FEC0164E27B074110027BA42 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC0164D27B074110027BA42 /* SettingViewController.swift */; };
+		FEC1290127B20EAF00656F6A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FEC1290027B20EAF00656F6A /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,10 +77,10 @@
 		BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective_Bike_KollectiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F972A83EB351DE00922D7BEE /* Pods-Bike KollectiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike KollectiveTests.release.xcconfig"; path = "Target Support Files/Pods-Bike KollectiveTests/Pods-Bike KollectiveTests.release.xcconfig"; sourceTree = "<group>"; };
-		FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		FE94815727A345130081F6DD /* LoginFieldViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFieldViewControler.swift; sourceTree = "<group>"; };
 		FE94815927A347600081F6DD /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		FEC0164D27B074110027BA42 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		FEC1290027B20EAF00656F6A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,7 +183,7 @@
 				BFBAF748278E1F63004B80EB /* Assets.xcassets */,
 				BFBAF74A278E1F64004B80EB /* LaunchScreen.storyboard */,
 				BFBAF74D278E1F64004B80EB /* Info.plist */,
-				FE4C8156279B6081000DDB56 /* GoogleService-Info.plist */,
+				FEC1290027B20EAF00656F6A /* GoogleService-Info.plist */,
 			);
 			path = "Bike Kollective";
 			sourceTree = "<group>";
@@ -317,7 +317,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BFBAF74C278E1F64004B80EB /* LaunchScreen.storyboard in Resources */,
-				FE4C8157279B6081000DDB56 /* GoogleService-Info.plist in Resources */,
+				FEC1290127B20EAF00656F6A /* GoogleService-Info.plist in Resources */,
 				BFBAF749278E1F63004B80EB /* Assets.xcassets in Resources */,
 				BFBAF747278E1F61004B80EB /* Main.storyboard in Resources */,
 			);
@@ -675,6 +675,8 @@
 				DEVELOPMENT_TEAM = GZP2CMCCN6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bike Kollective/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Bike Kollective needs access to your camera to take a photo of the bike";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The Bike Kollective needs access to your location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -684,8 +686,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.capstone.Bike-Kollective";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.BikeKollective;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -704,6 +706,8 @@
 				DEVELOPMENT_TEAM = GZP2CMCCN6;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bike Kollective/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "The Bike Kollective needs access to your camera to take a photo of the bike";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "The Bike Kollective needs access to your location.";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -713,8 +717,8 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.capstone.Bike-Kollective";
+				MARKETING_VERSION = 0.1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.capstone.BikeKollective;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;

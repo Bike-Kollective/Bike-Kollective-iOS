@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -352,8 +353,10 @@
         <!--Bikes-->
         <scene sceneID="xzk-vF-qlR">
             <objects>
-                <navigationController id="hMl-nX-dbk" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Bikes" id="T4r-42-WGm"/>
+                <navigationController extendedLayoutIncludesOpaqueBars="YES" id="hMl-nX-dbk" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Bikes" id="T4r-42-WGm">
+                        <imageReference key="image" image="bicycle" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="2Bn-Br-ZIY">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -369,7 +372,7 @@
         <!--List View Controller-->
         <scene sceneID="xtu-dP-RUz">
             <objects>
-                <viewController id="6jF-3v-rgM" customClass="ListViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="6jF-3v-rgM" customClass="ListViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BlG-c9-cmX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -447,17 +450,32 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <searchBar contentMode="redraw" placeholder="Address Search" translatesAutoresizingMaskIntoConstraints="NO" id="xIv-gc-Njz">
+                                <rect key="frame" x="0.0" y="88" width="414" height="42"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="42" id="o9a-ny-scg"/>
+                                </constraints>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Bh6-s7-l4v"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="xIv-gc-Njz" firstAttribute="trailing" secondItem="Bh6-s7-l4v" secondAttribute="trailing" id="2DH-wd-vwV"/>
+                            <constraint firstItem="xIv-gc-Njz" firstAttribute="top" secondItem="Bh6-s7-l4v" secondAttribute="top" id="UjH-x6-YpN"/>
                             <constraint firstItem="0us-7B-NYk" firstAttribute="top" secondItem="BlG-c9-cmX" secondAttribute="top" id="b7x-fm-Dp0"/>
                             <constraint firstItem="0us-7B-NYk" firstAttribute="trailing" secondItem="Bh6-s7-l4v" secondAttribute="trailing" id="cMT-uc-eNJ"/>
+                            <constraint firstItem="xIv-gc-Njz" firstAttribute="leading" secondItem="Bh6-s7-l4v" secondAttribute="leading" id="ijl-xf-gAG"/>
                             <constraint firstAttribute="bottom" secondItem="0us-7B-NYk" secondAttribute="bottom" id="rM0-j1-i2Y"/>
                             <constraint firstItem="0us-7B-NYk" firstAttribute="leading" secondItem="Bh6-s7-l4v" secondAttribute="leading" id="vdD-F8-yCM"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="iH8-Bd-1us">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="DzG-Eg-FPn">
+                            <connections>
+                                <segue destination="vuK-ba-zYO" kind="presentation" id="1bK-f3-RxV"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Bike" id="Rwa-eF-9DY">
                             <connections>
                                 <segue destination="Dg3-Xg-l2y" kind="show" id="zoT-Wl-uEf"/>
@@ -465,6 +483,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bikeSearchBar" destination="xIv-gc-Njz" id="nsO-EV-N8g"/>
                         <outlet property="listView" destination="0us-7B-NYk" id="gUQ-xh-Fv0"/>
                     </connections>
                 </viewController>
@@ -480,20 +499,33 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ngb-UO-H9l">
-                                <rect key="frame" x="0.0" y="90" width="414" height="716"/>
+                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="H0o-5G-Zyi">
+                                <rect key="frame" x="0.0" y="-87" width="414" height="897"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </view>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="8oj-lc-FZC">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </mapView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e2i-Rw-ASA"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Ngb-UO-H9l" firstAttribute="top" secondItem="nfM-xd-tCL" secondAttribute="top" constant="90" id="9dP-Er-Y72"/>
-                            <constraint firstItem="Ngb-UO-H9l" firstAttribute="leading" secondItem="e2i-Rw-ASA" secondAttribute="leading" id="FYt-ix-0Kn"/>
-                            <constraint firstAttribute="bottom" secondItem="Ngb-UO-H9l" secondAttribute="bottom" constant="90" id="Iom-Oq-Bgb"/>
-                            <constraint firstItem="Ngb-UO-H9l" firstAttribute="trailing" secondItem="e2i-Rw-ASA" secondAttribute="trailing" id="b83-5a-Zto"/>
+                            <constraint firstItem="e2i-Rw-ASA" firstAttribute="trailing" secondItem="H0o-5G-Zyi" secondAttribute="trailing" id="5Ma-yk-st0"/>
+                            <constraint firstAttribute="bottom" secondItem="8oj-lc-FZC" secondAttribute="bottom" id="7vY-LE-SfY"/>
+                            <constraint firstItem="H0o-5G-Zyi" firstAttribute="top" secondItem="nfM-xd-tCL" secondAttribute="top" id="VED-OJ-1hv"/>
+                            <constraint firstItem="e2i-Rw-ASA" firstAttribute="bottom" secondItem="H0o-5G-Zyi" secondAttribute="bottom" id="Xh3-dz-CHg"/>
+                            <constraint firstItem="H0o-5G-Zyi" firstAttribute="leading" secondItem="e2i-Rw-ASA" secondAttribute="leading" id="YQK-Ef-Dkf"/>
+                            <constraint firstItem="8oj-lc-FZC" firstAttribute="top" secondItem="nfM-xd-tCL" secondAttribute="top" id="hfe-m9-H14"/>
+                            <constraint firstItem="8oj-lc-FZC" firstAttribute="trailing" secondItem="e2i-Rw-ASA" secondAttribute="trailing" id="lVt-rH-2Sp"/>
+                            <constraint firstItem="8oj-lc-FZC" firstAttribute="leading" secondItem="e2i-Rw-ASA" secondAttribute="leading" id="qBE-J0-1Vz"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="HF7-fA-9Kd">
+                        <barButtonItem key="leftBarButtonItem" title="Filter" id="EnO-B1-UtA">
+                            <connections>
+                                <segue destination="vuK-ba-zYO" kind="presentation" id="Mie-jj-7DB"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Bike" id="ti5-Xt-5OD">
                             <connections>
                                 <segue destination="Dg3-Xg-l2y" kind="show" id="Dcd-mx-0Gy"/>
@@ -504,6 +536,30 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="joY-6g-6XC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="939.50892857142856"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="K51-Y2-JY3">
+            <objects>
+                <viewController id="vuK-ba-zYO" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zSU-OZ-9bk">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaR-q2-Fa7">
+                                <rect key="frame" x="20" y="20" width="60" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="8vx-kN-CkH"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lrd-hb-d6m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="986.95652173913049" y="1747.7678571428571"/>
         </scene>
         <!--Bike Detail View Controller-->
         <scene sceneID="xG7-QM-M7W">
@@ -604,7 +660,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="s6f-a3-Xss" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="561" y="1773"/>
+            <point key="canvasLocation" x="-191" y="1748"/>
         </scene>
         <!--Add Bike View Controller-->
         <scene sceneID="vuL-mV-Sbv">
@@ -728,7 +784,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYH-3B-wDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="1773"/>
+            <point key="canvasLocation" x="2072" y="1748"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lcw-Zo-M7h">
@@ -753,7 +809,9 @@
         <scene sceneID="oeZ-FK-i27">
             <objects>
                 <navigationController id="WRr-kl-6BW" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Map" id="hzK-OD-d6H"/>
+                    <tabBarItem key="tabBarItem" title="Map" id="hzK-OD-d6H">
+                        <imageReference key="image" image="map" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="5nM-QX-y7w">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -852,7 +910,9 @@
         <scene sceneID="1Oh-6S-5Dq">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vlg-H0-Paf" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="niU-SS-KyF"/>
+                    <tabBarItem key="tabBarItem" title="Profile" id="niU-SS-KyF">
+                        <imageReference key="image" image="person" catalog="system" symbolScale="large"/>
+                    </tabBarItem>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="Tdj-mi-7ex">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -870,8 +930,12 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="zoT-Wl-uEf"/>
+        <segue reference="1bK-f3-RxV"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="bicycle" catalog="system" width="128" height="78"/>
+        <image name="map" catalog="system" width="128" height="110"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

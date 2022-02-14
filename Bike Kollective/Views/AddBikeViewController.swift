@@ -24,6 +24,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var bikeMakeError: UILabel!
     @IBOutlet weak var bikeModelError: UILabel!
     @IBOutlet weak var bikeLockCodeError: UILabel!
+    @IBOutlet weak var bikeImageEmptyError: UILabel!
     
     let manager = CLLocationManager()
     var currentLatitude: Double?
@@ -36,6 +37,8 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         bikeModelField.delegate = self
         bikeCodeField.delegate = self
         
+        //Hide the image is empty error message.
+        bikeImageEmptyError.isHidden = true
         
         //Add an event listener for keyboard.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -163,6 +166,20 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         return nil
     }
     
+    func bikeImageCheck() -> Bool{
+        
+        print("In Image check FALSE")
+        
+        if addBikeImage.image == nil {
+            bikeImageEmptyError.isHidden = false
+            return false
+        }
+        else {
+            bikeImageEmptyError.isHidden = true
+            return true
+        }
+    }
+    
     @IBAction func addBikeTapped(_ sender: Any) {
         
         // Check to see if their is the proper inputs in the required fields
@@ -172,6 +189,17 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if(makeEmpty == false || modelEmpty == false || bikeCodeEmpty == false) {
             print("ERROR: Not all needed valid inputs")
+            return
+        }
+        
+        
+//        print("BIKE IMAGE")
+//        print(addBikeImage)
+        
+        // Check to see if there was a photo taken.
+        let isImage = bikeImageCheck()
+        if isImage == false {
+            print("ERROR: No bike image input")
             return
         }
         
@@ -245,7 +273,10 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
                 
             })
-
+            
+            // display success message to the user.
+            self.bikeUploadSuccessAlert()
+            
         }
 
         uploadTask.observe(.failure) { (snapshot) in
@@ -279,6 +310,17 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         currentLatitude = first.coordinate.latitude
         currentLongitude = first.coordinate.longitude
         
+    }
+    
+    func bikeUploadSuccessAlert() {
+        //Create the success alert message to pop up.
+        let successAlert = UIAlertController(title: "Success", message: "Bike successfuly uploaded to the Kollective", preferredStyle: UIAlertController.Style.alert)
+        
+        //Create the button to get rid of the alert.
+        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        //Present the alert to the user.
+        self.present(successAlert, animated: true, completion: nil)
     }
 
 }

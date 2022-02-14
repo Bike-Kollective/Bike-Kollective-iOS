@@ -672,7 +672,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GZP2CMCCN6;
+				DEVELOPMENT_TEAM = S8N6A6B9WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bike Kollective/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "The Bike Kollective needs access to your camera to take a photo of the bike";
@@ -703,7 +703,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GZP2CMCCN6;
+				DEVELOPMENT_TEAM = S8N6A6B9WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bike Kollective/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "The Bike Kollective needs access to your camera to take a photo of the bike";

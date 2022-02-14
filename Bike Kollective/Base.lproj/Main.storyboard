@@ -682,6 +682,12 @@
                                     <action selector="addBikeTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="PW5-XF-kUy"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Bike Image is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qtJ-I1-kth" userLabel="Bike Photo Error">
+                                <rect key="frame" x="20.5" y="655" width="187.5" height="20"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDI-os-Je5"/>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
@@ -694,12 +700,14 @@
                             <constraint firstItem="UdS-Hh-Nwy" firstAttribute="top" secondItem="Qg3-So-vom" secondAttribute="bottom" constant="8" symbolic="YES" id="JF7-7f-Y1w"/>
                             <constraint firstItem="Xl2-tl-bQQ" firstAttribute="top" secondItem="uCh-hK-hgd" secondAttribute="bottom" constant="8" symbolic="YES" id="KQ2-EG-gXt"/>
                             <constraint firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Men-HU-5i4"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="top" secondItem="5wM-OR-ZiO" secondAttribute="bottom" constant="78" id="PVo-pu-oMy"/>
                             <constraint firstItem="dtr-JQ-y8J" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="RpL-Q7-jXZ"/>
+                            <constraint firstItem="qtJ-I1-kth" firstAttribute="top" secondItem="cYc-Ae-y4N" secondAttribute="bottom" constant="22" id="S2r-XG-VJh"/>
+                            <constraint firstItem="qtJ-I1-kth" firstAttribute="leading" secondItem="cYc-Ae-y4N" secondAttribute="leading" id="TyT-F4-qer"/>
                             <constraint firstItem="YZJ-uq-dBj" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Uue-8h-Wy2"/>
                             <constraint firstItem="5wM-OR-ZiO" firstAttribute="top" secondItem="Qg3-So-vom" secondAttribute="bottom" constant="36" id="X2n-3K-set"/>
                             <constraint firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Yu4-7k-hal"/>
                             <constraint firstItem="4FD-t6-j7u" firstAttribute="top" secondItem="YZJ-uq-dBj" secondAttribute="bottom" constant="8" symbolic="YES" id="a0l-wd-TqZ"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="top" secondItem="qtJ-I1-kth" secondAttribute="bottom" constant="8" symbolic="YES" id="aKc-X1-lRT"/>
                             <constraint firstItem="5wM-OR-ZiO" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="b0a-Da-ZcJ"/>
                             <constraint firstItem="cYc-Ae-y4N" firstAttribute="leading" secondItem="5wM-OR-ZiO" secondAttribute="leading" id="bq3-Q0-rVU"/>
                             <constraint firstItem="Qg3-So-vom" firstAttribute="top" secondItem="YZJ-uq-dBj" secondAttribute="bottom" constant="36" id="e2L-nD-eqx"/>
@@ -719,6 +727,7 @@
                     <connections>
                         <outlet property="addBikeImage" destination="uCh-hK-hgd" id="ZNw-9k-qdR"/>
                         <outlet property="bikeCodeField" destination="5wM-OR-ZiO" id="cmD-v3-FXd"/>
+                        <outlet property="bikeImageEmptyError" destination="qtJ-I1-kth" id="eaD-kY-st0"/>
                         <outlet property="bikeLockCodeError" destination="cYc-Ae-y4N" id="0D9-yL-8D6"/>
                         <outlet property="bikeMakeError" destination="4FD-t6-j7u" id="xB3-CS-P82"/>
                         <outlet property="bikeMakeField" destination="YZJ-uq-dBj" id="ZTN-F5-PfN"/>
@@ -728,7 +737,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYH-3B-wDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1419" y="1773"/>
+            <point key="canvasLocation" x="1418.840579710145" y="1772.5446428571429"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lcw-Zo-M7h">

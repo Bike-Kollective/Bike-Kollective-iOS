@@ -748,35 +748,33 @@
                         <viewLayoutGuide key="safeArea" id="vDI-os-Je5"/>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="0MC-53-0Qn"/>
-                            <constraint firstItem="Qg3-So-vom" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="5lJ-Zk-ymf"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="BhM-Id-1Tf"/>
-                            <constraint firstItem="4FD-t6-j7u" firstAttribute="leading" secondItem="YZJ-uq-dBj" secondAttribute="leading" id="Cdr-r9-Hed"/>
-                            <constraint firstItem="hfT-54-u3o" firstAttribute="top" secondItem="cYc-Ae-y4N" secondAttribute="bottom" constant="22" id="EPJ-bp-pG9"/>
-                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="FwN-cG-swf"/>
-                            <constraint firstItem="UdS-Hh-Nwy" firstAttribute="top" secondItem="Qg3-So-vom" secondAttribute="bottom" constant="8" symbolic="YES" id="JF7-7f-Y1w"/>
-                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="top" secondItem="uCh-hK-hgd" secondAttribute="bottom" constant="8" symbolic="YES" id="KQ2-EG-gXt"/>
-                            <constraint firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Men-HU-5i4"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="top" secondItem="5wM-OR-ZiO" secondAttribute="bottom" constant="78" id="PVo-pu-oMy"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="RpL-Q7-jXZ"/>
-                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Uue-8h-Wy2"/>
-                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="top" secondItem="Qg3-So-vom" secondAttribute="bottom" constant="36" id="X2n-3K-set"/>
-                            <constraint firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Yu4-7k-hal"/>
-                            <constraint firstItem="4FD-t6-j7u" firstAttribute="top" secondItem="YZJ-uq-dBj" secondAttribute="bottom" constant="8" symbolic="YES" id="a0l-wd-TqZ"/>
-                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="b0a-Da-ZcJ"/>
-                            <constraint firstItem="cYc-Ae-y4N" firstAttribute="leading" secondItem="5wM-OR-ZiO" secondAttribute="leading" id="bq3-Q0-rVU"/>
-                            <constraint firstItem="Qg3-So-vom" firstAttribute="top" secondItem="YZJ-uq-dBj" secondAttribute="bottom" constant="36" id="e2L-nD-eqx"/>
-                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="top" secondItem="Xl2-tl-bQQ" secondAttribute="bottom" constant="12" id="f6z-WQ-DKt"/>
-                            <constraint firstItem="cYc-Ae-y4N" firstAttribute="top" secondItem="5wM-OR-ZiO" secondAttribute="bottom" constant="8" symbolic="YES" id="gYQ-ii-Ybl"/>
-                            <constraint firstItem="hfT-54-u3o" firstAttribute="leading" secondItem="cYc-Ae-y4N" secondAttribute="leading" id="hKt-06-pQt"/>
-                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="ho5-Xf-QuN"/>
-                            <constraint firstItem="UdS-Hh-Nwy" firstAttribute="leading" secondItem="Qg3-So-vom" secondAttribute="leading" id="ick-av-wEe"/>
-                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="ihN-6Z-7Op"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="top" secondItem="vDI-os-Je5" secondAttribute="top" id="izU-dc-vwc"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="kJ0-Ds-TuF"/>
-                            <constraint firstItem="Qg3-So-vom" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="lXb-eh-GJA"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="height" secondItem="tCQ-Im-Ob5" secondAttribute="height" multiplier="0.3" id="npf-Cw-9GU"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="xTg-Uc-kk2"/>
+                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="00v-C9-WDw"/>
+                            <constraint firstItem="cYc-Ae-y4N" firstAttribute="leading" secondItem="5wM-OR-ZiO" secondAttribute="leading" id="4k8-Yz-338"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="top" secondItem="vDI-os-Je5" secondAttribute="top" id="5oF-iE-C5z"/>
+                            <constraint firstItem="Qg3-So-vom" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="5pn-iO-ww0"/>
+                            <constraint firstItem="Qg3-So-vom" firstAttribute="top" secondItem="4FD-t6-j7u" secondAttribute="bottom" constant="8" symbolic="YES" id="7KJ-0Q-4rH"/>
+                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="8f9-So-JgR"/>
+                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="top" secondItem="uCh-hK-hgd" secondAttribute="bottom" constant="8" symbolic="YES" id="G33-65-Fxj"/>
+                            <constraint firstItem="UdS-Hh-Nwy" firstAttribute="leading" secondItem="Qg3-So-vom" secondAttribute="leading" id="NMc-80-MDE"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="OaK-gS-Jd5"/>
+                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="top" secondItem="Xl2-tl-bQQ" secondAttribute="bottom" constant="12" id="QJH-8q-bZp"/>
+                            <constraint firstItem="Qg3-So-vom" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="RhR-Gg-yUv"/>
+                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="SpH-yd-5nf"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="height" secondItem="tCQ-Im-Ob5" secondAttribute="height" multiplier="0.300223" id="TJa-x5-3Xg"/>
+                            <constraint firstItem="4FD-t6-j7u" firstAttribute="leading" secondItem="YZJ-uq-dBj" secondAttribute="leading" id="Txs-NZ-NMg"/>
+                            <constraint firstItem="hfT-54-u3o" firstAttribute="leading" secondItem="cYc-Ae-y4N" secondAttribute="leading" id="Vhq-8Q-eTZ"/>
+                            <constraint firstItem="4FD-t6-j7u" firstAttribute="top" secondItem="YZJ-uq-dBj" secondAttribute="bottom" constant="8" symbolic="YES" id="W5B-aO-99v"/>
+                            <constraint firstItem="cYc-Ae-y4N" firstAttribute="top" secondItem="5wM-OR-ZiO" secondAttribute="bottom" constant="8" symbolic="YES" id="YpM-BE-HoE"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="a7s-nF-oru"/>
+                            <constraint firstItem="UdS-Hh-Nwy" firstAttribute="top" secondItem="Qg3-So-vom" secondAttribute="bottom" constant="8" symbolic="YES" id="abR-9h-lYx"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="bzp-0e-ogi"/>
+                            <constraint firstItem="5wM-OR-ZiO" firstAttribute="top" secondItem="UdS-Hh-Nwy" secondAttribute="bottom" constant="8" symbolic="YES" id="cVJ-mM-NmT"/>
+                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="f68-80-7Qk"/>
+                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" multiplier="0.9" id="fNp-CI-beO"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="top" secondItem="hfT-54-u3o" secondAttribute="bottom" constant="7" id="gVk-vS-Ygz"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="wzN-aK-CmQ"/>
+                            <constraint firstItem="hfT-54-u3o" firstAttribute="top" secondItem="cYc-Ae-y4N" secondAttribute="bottom" constant="22" id="yCl-5j-Q4U"/>
+                            <constraint firstItem="YZJ-uq-dBj" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="ynU-5j-FiA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IyR-GE-zLs"/>
@@ -793,7 +791,65 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cYH-3B-wDl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2072" y="1748"/>
+            <point key="canvasLocation" x="2071.0144927536235" y="1747.7678571428571"/>
+        </scene>
+        <!--Release Of Interest View Controller-->
+        <scene sceneID="Xnm-rZ-2ei">
+            <objects>
+                <viewController storyboardIdentifier="releaseOfInterest" id="j9H-vg-mLC" customClass="ReleaseOfInterestViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ENz-tY-fQc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release of Interest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8HC-I2-GGa">
+                                <rect key="frame" x="41.5" y="169" width="331" height="29"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1s-Az-OF6">
+                                <rect key="frame" x="41.5" y="646" width="331" height="54"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="54" id="LFR-jV-9s0"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
+                                <connections>
+                                    <action selector="confirmButtonTapped:" destination="j9H-vg-mLC" eventType="touchUpInside" id="HNh-XC-tr9"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6NC-gG-p6W">
+                                <rect key="frame" x="41.5" y="228" width="331" height="81.5"/>
+                                <string key="text">Please note that by signing below you are hearby releasing all interest in BLANK bike.  From this point forward this bike will be owned by the Bike Kollective.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="TdI-ua-pGi"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="8HC-I2-GGa" firstAttribute="top" secondItem="TdI-ua-pGi" secondAttribute="top" constant="125" id="66u-Ud-ehX"/>
+                            <constraint firstItem="6NC-gG-p6W" firstAttribute="width" secondItem="ENz-tY-fQc" secondAttribute="width" multiplier="0.8" id="7Pb-NE-2ap"/>
+                            <constraint firstItem="d1s-Az-OF6" firstAttribute="centerX" secondItem="TdI-ua-pGi" secondAttribute="centerX" id="Aat-Mx-svx"/>
+                            <constraint firstItem="6NC-gG-p6W" firstAttribute="centerX" secondItem="TdI-ua-pGi" secondAttribute="centerX" id="FPX-Ew-ELl"/>
+                            <constraint firstItem="d1s-Az-OF6" firstAttribute="width" secondItem="ENz-tY-fQc" secondAttribute="width" multiplier="0.8" id="MJS-rL-jnd"/>
+                            <constraint firstItem="8HC-I2-GGa" firstAttribute="width" secondItem="ENz-tY-fQc" secondAttribute="width" multiplier="0.8" id="TMz-TG-wkr"/>
+                            <constraint firstItem="6NC-gG-p6W" firstAttribute="centerX" secondItem="8HC-I2-GGa" secondAttribute="centerX" id="aL2-HR-NX0"/>
+                            <constraint firstItem="8HC-I2-GGa" firstAttribute="centerX" secondItem="TdI-ua-pGi" secondAttribute="centerX" id="ajj-5d-FoF"/>
+                            <constraint firstItem="6NC-gG-p6W" firstAttribute="top" secondItem="8HC-I2-GGa" secondAttribute="bottom" constant="30" id="baD-Eq-89K"/>
+                            <constraint firstItem="d1s-Az-OF6" firstAttribute="centerX" secondItem="6NC-gG-p6W" secondAttribute="centerX" id="na2-JO-fQI"/>
+                            <constraint firstItem="d1s-Az-OF6" firstAttribute="top" secondItem="6NC-gG-p6W" secondAttribute="bottom" constant="336.5" id="zAo-iQ-H2E"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="confirmButton" destination="d1s-Az-OF6" id="apr-JJ-IkM"/>
+                        <outlet property="releaseStatement" destination="6NC-gG-p6W" id="234-gb-RlG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mA6-72-bF5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2940.579710144928" y="1747.7678571428571"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Lcw-Zo-M7h">

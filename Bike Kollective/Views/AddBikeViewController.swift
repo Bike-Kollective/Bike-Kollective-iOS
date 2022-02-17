@@ -197,11 +197,17 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
 //        print(addBikeImage)
         
         // Check to see if there was a photo taken.
-        let isImage = bikeImageCheck()
-        if isImage == false {
-            print("ERROR: No bike image input")
-            return
-        }
+//        let isImage = bikeImageCheck()
+//        if isImage == false {
+//            print("ERROR: No bike image input")
+//            return
+//        }
+        
+        //Go to the release of interest screen.
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: "releaseOfInterest") as! ReleaseOfInterestViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        present(newViewController, animated: true)
+        
         
         // create Firestore and Firestore Storage
         let database = Firestore.firestore()

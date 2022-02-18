@@ -28,14 +28,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if error != nil || user == nil {
             // Show the app's signed-out state.
+                goToLoginView()
             } else {
-                // User was signed in previously before, so show the tab bar controller, i.e. the user state
-                let storyboard = UIStoryboard(name: "Main", bundle: nil)
-                let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
-                    
-                // This is to get the SceneDelegate object from your view controller
-                // then call the change root view controller function to change to main tab bar
-                (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
+                // user has been signed in previously without signing out, so restore their sign in status
+                goToTabViewController()
+                
             }
         }
         

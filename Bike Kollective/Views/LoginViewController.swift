@@ -10,6 +10,7 @@ import GoogleSignIn
 import FirebaseCore
 import FirebaseAuth
 
+
 class LoginViewController: UIViewController {
 
     // button for google sign in - need to set button class as GIDSignInButton
@@ -59,9 +60,13 @@ class LoginViewController: UIViewController {
             
             print("user full name is \(fullName)")*/
             
-            
-            // Add user to a firebase collection if they have not already been added to the database
-            goToTabViewController()
+            // let prof
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let mainTabBarController = storyboard.instantiateViewController(identifier: "MainTabBarController")
+                
+            // This is to get the SceneDelegate object from your view controller
+            // then call the change root view controller function to change to main tab bar
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(mainTabBarController)
             
         }
         
@@ -77,5 +82,3 @@ class LoginViewController: UIViewController {
     }
     */
 }
-
-

@@ -23,7 +23,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     //Error message
     @IBOutlet weak var emptyError: UILabel!
     
-    var userReleaseOfInterest: Bool?
+    var userReleaseOfInterest = false
     
     let manager = CLLocationManager()
     var currentLatitude: Double?
@@ -88,12 +88,15 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
         
-        // Check for keyboard notifications 
+        // Check for keyboard notifications
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification{
-            
+
+            print(keyboardSize.height)
             view.frame.origin.y = -keyboardSize.height
-        } else {
+        }
+        else {
             view.frame.origin.y = 0
+            
         }
                 
         print("Keyboard will show: \(notification.name.rawValue)")
@@ -154,6 +157,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         print("In Image check FALSE")
         
         if addBikeImage.image == nil {
+            emptyError.text = "A bike image is a required field."
             emptyError.isHidden = false
             return false
         }
@@ -162,6 +166,20 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
             return true
         }
     }
+    
+    func releaseOfInterestCheck() -> Bool{
+        
+        if userReleaseOfInterest == false {
+            emptyError.text = "Release of interest is a required field."
+            emptyError.isHidden = false
+            return false
+        }
+        else {
+            emptyError.isHidden = true
+            return true
+        }
+    }
+    
     
     @IBAction func releaseOfInterestTapped(_ sender: Any) {
 
@@ -181,7 +199,6 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBAction func addBikeTapped(_ sender: Any) {
         
         // Check to see if their is the proper inputs in the required fields
-        
         if emptyBikeMakeFieldCheck() == false {
             print("ERROR: Bike make field is empty")
             return
@@ -197,19 +214,21 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
 
-//        print("BIKE IMAGE")
-//        print(addBikeImage)
-        
         // Check to see if there was a photo taken.
-        let isImage = bikeImageCheck()
-        if isImage == false {
+        if bikeImageCheck() == false {
             print("ERROR: No bike image input")
             return
         }
         
+        
+        // Check to see if there is a release of interest.
+        if releaseOfInterestCheck() == false {
+            print("ERROR: No release of interest")
+            return
+        }
 
         print("RELEASE OF INTEREST IN ADD BIKE TAPPED")
-        print(userReleaseOfInterest!)
+        print(userReleaseOfInterest)
         
         
         // create Firestore and Firestore Storage
@@ -273,6 +292,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
                     "bike_lock_code": self.bikeCodeField.text!,
                     "missing": false, "rating": ratingArray,
                     "tags": tagsArray,
+                    "release_of_interest": self.userReleaseOfInterest,
                     "imageURL": uploadImageURL]) {
                     error in if let error = error {
                         print("ERROR: \(error)")
@@ -296,46 +316,11 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
     
-//    // Checks to see if the value input is empty or not.
-//    func checkValidInput(_ value: String) -> Bool {
-//
-//        if value.count == 0 {
-//            return false
-//        } else {
-//            return true
-//        }
-//    }
-
-    
-//    func getReleaseOfInterest() -> Bool {
-//
-//        var tempReleaseValue = false
-//
-//        let newViewController = storyboard?.instantiateViewController(withIdentifier: "releaseOfInterest") as! ReleaseOfInterestViewController
-//        newViewController.modalPresentationStyle = .fullScreen
-//        newViewController.releaseOfInterestCheck = { Bool in
-//            tempReleaseValue = Bool
-//        }
-//        present(newViewController, animated: true)
-//
-//        print("RELEASE OF INTEREST FUNCTION")
-//        print(tempReleaseValue)
-//
-//        return tempReleaseValue
-//
-//    }
-    
-    
-    
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let first = locations.first else {
             print("ERROR: No Locations")
             return
         }
-//
-//        print("COORDINATES TEST")
-//        print("\(first.coordinate.longitude) | \(first.coordinate.latitude)")
         
         currentLatitude = first.coordinate.latitude
         currentLongitude = first.coordinate.longitude

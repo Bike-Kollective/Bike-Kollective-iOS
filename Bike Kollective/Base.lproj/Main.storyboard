@@ -686,28 +686,39 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vAu-kK-66T" userLabel="Bike Make Field">
-                                <rect key="frame" x="0.0" y="412.33333333333331" width="390" height="34"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8t-Mo-MVM" userLabel="Bike Model Field">
-                                <rect key="frame" x="0.0" y="454.33333333333331" width="390" height="34"/>
+                                <rect key="frame" x="0.0" y="412" width="390" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="TWC-Nt-y6t"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Lock Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z8t-Dw-tor" userLabel="Bike Lock Code Field">
-                                <rect key="frame" x="0.0" y="496.33333333333326" width="390" height="34"/>
+                                <rect key="frame" x="0.0" y="496" width="390" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="nZX-T2-pSE"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Bike Image is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfT-54-u3o" userLabel="Error Message">
-                                <rect key="frame" x="0.0" y="538.33333333333337" width="187.66666666666666" height="20.333333333333371"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" systemColor="systemRedColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A8t-Mo-MVM" userLabel="Bike Model Field">
+                                <rect key="frame" x="0.0" y="454" width="390" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="34" id="Baq-Vf-gze"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jr-gW-brk">
+                                <rect key="frame" x="0.0" y="628.33333333333337" width="390" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Click for Release of Interest in Bike"/>
+                                <connections>
+                                    <action selector="releaseOfInterestTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="RAy-RE-aeF"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtr-JQ-y8J">
-                                <rect key="frame" x="0.0" y="703" width="390" height="55"/>
+                                <rect key="frame" x="0.0" y="667.33333333333337" width="390" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Y9x-BQ-ikh"/>
                                 </constraints>
@@ -717,42 +728,40 @@
                                     <action selector="addBikeTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="PW5-XF-kUy"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Jr-gW-brk">
-                                <rect key="frame" x="0.0" y="645" width="390" height="50"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Click for Release of Interest in Bike"/>
-                                <connections>
-                                    <action selector="releaseOfInterestTapped:" destination="Dg3-Xg-l2y" eventType="touchUpInside" id="RAy-RE-aeF"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Bike Image is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hfT-54-u3o" userLabel="Error Message">
+                                <rect key="frame" x="0.0" y="538" width="187.66666666666666" height="20.333333333333371"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDI-os-Je5"/>
                         <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="vDI-os-Je5" firstAttribute="bottom" secondItem="dtr-JQ-y8J" secondAttribute="bottom" constant="3" id="0BS-oE-ILb"/>
-                            <constraint firstItem="A8t-Mo-MVM" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="1L7-Fb-geo"/>
-                            <constraint firstItem="vAu-kK-66T" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="2Bn-kG-Msb"/>
-                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="top" secondItem="uCh-hK-hgd" secondAttribute="bottom" constant="8" symbolic="YES" id="6Vu-yM-2JP"/>
-                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="9HQ-cn-PoW"/>
-                            <constraint firstItem="vAu-kK-66T" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="CtK-9q-bLM"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="top" secondItem="vDI-os-Je5" secondAttribute="top" id="JzS-GP-IGw"/>
-                            <constraint firstItem="hfT-54-u3o" firstAttribute="leading" secondItem="z8t-Dw-tor" secondAttribute="leading" id="LKN-fN-z5Q"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="firstBaseline" secondItem="0Jr-gW-brk" secondAttribute="baseline" constant="60.666666666666742" id="Pdz-Qn-Xij"/>
-                            <constraint firstItem="hfT-54-u3o" firstAttribute="top" secondItem="z8t-Dw-tor" secondAttribute="bottom" constant="8" symbolic="YES" id="Rbd-2J-rz9"/>
-                            <constraint firstItem="A8t-Mo-MVM" firstAttribute="top" secondItem="vAu-kK-66T" secondAttribute="bottom" constant="8" symbolic="YES" id="SUu-lq-z7D"/>
-                            <constraint firstItem="0Jr-gW-brk" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="YXQ-Ea-BRm"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="height" secondItem="tCQ-Im-Ob5" secondAttribute="height" multiplier="0.3" id="ZgN-Ay-W5t"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="gFR-H5-Bah"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="h4n-ht-ue9"/>
-                            <constraint firstItem="z8t-Dw-tor" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="hJc-o3-WOx"/>
-                            <constraint firstItem="uCh-hK-hgd" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="o3n-ym-JRv"/>
-                            <constraint firstItem="A8t-Mo-MVM" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="qEk-Gy-k1X"/>
-                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="qbd-Km-7l3"/>
-                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="sl3-0H-1BN"/>
-                            <constraint firstItem="0Jr-gW-brk" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="xWz-zf-m7z"/>
-                            <constraint firstItem="z8t-Dw-tor" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="yLg-l2-rPG"/>
-                            <constraint firstItem="z8t-Dw-tor" firstAttribute="top" secondItem="A8t-Mo-MVM" secondAttribute="bottom" constant="8" symbolic="YES" id="yVc-7e-h1A"/>
-                            <constraint firstItem="vAu-kK-66T" firstAttribute="top" secondItem="Xl2-tl-bQQ" secondAttribute="bottom" constant="8" symbolic="YES" id="zNT-Lt-JSy"/>
+                            <constraint firstItem="0Jr-gW-brk" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="1fP-L3-NeS"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="height" secondItem="tCQ-Im-Ob5" secondAttribute="height" multiplier="0.3" id="71x-sZ-e1Z"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="top" secondItem="vDI-os-Je5" secondAttribute="top" id="75j-JH-16Q"/>
+                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="9fk-Tp-oaG"/>
+                            <constraint firstItem="z8t-Dw-tor" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="Aig-4A-4vp"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="top" secondItem="0Jr-gW-brk" secondAttribute="bottom" constant="8" symbolic="YES" id="Am4-AI-5J0"/>
+                            <constraint firstItem="vAu-kK-66T" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="Hwx-yg-mnu"/>
+                            <constraint firstItem="hfT-54-u3o" firstAttribute="top" secondItem="z8t-Dw-tor" secondAttribute="bottom" constant="8" symbolic="YES" id="JsU-DI-Ma1"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="MHu-M7-BOD"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="Mju-yu-cSx"/>
+                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="top" secondItem="uCh-hK-hgd" secondAttribute="bottom" constant="8" id="Nqf-Cx-5ff"/>
+                            <constraint firstItem="A8t-Mo-MVM" firstAttribute="top" secondItem="vAu-kK-66T" secondAttribute="bottom" constant="8" symbolic="YES" id="Ofq-Ti-UgZ"/>
+                            <constraint firstItem="z8t-Dw-tor" firstAttribute="top" secondItem="A8t-Mo-MVM" secondAttribute="bottom" constant="8" symbolic="YES" id="RTo-B5-E5n"/>
+                            <constraint firstItem="vAu-kK-66T" firstAttribute="top" secondItem="Xl2-tl-bQQ" secondAttribute="bottom" constant="7.6666666666666856" id="VJE-3d-oMA"/>
+                            <constraint firstItem="A8t-Mo-MVM" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="WRQ-pU-Oq4"/>
+                            <constraint firstItem="A8t-Mo-MVM" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="WxY-8D-eN9"/>
+                            <constraint firstItem="0Jr-gW-brk" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="a1Q-9g-kmr"/>
+                            <constraint firstItem="0Jr-gW-brk" firstAttribute="top" secondItem="hfT-54-u3o" secondAttribute="bottom" constant="70" id="d2s-Lt-BYr"/>
+                            <constraint firstItem="hfT-54-u3o" firstAttribute="leading" secondItem="z8t-Dw-tor" secondAttribute="leading" id="gMl-lV-2it"/>
+                            <constraint firstItem="z8t-Dw-tor" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="gey-h2-fQu"/>
+                            <constraint firstItem="vAu-kK-66T" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="pOo-tq-VxL"/>
+                            <constraint firstItem="dtr-JQ-y8J" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="qKg-BT-7rT"/>
+                            <constraint firstItem="uCh-hK-hgd" firstAttribute="centerX" secondItem="vDI-os-Je5" secondAttribute="centerX" id="tRF-5C-csN"/>
+                            <constraint firstItem="Xl2-tl-bQQ" firstAttribute="width" secondItem="tCQ-Im-Ob5" secondAttribute="width" id="zOm-UY-QTg"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IyR-GE-zLs"/>
@@ -790,7 +799,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1s-Az-OF6">
-                                <rect key="frame" x="39" y="666.33333333333337" width="312" height="54"/>
+                                <rect key="frame" x="0.0" y="666.33333333333337" width="390" height="54"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="54" id="LFR-jV-9s0"/>
                                 </constraints>
@@ -800,15 +809,8 @@
                                     <action selector="confirmButtonTapped:" destination="j9H-vg-mLC" eventType="touchUpInside" id="HNh-XC-tr9"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgQ-TI-4AY" userLabel="Accept Switch">
-                                <rect key="frame" x="41" y="542.33333333333337" width="51" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="76V-Dj-gqq"/>
-                                    <constraint firstAttribute="width" constant="49" id="IQC-Bn-sfT"/>
-                                </constraints>
-                            </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Agree to the release of interest of bike." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0f-Eg-vn2">
-                                <rect key="frame" x="119" y="514" width="253" height="47"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agree to the release of interest of bike." textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I0f-Eg-vn2">
+                                <rect key="frame" x="95" y="542.33333333333337" width="251" height="47"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="251" id="5no-1g-fNb"/>
                                     <constraint firstAttribute="height" constant="47" id="wEg-jG-rMZ"/>
@@ -817,24 +819,31 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgQ-TI-4AY" userLabel="Accept Switch">
+                                <rect key="frame" x="26" y="542" width="51" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="49" id="IQC-Bn-sfT"/>
+                                </constraints>
+                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="TdI-ua-pGi"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="ZgQ-TI-4AY" firstAttribute="leading" secondItem="TdI-ua-pGi" secondAttribute="leading" constant="41" id="2Oo-4G-YsH"/>
+                            <constraint firstItem="ZgQ-TI-4AY" firstAttribute="leading" secondItem="TdI-ua-pGi" secondAttribute="leading" constant="26" id="0eu-p2-gGr"/>
                             <constraint firstItem="8HC-I2-GGa" firstAttribute="top" secondItem="TdI-ua-pGi" secondAttribute="top" constant="125" id="66u-Ud-ehX"/>
                             <constraint firstItem="I0f-Eg-vn2" firstAttribute="top" secondItem="6NC-gG-p6W" secondAttribute="bottom" constant="212.5" id="6BN-yP-CiM"/>
                             <constraint firstItem="6NC-gG-p6W" firstAttribute="width" secondItem="ENz-tY-fQc" secondAttribute="width" multiplier="0.8" id="7Pb-NE-2ap"/>
                             <constraint firstItem="d1s-Az-OF6" firstAttribute="centerX" secondItem="TdI-ua-pGi" secondAttribute="centerX" id="Aat-Mx-svx"/>
                             <constraint firstItem="6NC-gG-p6W" firstAttribute="centerX" secondItem="TdI-ua-pGi" secondAttribute="centerX" id="FPX-Ew-ELl"/>
-                            <constraint firstItem="TdI-ua-pGi" firstAttribute="trailing" secondItem="I0f-Eg-vn2" secondAttribute="trailing" constant="51" id="FtQ-Kx-6zR"/>
-                            <constraint firstItem="I0f-Eg-vn2" firstAttribute="leading" secondItem="ZgQ-TI-4AY" secondAttribute="trailing" constant="20" id="Kh4-Wv-VrL"/>
-                            <constraint firstItem="d1s-Az-OF6" firstAttribute="width" secondItem="ENz-tY-fQc" secondAttribute="width" multiplier="0.8" id="MJS-rL-jnd"/>
-                            <constraint firstItem="ZgQ-TI-4AY" firstAttribute="top" secondItem="6NC-gG-p6W" secondAttribute="bottom" constant="212.5" id="Q8i-iF-K6N"/>
+                            <constraint firstItem="d1s-Az-OF6" firstAttribute="top" secondItem="ZgQ-TI-4AY" secondAttribute="bottom" constant="93.329999999999998" id="KmX-if-vFt"/>
+                            <constraint firstItem="d1s-Az-OF6" firstAttribute="width" secondItem="ENz-tY-fQc" secondAttribute="width" id="MJS-rL-jnd"/>
                             <constraint firstItem="8HC-I2-GGa" firstAttribute="width" secondItem="ENz-tY-fQc" secondAttribute="width" multiplier="0.8" id="TMz-TG-wkr"/>
+                            <constraint firstItem="I0f-Eg-vn2" firstAttribute="leading" secondItem="ZgQ-TI-4AY" secondAttribute="trailing" constant="20" id="Vl9-XT-iOD"/>
                             <constraint firstItem="6NC-gG-p6W" firstAttribute="centerX" secondItem="8HC-I2-GGa" secondAttribute="centerX" id="aL2-HR-NX0"/>
                             <constraint firstItem="8HC-I2-GGa" firstAttribute="centerX" secondItem="TdI-ua-pGi" secondAttribute="centerX" id="ajj-5d-FoF"/>
                             <constraint firstItem="6NC-gG-p6W" firstAttribute="top" secondItem="8HC-I2-GGa" secondAttribute="bottom" constant="30" id="baD-Eq-89K"/>
+                            <constraint firstItem="d1s-Az-OF6" firstAttribute="top" secondItem="I0f-Eg-vn2" secondAttribute="bottom" constant="77" id="gkx-EJ-83H"/>
+                            <constraint firstItem="6NC-gG-p6W" firstAttribute="leading" secondItem="ZgQ-TI-4AY" secondAttribute="trailing" constant="-36" id="iht-Ea-UWr"/>
                             <constraint firstItem="d1s-Az-OF6" firstAttribute="centerX" secondItem="6NC-gG-p6W" secondAttribute="centerX" id="na2-JO-fQI"/>
                             <constraint firstItem="d1s-Az-OF6" firstAttribute="top" secondItem="6NC-gG-p6W" secondAttribute="bottom" constant="336.5" id="zAo-iQ-H2E"/>
                         </constraints>

@@ -9,9 +9,12 @@ import UIKit
 
 class BikeDetailViewController: UIViewController {
 
+    var bike: Bike!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        print(bike)
         // Do any additional setup after loading the view.
     }
     

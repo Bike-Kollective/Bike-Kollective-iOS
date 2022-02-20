@@ -11,7 +11,7 @@ class BikeCell: UITableViewCell {
 
     @IBOutlet weak var modelLabel: UILabel!
     @IBOutlet weak var distanceLabel: UILabel!
-    @IBOutlet weak var picView: UIImageView!
+    @IBOutlet weak var picView: BikeImageView!
     @IBOutlet weak var ratingView: UIImageView!
     @IBOutlet weak var tagsLabel: UILabel!
     

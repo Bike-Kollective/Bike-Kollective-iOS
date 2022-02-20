@@ -9,22 +9,11 @@ import UIKit
 import CoreLocation
 import Firebase
 import FirebaseStorage
-import AlamofireImage
 import MapKit
 
-struct Bike {
-    let name: String
-    let make: String
-    let model: String
-    let rating: [Int]
-    let tags: [String]
-    let location: CLLocation
-    let imageUrl: String
-}
 
 class ListViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CLLocationManagerDelegate, UISearchBarDelegate {
-     
-
+    
 
     @IBOutlet weak var bikeSearchBar: UISearchBar!
     @IBOutlet weak var listView: UITableView!
@@ -36,6 +25,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     var storage : Storage?
     let refreshment = UIRefreshControl()
     let defaults = UserDefaults.standard
+    var matchingDocs = [QueryDocumentSnapshot]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -75,11 +65,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         listView.refreshControl = refreshment
     }
 
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        self.loadData()
-    }
+    // MARK: Data Handling
     
     @objc func refresher() {
         self.bikeSearchBar.text = ""
@@ -112,9 +98,13 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     if let coords = data["location"] {
                                                     let point = coords as! GeoPoint
                                                     locale = CLLocation(latitude: point.latitude, longitude: point.longitude)
+                                        let distance: Double = (self.currentLocation?.distance(from: locale))!
+                                        let milesAway: Double = round((distance / 1609.3) * 10) / 10.0
+                                                    if milesAway <= 25.0 {
+                                                        let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String)
+                                                        self.bikes.append(bike)
+                                                    }
                                                 }
-                                    let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, imageUrl: data["imageURL"] as! String)
-                                    self.bikes.append(bike)
                                 }
                                 self.listView.reloadData()
                                 self.refreshment.endRefreshing()
@@ -122,7 +112,12 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+
+    
+    // MARK: SearchBar
+    
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        self.bikeSearchBar.becomeFirstResponder()
         self.bikeSearchBar.showsCancelButton = true
     }
     
@@ -150,62 +145,89 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.bikeSearchBar.resignFirstResponder()
     }
     
-    
+    // MARK: TableView
 
+    private func getAvgRating(sum: Int, length: Int) -> UIImage {
+        let avgRating : Double
+        if sum == 0 {
+           avgRating = 0
+        } else {
+            avgRating = Double(sum / length)
+        }
+        switch avgRating {
+        case 0..<0.5:
+            return UIImage(named: "regular_0")!
+        case 0.5..<1.25:
+            return UIImage(named: "regular_1")!
+        case 1.25..<1.75:
+            return UIImage(named: "regular_1_half")!
+        case 1.75..<2.25:
+            return UIImage(named: "regular_2")!
+        case 2.25..<2.75:
+            return UIImage(named: "regular_2_half")!
+        case 2.75..<3.25:
+            return UIImage(named: "regular_3")!
+        case 3.25..<3.75:
+            return UIImage(named: "regular_3_half")!
+        case 3.75..<4.2:
+            return UIImage(named: "regular_4")!
+        case 4.2..<4.6:
+            return UIImage(named: "regular_4_half")!
+        default:
+            return UIImage(named: "regular_5")!
+        }
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return bikes.count
+        switch bikes.count == 0 {
+        case true:
+            return 1
+        case false:
+            return bikes.count
+        }
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = listView.dequeueReusableCell(withIdentifier: "BikeCell") as! BikeCell
-        let item = bikes[indexPath.row]
-        cell.modelLabel.text = "\(item.make) \(item.model)"
-        cell.tagsLabel.text = item.tags.joined(separator: ", ")
-        let distance = currentLocation?.distance(from: item.location) ?? 160900
-        let milesAway = round((distance / 1609) * 10) / 10.0
-        cell.distanceLabel.text = "\(milesAway)mi. away"
-        let url = URL(string: item.imageUrl)!
-        cell.picView.af.setImage(withURL: url)
-        let sumRating = item.rating.reduce(0, +)
-        let avgRating : Double
-        if sumRating == 0 {
-           avgRating = 0
-        } else {
-            avgRating = Double(sumRating / item.rating.count)
+        switch bikes.count == 0 {
+        case true:
+            let cell = listView.dequeueReusableCell(withIdentifier: "emptyCell")!
+            return cell
+        case false:
+            let cell = listView.dequeueReusableCell(withIdentifier: "BikeCell") as! BikeCell
+            let item = bikes[indexPath.row]
+            cell.modelLabel.text = "\(item.make) \(item.model)"
+            cell.tagsLabel.text = item.tags.joined(separator: ", ")
+            cell.distanceLabel.text = "\(item.distance)mi. away"
+            if let imgUrl = URL(string: item.imageUrl) {
+                cell.picView.loadImage(from: imgUrl)
+            }
+            let sumRating = item.rating.reduce(0, +)
+            let rateLength : Int = item.rating.count
+            cell.ratingView.image = getAvgRating(sum: sumRating, length: rateLength)
+            return cell
         }
-        switch avgRating {
-        case 0..<0.5:
-            cell.ratingView.image = UIImage(named: "regular_0")
-        case 0.5..<1.25:
-            cell.ratingView.image = UIImage(named: "regular_1")
-        case 1.25..<1.75:
-            cell.ratingView.image = UIImage(named: "regular_1_half")
-        case 1.75..<2.25:
-            cell.ratingView.image = UIImage(named: "regular_2")
-        case 2.25..<2.75:
-            cell.ratingView.image = UIImage(named: "regular_2_half")
-        case 2.75..<3.25:
-            cell.ratingView.image = UIImage(named: "regular_3")
-        case 3.25..<3.75:
-            cell.ratingView.image = UIImage(named: "regular_3_half")
-        case 3.75..<4.2:
-            cell.ratingView.image = UIImage(named: "regular_4")
-        case 4.2..<4.6:
-            cell.ratingView.image = UIImage(named: "regular_4_half")
-        default:
-            cell.ratingView.image = UIImage(named: "regular_5")
-        }
-        return cell
+        
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
+    // MARK: Navigation
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        let cell = sender as! UITableViewCell
+        let indexPath = listView.indexPath(for: cell)!
+        let bike = bikes[indexPath.row]
+        // Pass to Bike Detail View Controller
+        let detailView = segue.destination as! BikeDetailViewController
+        
+        detailView.bike = bike
+        
+        listView.deselectRow(at: indexPath, animated: true)
     }
-    */
+
+   
+    
+
+   
 
 }

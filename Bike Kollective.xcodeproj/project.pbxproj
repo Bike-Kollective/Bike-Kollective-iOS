@@ -27,6 +27,7 @@
 		BFBAF761278E1F64004B80EB /* Bike_KollectiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF760278E1F64004B80EB /* Bike_KollectiveUITests.swift */; };
 		BFBAF763278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */; };
 		C04FCC0CFE8DEE8AF7E90BCE /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */; };
+		F8585CB727C314F500B422F9 /* ReleaseOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */; };
 		FE4F25BE27BDAD57005B6161 /* goToLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F25BD27BDAD57005B6161 /* goToLoginView.swift */; };
 		FE4F25C027BDAE0D005B6161 /* goToTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F25BF27BDAE0D005B6161 /* goToTabViewController.swift */; };
 		FE70321727B743D600FA9CE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE70321627B743D600FA9CE1 /* GoogleService-Info.plist */; };
@@ -81,6 +82,7 @@
 		BFBAF75C278E1F64004B80EB /* Bike KollectiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bike KollectiveUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBAF760278E1F64004B80EB /* Bike_KollectiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITests.swift; sourceTree = "<group>"; };
 		BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseOfInterestViewController.swift; sourceTree = "<group>"; };
 		F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective_Bike_KollectiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F972A83EB351DE00922D7BEE /* Pods-Bike KollectiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike KollectiveTests.release.xcconfig"; path = "Target Support Files/Pods-Bike KollectiveTests/Pods-Bike KollectiveTests.release.xcconfig"; sourceTree = "<group>"; };
 		FE4F25BD27BDAD57005B6161 /* goToLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goToLoginView.swift; sourceTree = "<group>"; };
@@ -155,6 +157,7 @@
 				BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */,
 				BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */,
 				FEC0164D27B074110027BA42 /* SettingViewController.swift */,
+				F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -523,6 +526,7 @@
 				BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */,
 				BF5B6B232797B3FF000BFFF5 /* ProfileViewController.swift in Sources */,
 				BF5B6B212797B3EA000BFFF5 /* ListViewController.swift in Sources */,
+				F8585CB727C314F500B422F9 /* ReleaseOfInterestViewController.swift in Sources */,
 				BF5B6B1F2797B3D7000BFFF5 /* MapViewController.swift in Sources */,
 				FEC0164E27B074110027BA42 /* SettingViewController.swift in Sources */,
 			);
@@ -704,7 +708,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GZP2CMCCN6;
+				DEVELOPMENT_TEAM = S8N6A6B9WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bike Kollective/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "The Bike Kollective needs access to your camera to take a photo of the bike";
@@ -735,7 +739,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = GZP2CMCCN6;
+				DEVELOPMENT_TEAM = S8N6A6B9WJ;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Bike Kollective/Info.plist";
 				INFOPLIST_KEY_NSCameraUsageDescription = "The Bike Kollective needs access to your camera to take a photo of the bike";

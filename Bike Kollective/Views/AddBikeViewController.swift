@@ -20,10 +20,10 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var bikeModelField: UITextField!
     @IBOutlet weak var bikeCodeField: UITextField!
     
-    //Error messages
-    @IBOutlet weak var bikeMakeError: UILabel!
-    @IBOutlet weak var bikeModelError: UILabel!
-    @IBOutlet weak var bikeLockCodeError: UILabel!
+    //Error message
+    @IBOutlet weak var emptyError: UILabel!
+    
+    var userReleaseOfInterest = false
     
     let manager = CLLocationManager()
     var currentLatitude: Double?
@@ -36,6 +36,8 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         bikeModelField.delegate = self
         bikeCodeField.delegate = self
         
+        //Hide the empty error message.
+        emptyError.isHidden = true
         
         //Add an event listener for keyboard.
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillChange(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
@@ -86,12 +88,15 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
             return
         }
         
-        // Check for keyboard notifications 
+        // Check for keyboard notifications
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification{
-            
+
+            print(keyboardSize.height)
             view.frame.origin.y = -keyboardSize.height
-        } else {
+        }
+        else {
             view.frame.origin.y = 0
+            
         }
                 
         print("Keyboard will show: \(notification.name.rawValue)")
@@ -105,75 +110,126 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         return true
     }
     
-    
-    @IBAction func bikeMakeChanged(_ sender: Any) {
-        if let bikeMake = bikeMakeField.text {
-            if let errorMessage = emptyBikeMake(bikeMake) {
-                bikeMakeError.text = errorMessage
-                bikeMakeError.isHidden = false
-            }
-            else {
-                bikeMakeError.isHidden = true
-            }
-        }
-    }
-    
-    func emptyBikeMake(_ value: String) -> String? {
-        if value.count == 0 {
-            return "Bike make is a required field."
-        }
-        return nil
-    }
-    
-    @IBAction func bikeModelChanged(_ sender: Any) {
-        if let bikeModel = bikeModelField.text {
-            if let errorMessage = emptyBikeModel(bikeModel) {
-                bikeModelError.text = errorMessage
-                bikeModelError.isHidden = false
-            }
-            else {
-                bikeModelError.isHidden = true
-            }
-        }
-    }
+    func emptyBikeMakeFieldCheck() -> Bool{
         
-    func emptyBikeModel(_ value: String) -> String? {
-        if value.count == 0 {
-            return "Bike model is a required field."
+        // Check the Bike Make Field
+        if bikeMakeField.text?.count == 0 {
+            emptyError.text = "Bike make is a required field."
+            emptyError.isHidden = false
+            return false
         }
-        return nil
-    }
-    
-    @IBAction func bikeLockCodeChanged(_ sender: Any) {
-        if let bikeLockCode = bikeCodeField.text {
-            if let errorMessage = emptyBikeLockCode(bikeLockCode) {
-                bikeLockCodeError.text = errorMessage
-                bikeLockCodeError.isHidden = false
-            }
-            else {
-                bikeLockCodeError.isHidden = true
-            }
+        else {
+            emptyError.isHidden = true
+            return true
         }
     }
     
-    func emptyBikeLockCode(_ value: String) -> String? {
-        if value.count == 0 {
-            return "Bike lock code is a required field"
+    func emptyBikeModelFieldCheck() -> Bool{
+        // Check the Bike Model Field
+        if bikeModelField.text?.count == 0 {
+            emptyError.text = "Bike model is a required field."
+            emptyError.isHidden = false
+            return false
         }
-        return nil
+        else {
+            emptyError.isHidden = true
+            return true
+        }
     }
+    
+    func emptyBikeLockCodeFieldCheck() -> Bool{
+        
+        // Check the Bike Lock Code Field
+        if bikeCodeField.text?.count == 0 {
+            emptyError.text = "Bike lock code is a required field."
+            emptyError.isHidden = false
+            return false
+        }
+        else {
+            emptyError.isHidden = true
+            return true
+        }
+    
+    }
+    
+    func bikeImageCheck() -> Bool{
+        
+        print("In Image check FALSE")
+        
+        if addBikeImage.image == nil {
+            emptyError.text = "A bike image is a required field."
+            emptyError.isHidden = false
+            return false
+        }
+        else {
+            emptyError.isHidden = true
+            return true
+        }
+    }
+    
+    func releaseOfInterestCheck() -> Bool{
+        
+        if userReleaseOfInterest == false {
+            emptyError.text = "Release of interest is a required field."
+            emptyError.isHidden = false
+            return false
+        }
+        else {
+            emptyError.isHidden = true
+            return true
+        }
+    }
+    
+    
+    @IBAction func releaseOfInterestTapped(_ sender: Any) {
+
+        let newViewController = storyboard?.instantiateViewController(withIdentifier: "releaseOfInterest") as! ReleaseOfInterestViewController
+        newViewController.modalPresentationStyle = .fullScreen
+        newViewController.releaseOfInterestCheck = { Bool in
+            self.userReleaseOfInterest = Bool
+        }
+        present(newViewController, animated: true)
+        
+        print("RELEASE OF INTEREST FUNCTION")
+        print(userReleaseOfInterest)
+        
+    }
+    
     
     @IBAction func addBikeTapped(_ sender: Any) {
         
         // Check to see if their is the proper inputs in the required fields
-        let makeEmpty = checkValidInput(self.bikeMakeField.text!)
-        let modelEmpty = checkValidInput(self.bikeModelField.text!)
-        let bikeCodeEmpty = checkValidInput(self.bikeCodeField.text!)
-        
-        if(makeEmpty == false || modelEmpty == false || bikeCodeEmpty == false) {
-            print("ERROR: Not all needed valid inputs")
+        if emptyBikeMakeFieldCheck() == false {
+            print("ERROR: Bike make field is empty")
             return
         }
+        
+        if emptyBikeModelFieldCheck() == false {
+            print("ERROR: Bike model field is empty")
+            return
+        }
+        
+        if emptyBikeLockCodeFieldCheck() == false {
+            print("ERROR: Bike lock code field is empty")
+            return
+        }
+
+        // Check to see if there was a photo taken.
+        if bikeImageCheck() == false {
+            print("ERROR: No bike image input")
+            return
+        }
+        
+        
+        // Check to see if there is a release of interest.
+        if releaseOfInterestCheck() == false {
+            print("ERROR: No release of interest")
+            return
+        }
+
+        print("RELEASE OF INTEREST IN ADD BIKE TAPPED")
+        print(userReleaseOfInterest)
+        
         
         // create Firestore and Firestore Storage
         let database = Firestore.firestore()
@@ -236,6 +292,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
                     "bike_lock_code": self.bikeCodeField.text!,
                     "missing": false, "rating": ratingArray,
                     "tags": tagsArray,
+                    "release_of_interest": self.userReleaseOfInterest,
                     "imageURL": uploadImageURL]) {
                     error in if let error = error {
                         print("ERROR: \(error)")
@@ -245,7 +302,10 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
                 }
                 
             })
-
+            
+            // display success message to the user.
+            self.bikeUploadSuccessAlert()
+            
         }
 
         uploadTask.observe(.failure) { (snapshot) in
@@ -256,29 +316,26 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
 
     
-    // Checks to see if the value input is empty or not.
-    func checkValidInput(_ value: String) -> Bool {
-        
-        if value.count == 0 {
-            return false
-        } else {
-            return true
-        }
-    }
-
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let first = locations.first else {
             print("ERROR: No Locations")
             return
         }
-//
-//        print("COORDINATES TEST")
-//        print("\(first.coordinate.longitude) | \(first.coordinate.latitude)")
         
         currentLatitude = first.coordinate.latitude
         currentLongitude = first.coordinate.longitude
         
+    }
+    
+    func bikeUploadSuccessAlert() {
+        //Create the success alert message to pop up.
+        let successAlert = UIAlertController(title: "Success", message: "Bike successfuly uploaded to the Kollective", preferredStyle: UIAlertController.Style.alert)
+        
+        //Create the button to get rid of the alert.
+        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        //Present the alert to the user.
+        self.present(successAlert, animated: true, completion: nil)
     }
 
 }

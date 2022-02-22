@@ -587,7 +587,7 @@
         <!--Bike Detail View Controller-->
         <scene sceneID="xG7-QM-M7W">
             <objects>
-                <viewController id="7k9-bx-xFg" customClass="BikeDetailViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BikeDetailViewController" id="7k9-bx-xFg" customClass="BikeDetailViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wzc-fU-2VU">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -162,6 +162,21 @@
             </objects>
             <point key="canvasLocation" x="-1191" y="-1037"/>
         </scene>
+        <!--Accident Waiver View Controller-->
+        <scene sceneID="Md6-AF-eJM">
+            <objects>
+                <viewController storyboardIdentifier="WaiverView" id="41l-AG-5tz" customClass="AccidentWaiverViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7Wo-fJ-q1C">
+                        <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="MHG-BF-maz"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="d8N-RE-X5Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-471" y="-716"/>
+        </scene>
         <!--Profile View Controller-->
         <scene sceneID="UYk-HJ-Wjh">
             <objects>

@@ -148,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				FE94815927A347600081F6DD /* EmailSignUpViewController.swift */,
+				BF97B20227C18ACD006B6E5B /* BikeImageView.swift */,
 				FE94815727A345130081F6DD /* LoginFieldViewControler.swift */,
 				BF5C8A1127A0ECED00C6868F /* BikeCell.swift */,
 				BF5B6B182797B396000BFFF5 /* LoginViewController.swift */,
@@ -224,7 +225,6 @@
 				FE4F25BD27BDAD57005B6161 /* goToLoginView.swift */,
 				FE4F25BF27BDAE0D005B6161 /* goToTabViewController.swift */,
 				BF97B20027C18A60006B6E5B /* Bike.swift */,
-				BF97B20227C18ACD006B6E5B /* BikeImageView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";

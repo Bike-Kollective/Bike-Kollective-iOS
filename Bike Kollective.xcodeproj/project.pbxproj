@@ -153,6 +153,7 @@
 		BF5B6B172797B355000BFFF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FE87D39B27C57AB700E5B435 /* AccidentWaiverViewController.swift */,
 				FE94815927A347600081F6DD /* EmailSignUpViewController.swift */,
 				BF97B20227C18ACD006B6E5B /* BikeImageView.swift */,
 				FE94815727A345130081F6DD /* LoginFieldViewControler.swift */,
@@ -165,7 +166,6 @@
 				BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */,
 				FEC0164D27B074110027BA42 /* SettingViewController.swift */,
 				F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */,
-				FE87D39B27C57AB700E5B435 /* AccidentWaiverViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

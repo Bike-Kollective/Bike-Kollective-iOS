@@ -11,6 +11,5 @@ import UIKit
 public func goToWaiver() -> Void {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let waiverView = storyboard.instantiateViewController(identifier: "WaiverView")
-
     (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(waiverView)
 }

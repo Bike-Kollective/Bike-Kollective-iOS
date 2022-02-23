@@ -16,7 +16,7 @@ class LoginViewController: UIViewController {
     // button for google sign in - need to set button class as GIDSignInButton
     // @IBOutlet weak var signInButton: GIDSignInButton!
     
-    var db:Firestore!
+    var db: Firestore!
     
     override func viewDidLoad() {
         super.viewDidLoad()

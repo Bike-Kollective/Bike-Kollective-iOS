@@ -28,9 +28,12 @@
 		BFBAF763278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */; };
 		C04FCC0CFE8DEE8AF7E90BCE /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */; };
 		F8585CB727C314F500B422F9 /* ReleaseOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */; };
-		FE4F25BE27BDAD57005B6161 /* goToLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F25BD27BDAD57005B6161 /* goToLoginView.swift */; };
-		FE4F25C027BDAE0D005B6161 /* goToTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F25BF27BDAE0D005B6161 /* goToTabViewController.swift */; };
+		FE4F25BE27BDAD57005B6161 /* GoToLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F25BD27BDAD57005B6161 /* GoToLoginView.swift */; };
+		FE4F25C027BDAE0D005B6161 /* GoToTabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F25BF27BDAE0D005B6161 /* GoToTabViewController.swift */; };
 		FE70321727B743D600FA9CE1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = FE70321627B743D600FA9CE1 /* GoogleService-Info.plist */; };
+		FE87D39A27C57A3100E5B435 /* GoToAccidentWaiverView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87D39927C57A3100E5B435 /* GoToAccidentWaiverView.swift */; };
+		FE87D39C27C57AB700E5B435 /* AccidentWaiverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87D39B27C57AB700E5B435 /* AccidentWaiverViewController.swift */; };
+		FE87D39E27C57B0900E5B435 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87D39D27C57B0900E5B435 /* User.swift */; };
 		FE94815827A345130081F6DD /* LoginFieldViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94815727A345130081F6DD /* LoginFieldViewControler.swift */; };
 		FE94815A27A347610081F6DD /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94815927A347600081F6DD /* EmailSignUpViewController.swift */; };
 		FEC0164E27B074110027BA42 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC0164D27B074110027BA42 /* SettingViewController.swift */; };
@@ -85,9 +88,12 @@
 		F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseOfInterestViewController.swift; sourceTree = "<group>"; };
 		F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective_Bike_KollectiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F972A83EB351DE00922D7BEE /* Pods-Bike KollectiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike KollectiveTests.release.xcconfig"; path = "Target Support Files/Pods-Bike KollectiveTests/Pods-Bike KollectiveTests.release.xcconfig"; sourceTree = "<group>"; };
-		FE4F25BD27BDAD57005B6161 /* goToLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goToLoginView.swift; sourceTree = "<group>"; };
-		FE4F25BF27BDAE0D005B6161 /* goToTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = goToTabViewController.swift; sourceTree = "<group>"; };
+		FE4F25BD27BDAD57005B6161 /* GoToLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToLoginView.swift; sourceTree = "<group>"; };
+		FE4F25BF27BDAE0D005B6161 /* GoToTabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToTabViewController.swift; sourceTree = "<group>"; };
 		FE70321627B743D600FA9CE1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		FE87D39927C57A3100E5B435 /* GoToAccidentWaiverView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToAccidentWaiverView.swift; sourceTree = "<group>"; };
+		FE87D39B27C57AB700E5B435 /* AccidentWaiverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccidentWaiverViewController.swift; sourceTree = "<group>"; };
+		FE87D39D27C57B0900E5B435 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FE94815727A345130081F6DD /* LoginFieldViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFieldViewControler.swift; sourceTree = "<group>"; };
 		FE94815927A347600081F6DD /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		FEC0164D27B074110027BA42 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
@@ -147,6 +153,7 @@
 		BF5B6B172797B355000BFFF5 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				FE87D39B27C57AB700E5B435 /* AccidentWaiverViewController.swift */,
 				FE94815927A347600081F6DD /* EmailSignUpViewController.swift */,
 				BF97B20227C18ACD006B6E5B /* BikeImageView.swift */,
 				FE94815727A345130081F6DD /* LoginFieldViewControler.swift */,
@@ -188,6 +195,7 @@
 		BFBAF73E278E1F61004B80EB /* Bike Kollective */ = {
 			isa = PBXGroup;
 			children = (
+				FE87D39827C57A1100E5B435 /* Models */,
 				FE4F25C127BDAE8C005B6161 /* Extensions */,
 				FE4F25BC27BDAD2F005B6161 /* Helpers */,
 				BF5B6B172797B355000BFFF5 /* Views */,
@@ -222,9 +230,9 @@
 		FE4F25BC27BDAD2F005B6161 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				FE4F25BD27BDAD57005B6161 /* goToLoginView.swift */,
-				FE4F25BF27BDAE0D005B6161 /* goToTabViewController.swift */,
-				BF97B20027C18A60006B6E5B /* Bike.swift */,
+				FE4F25BD27BDAD57005B6161 /* GoToLoginView.swift */,
+				FE4F25BF27BDAE0D005B6161 /* GoToTabViewController.swift */,
+				FE87D39927C57A3100E5B435 /* GoToAccidentWaiverView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -234,6 +242,15 @@
 			children = (
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		FE87D39827C57A1100E5B435 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BF97B20027C18A60006B6E5B /* Bike.swift */,
+				FE87D39D27C57B0900E5B435 /* User.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -515,14 +532,17 @@
 				BF5B6B1B2797B3B7000BFFF5 /* AddBikeViewController.swift in Sources */,
 				BF5B6B192797B396000BFFF5 /* LoginViewController.swift in Sources */,
 				BF97B20127C18A60006B6E5B /* Bike.swift in Sources */,
+				FE87D39A27C57A3100E5B435 /* GoToAccidentWaiverView.swift in Sources */,
 				FE94815A27A347610081F6DD /* EmailSignUpViewController.swift in Sources */,
 				BF5C8A1227A0ECED00C6868F /* BikeCell.swift in Sources */,
 				FE94815827A345130081F6DD /* LoginFieldViewControler.swift in Sources */,
-				FE4F25C027BDAE0D005B6161 /* goToTabViewController.swift in Sources */,
+				FE4F25C027BDAE0D005B6161 /* GoToTabViewController.swift in Sources */,
+				FE87D39E27C57B0900E5B435 /* User.swift in Sources */,
 				BF97B20327C18ACD006B6E5B /* BikeImageView.swift in Sources */,
+				FE87D39C27C57AB700E5B435 /* AccidentWaiverViewController.swift in Sources */,
 				BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */,
 				BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */,
-				FE4F25BE27BDAD57005B6161 /* goToLoginView.swift in Sources */,
+				FE4F25BE27BDAD57005B6161 /* GoToLoginView.swift in Sources */,
 				BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */,
 				BF5B6B232797B3FF000BFFF5 /* ProfileViewController.swift in Sources */,
 				BF5B6B212797B3EA000BFFF5 /* ListViewController.swift in Sources */,

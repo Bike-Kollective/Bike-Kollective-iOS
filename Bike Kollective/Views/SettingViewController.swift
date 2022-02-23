@@ -6,15 +6,19 @@
 //
 
 import UIKit
+import Firebase
 import FirebaseAuth
 import GoogleSignIn
 
 class SettingViewController: UIViewController {
 
+    var db: Firestore!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // connect to Firestore
+        db = Firestore.firestore()
     }
     
     // signs out the user from the app and takes them back to the login page
@@ -57,18 +61,21 @@ class SettingViewController: UIViewController {
                 
                 // get the current user and delete with the deleteWithCompletion method?
                 let user = Auth.auth().currentUser
+                guard let userId = user?.uid else { return }
                 
                 user?.delete { error in
                     if let error = error {
-                        print("error with account deletion")
+                        print("error with account deletion: \(error)")
                     } else {
                         // account deleted
                         print("account deleted succesfully")
+                        // delete rest of user data from firestore
+                        self.deleteFirestoreAccountData(userId: userId)
+                        // to the log in screen
+                        goToLoginView()
                     }
                 }
             }
-            // to the log in screen
-            goToLoginView()
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
@@ -84,6 +91,18 @@ class SettingViewController: UIViewController {
         
     }
     
+    // deletes user data from the Users collection
+    private func deleteFirestoreAccountData(userId: String) -> Void {
+        let userRef = db.collection("Users").document(userId)
+        
+        userRef.delete() { error in
+            if let error = error {
+                print("Error deleting user account: \(error)")
+            } else {
+                print("DELETED PROPERLY")
+            }
+        }
+    }
     /*
     // MARK: - Navigation
 

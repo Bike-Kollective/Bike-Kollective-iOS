@@ -26,10 +26,15 @@ class AccidentWaiverViewController: UIViewController {
     @IBAction func acceptTerms(_ sender: Any) {
         let firebaseUser = Auth.auth().currentUser
         guard
-            let userId = firebaseUser?.uid
-        else {return}
+            let userId = firebaseUser?.uid,
+            let email = firebaseUser?.email
+        else { return }
         
-        let newUser = User(signedWaiver: true, isBanned: false, bikeId: nil)
+        let newUser = User(
+            email: email,
+            signedWaiver: true,
+            isBanned: false,
+            bikeId: nil)
         // add the user
         addUserToDatabase(userId: userId, newUser: newUser)
         // now go to the main page

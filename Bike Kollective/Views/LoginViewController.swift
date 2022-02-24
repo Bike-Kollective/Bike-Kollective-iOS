@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
             // guard let user = user else { return }
             
             if let error = error {
-                print("Sign In error")
+                print("Sign In error: \(error)")
                 return
             }
             

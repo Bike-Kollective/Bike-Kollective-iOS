@@ -212,20 +212,20 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: Navigation
     
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        // Get the new view controller using segue.destination.
-//        let cell = sender as! UITableViewCell
-//        let indexPath = listView.indexPath(for: cell)!
-//        let bike = bikes[indexPath.row]
-//        // Pass to Bike Detail View Controller
-//        let detailView = segue.destination as! BikeDetailViewController
-//
-//        detailView.bike = bike
-//
-//        listView.deselectRow(at: indexPath, animated: true)
-//    }
-//
-//
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        let cell = sender as! UITableViewCell
+        let indexPath = listView.indexPath(for: cell)!
+        let bike = bikes[indexPath.row]
+        // Pass to Bike Detail View Controller
+        let detailView = segue.destination as! BikeDetailViewController
+
+        detailView.bike = bike
+
+        listView.deselectRow(at: indexPath, animated: true)
+    }
+
+   
     
 
    

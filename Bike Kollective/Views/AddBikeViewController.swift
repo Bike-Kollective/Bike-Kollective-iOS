@@ -29,6 +29,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
     var currentLatitude: Double?
     var currentLongitude: Double?
 
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -90,16 +91,13 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // Check for keyboard notifications
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification{
-
-            print(keyboardSize.height)
             view.frame.origin.y = -keyboardSize.height
         }
         else {
             view.frame.origin.y = 0
-            
         }
                 
-        print("Keyboard will show: \(notification.name.rawValue)")
+//        print("Keyboard will show: \(notification.name.rawValue)")
     }
     
     // Makes the keyboard dissapear after the user hits return after input.

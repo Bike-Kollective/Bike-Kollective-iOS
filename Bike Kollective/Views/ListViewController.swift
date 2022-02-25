@@ -20,8 +20,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     var db: Firestore!
     var bikes = [Bike]()
-    var locationManager : CLLocationManager?
-    var currentLocation : CLLocation?
+    var locationManager = CLLocationManager()
+    var currentLocation = CLLocation()
     var storage : Storage?
     let refreshment = UIRefreshControl()
     let defaults = UserDefaults.standard
@@ -39,22 +39,10 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Connects to Firestore database
         db = Firestore.firestore()
         // Connects location services
-        locationManager = CLLocationManager()
-        locationManager?.delegate = self
+        locationManager.delegate = self
         // Gets authorization for user's location
-        locationManager?.requestWhenInUseAuthorization()
-        if locationManager?.authorizationStatus == .authorizedWhenInUse {
-            locationManager?.startUpdatingLocation()
-            currentLocation = locationManager?.location
-            print("Coords: \(String(describing: currentLocation))")
-        }
-        else if locationManager?.authorizationStatus == .authorizedAlways {
-            locationManager?.startUpdatingLocation()
-            currentLocation = locationManager?.location
-            print("Coords: \(String(describing: currentLocation))")
-        } else {
-            currentLocation = CLLocation(latitude: 41.8781, longitude: 87.6298)
-        }
+        locationManager.requestWhenInUseAuthorization()
+        setLocation()
         // Connects to Firebase storage for images
         storage = Storage.storage()
         // Loads bike data
@@ -69,19 +57,17 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @objc func refresher() {
         self.bikeSearchBar.text = ""
-        if locationManager?.authorizationStatus == .authorizedWhenInUse {
-            locationManager?.startUpdatingLocation()
-            currentLocation = locationManager?.location
-            print("Coords: \(String(describing: currentLocation))")
-        }
-        else if locationManager?.authorizationStatus == .authorizedAlways {
-            locationManager?.startUpdatingLocation()
-            currentLocation = locationManager?.location
-            print("Coords: \(String(describing: currentLocation))")
-        } else {
-            currentLocation = CLLocation(latitude: 41.8781, longitude: 87.6298)
-        }
+        setLocation()
         loadData()
+    }
+    
+    private func setLocation() {
+        currentLocation = CLLocation(latitude: 41.8781, longitude: 87.6298)
+        if locationManager.authorizationStatus == .authorizedWhenInUse || locationManager.authorizationStatus == .authorizedAlways {
+            locationManager.startUpdatingLocation()
+            currentLocation = locationManager.location ?? CLLocation(latitude: 41.8781, longitude: 87.6298)
+            print("Coords: \(String(describing: currentLocation))")
+        }
     }
 
     
@@ -98,8 +84,8 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                                     if let coords = data["location"] {
                                                     let point = coords as! GeoPoint
                                                     locale = CLLocation(latitude: point.latitude, longitude: point.longitude)
-                                        let distance: Double = (self.currentLocation?.distance(from: locale))!
-                                        let milesAway: Double = round((distance / 1609.3) * 10) / 10.0
+                                                    let distance: Double = self.currentLocation.distance(from: locale)
+                                                    let milesAway: Double = round((distance / 1609.3) * 10) / 10.0
                                                     if milesAway <= 25.0 {
                                                         let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String)
                                                         self.bikes.append(bike)
@@ -136,7 +122,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                 }
                 let placemarks = placemarks
                 let location = placemarks?.first?.location
-                self.currentLocation = location
+                self.currentLocation = location ?? self.currentLocation
                 self.loadData()
                 self.listView.reloadData()
             }
@@ -214,18 +200,19 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
-        let cell = sender as! UITableViewCell
-        let indexPath = listView.indexPath(for: cell)!
-        let bike = bikes[indexPath.row]
-        // Pass to Bike Detail View Controller
-        let detailView = segue.destination as! BikeDetailViewController
+        if let cell = sender as? UITableViewCell {
+            let indexPath = listView.indexPath(for: cell)!
+            let bike = bikes[indexPath.row]
+            // Pass to Bike Detail View Controller
+            let detailView = segue.destination as! BikeDetailViewController
 
-        detailView.bike = bike
+            detailView.bike = bike
 
-        listView.deselectRow(at: indexPath, animated: true)
+            listView.deselectRow(at: indexPath, animated: true)
+        }
     }
 
-   
+
     
 
    

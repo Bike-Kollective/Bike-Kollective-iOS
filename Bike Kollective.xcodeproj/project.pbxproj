@@ -36,6 +36,8 @@
 		FE87D39E27C57B0900E5B435 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE87D39D27C57B0900E5B435 /* User.swift */; };
 		FE94815827A345130081F6DD /* LoginFieldViewControler.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94815727A345130081F6DD /* LoginFieldViewControler.swift */; };
 		FE94815A27A347610081F6DD /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE94815927A347600081F6DD /* EmailSignUpViewController.swift */; };
+		FEB6D28727C804F4003092C3 /* GoToBannedUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB6D28627C804F4003092C3 /* GoToBannedUserView.swift */; };
+		FEB6D28927C8057A003092C3 /* BannedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB6D28827C8057A003092C3 /* BannedUserViewController.swift */; };
 		FEC0164E27B074110027BA42 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC0164D27B074110027BA42 /* SettingViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		FE87D39D27C57B0900E5B435 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		FE94815727A345130081F6DD /* LoginFieldViewControler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginFieldViewControler.swift; sourceTree = "<group>"; };
 		FE94815927A347600081F6DD /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		FEB6D28627C804F4003092C3 /* GoToBannedUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToBannedUserView.swift; sourceTree = "<group>"; };
+		FEB6D28827C8057A003092C3 /* BannedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannedUserViewController.swift; sourceTree = "<group>"; };
 		FEC0164D27B074110027BA42 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,6 +158,9 @@
 			isa = PBXGroup;
 			children = (
 				FE87D39B27C57AB700E5B435 /* AccidentWaiverViewController.swift */,
+				FEB6D28827C8057A003092C3 /* BannedUserViewController.swift */,
+				FEC0164D27B074110027BA42 /* SettingViewController.swift */,
+				BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */,
 				FE94815927A347600081F6DD /* EmailSignUpViewController.swift */,
 				BF97B20227C18ACD006B6E5B /* BikeImageView.swift */,
 				FE94815727A345130081F6DD /* LoginFieldViewControler.swift */,
@@ -163,8 +170,6 @@
 				BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */,
 				BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */,
 				BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */,
-				BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */,
-				FEC0164D27B074110027BA42 /* SettingViewController.swift */,
 				F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */,
 			);
 			path = Views;
@@ -233,6 +238,7 @@
 				FE4F25BD27BDAD57005B6161 /* GoToLoginView.swift */,
 				FE4F25BF27BDAE0D005B6161 /* GoToTabViewController.swift */,
 				FE87D39927C57A3100E5B435 /* GoToAccidentWaiverView.swift */,
+				FEB6D28627C804F4003092C3 /* GoToBannedUserView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -534,11 +540,13 @@
 				BF97B20127C18A60006B6E5B /* Bike.swift in Sources */,
 				FE87D39A27C57A3100E5B435 /* GoToAccidentWaiverView.swift in Sources */,
 				FE94815A27A347610081F6DD /* EmailSignUpViewController.swift in Sources */,
+				FEB6D28727C804F4003092C3 /* GoToBannedUserView.swift in Sources */,
 				BF5C8A1227A0ECED00C6868F /* BikeCell.swift in Sources */,
 				FE94815827A345130081F6DD /* LoginFieldViewControler.swift in Sources */,
 				FE4F25C027BDAE0D005B6161 /* GoToTabViewController.swift in Sources */,
 				FE87D39E27C57B0900E5B435 /* User.swift in Sources */,
 				BF97B20327C18ACD006B6E5B /* BikeImageView.swift in Sources */,
+				FEB6D28927C8057A003092C3 /* BannedUserViewController.swift in Sources */,
 				FE87D39C27C57AB700E5B435 /* AccidentWaiverViewController.swift in Sources */,
 				BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */,
 				BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */,

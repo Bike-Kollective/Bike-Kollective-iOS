@@ -35,7 +35,7 @@ class LoginViewController: UIViewController {
             // guard let user = user else { return }
             
             if let error = error {
-                print("Sign In error")
+                print("Sign In error: \(error)")
                 return
             }
             
@@ -56,8 +56,8 @@ class LoginViewController: UIViewController {
                     // get the userId from firebase auth
                     let firebaseUser = Auth.auth().currentUser
                     guard let userId = firebaseUser?.uid else {return}
-                    print(userId)
                     checkIfUserExists(userId: userId)
+                    
                 }
                 
             }
@@ -79,8 +79,14 @@ class LoginViewController: UIViewController {
         userRef.getDocument { (document, error) in
             // user exists - has signed waiver form
             if let document = document, document.exists {
-                // take them straight to the main page to see bikes
-                goToTabViewController()
+                
+                // if the banned field is true, go to banned account
+                if document.get("banned") as! Bool {
+                    goToBannedUserView()
+                } else {
+                    goToTabViewController()
+                }
+               
             } else {
                 // they don't exist in database, haven't signed waiver so take them to waiver form to sign
                 goToWaiver()
@@ -91,6 +97,7 @@ class LoginViewController: UIViewController {
         
     }
     
+
     
     /*
     // MARK: - Navigation

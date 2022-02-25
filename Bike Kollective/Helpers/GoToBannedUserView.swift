@@ -12,5 +12,4 @@ public func goToBannedUserView() -> Void {
     let storyboard = UIStoryboard(name: "Main", bundle: nil)
     let bannedUserView = storyboard.instantiateViewController(identifier: "BannedUserView")
     (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(bannedUserView)
-    
 }

@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 import FirebaseCore
 import GoogleSignIn
 import GoogleMaps
-
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,16 +24,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs
         FirebaseApp.configure()
         
-        // attempts to restore any previous log in so that user does not have to sign in each time they open app
+        let db = Firestore.firestore()
         
+        // attempts to restore any previous log in so that user does not have to sign in each time they open app
         GIDSignIn.sharedInstance.restorePreviousSignIn { user, error in
             if error != nil || user == nil {
             // Show the app's signed-out state.
                 goToLoginView()
             } else {
-                // user has been signed in previously without signing out, so restore their sign in status
-                goToTabViewController()
-                
+                let firebaseUser = Auth.auth().currentUser
+                guard let userId = firebaseUser?.uid else {return}
+                let userRef = db.collection("Users").document(userId)
+                userRef.getDocument { (document, error) in
+                    if let document = document, document.exists {
+                        print("User ID: \(userId)")
+                        // check if user is banned
+                        if document.get("banned") as! Bool {
+                            goToBannedUserView()
+                        } else {
+                            goToTabViewController()
+                        }
+                    }
+                }
             }
         }
         

@@ -259,7 +259,7 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="160" id="Kyh-Ox-bCg"/>
                                         </constraints>
-                                        <string key="text">Your account has been banned for failing to return borrowed bikes on time, resulting in them going missing. Due to these violations your account has been banned from the Bike Kollective community.</string>
+                                        <string key="text">Your account has been banned for failing to return borrowed bikes on time, resulting in them going missing. Due to these violations, your account has been banned from the Bike Kollective community.</string>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -271,6 +271,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Return to Login"/>
+                                        <connections>
+                                            <action selector="returnToLoginScreen:" destination="TqV-N8-PhZ" eventType="touchUpInside" id="iEa-i8-WOx"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -287,7 +290,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rev-ei-Ia1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="217" y="-717"/>
+            <point key="canvasLocation" x="216.80000000000001" y="-717.48768472906409"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="UYk-HJ-Wjh">

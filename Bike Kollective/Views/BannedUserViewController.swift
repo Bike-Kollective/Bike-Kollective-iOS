@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import FirebaseAuth
+import GoogleSignIn
 
 class BannedUserViewController: UIViewController {
 
@@ -15,7 +17,20 @@ class BannedUserViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func returnToLoginScreen(_ sender: Any) {
+        // sign out of google account
+        GIDSignIn.sharedInstance.signOut()
+        // sign out of firebase
+        let firebaseSignOut = Auth.auth()
+        do {
+            try firebaseSignOut.signOut()
+        } catch let signOutError as NSError {
+          print("Error signing out: %@", signOutError)
+        }
+        // to the log in screen
+        goToLoginView()
+    }
+    
     /*
     // MARK: - Navigation
 

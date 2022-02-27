@@ -17,4 +17,5 @@ struct Bike {
     let location: CLLocation
     let distance: Double
     let imageUrl: String
+    let bike_lock_code: String
 }

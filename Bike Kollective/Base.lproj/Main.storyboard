@@ -724,24 +724,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ehc-PR-JbZ">
-                                <rect key="frame" x="0.0" y="102.33333333333331" width="390" height="639.33333333333348"/>
+                                <rect key="frame" x="0.0" y="101.66666666666669" width="375" height="608.66666666666652"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="InL-De-Lep">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="223.66666666666666"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sVJ-na-fgw">
-                                        <rect key="frame" x="0.0" y="223.66666666666669" width="390" height="64"/>
+                                        <rect key="frame" x="0.0" y="213" width="375" height="61"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Make" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sQc-oG-gSV">
-                                                <rect key="frame" x="0.0" y="22" width="191" height="20.333333333333329"/>
+                                                <rect key="frame" x="0.0" y="20.333333333333314" width="183.66666666666666" height="20.333333333333329"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Model" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LpD-OT-oFr">
-                                                <rect key="frame" x="199" y="22" width="191" height="20.333333333333329"/>
+                                                <rect key="frame" x="191.66666666666663" y="20.333333333333314" width="183.33333333333337" height="20.333333333333329"/>
                                                 <rect key="contentStretch" x="0.0" y="0.0" width="0.5" height="1"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
@@ -750,13 +750,13 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="zWM-I6-MjF">
-                                        <rect key="frame" x="0.0" y="287.66666666666669" width="390" height="64"/>
+                                        <rect key="frame" x="0.0" y="274" width="375" height="60.666666666666686"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="249" translatesAutoresizingMaskIntoConstraints="NO" id="PqP-Xl-4qm" userLabel="Bike Rating">
-                                                <rect key="frame" x="0.0" y="0.0" width="191" height="64"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="183.66666666666666" height="60.666666666666664"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tags" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rcy-cN-YdU">
-                                                <rect key="frame" x="199" y="22" width="191" height="20.333333333333329"/>
+                                                <rect key="frame" x="191.66666666666663" y="20.333333333333314" width="183.33333333333337" height="20.333333333333329"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -764,24 +764,27 @@
                                         </subviews>
                                     </stackView>
                                     <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="xaS-6K-ESH">
-                                        <rect key="frame" x="0.0" y="351.66666666666669" width="390" height="128"/>
+                                        <rect key="frame" x="0.0" y="334.66666666666663" width="375" height="122"/>
                                     </mapView>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comments" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="udQ-e8-qYO" userLabel="Comments">
-                                        <rect key="frame" x="0.0" y="479.66666666666669" width="390" height="63.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="456.66666666666669" width="375" height="60.666666666666686"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCd-fZ-DIP">
-                                        <rect key="frame" x="0.0" y="543.33333333333326" width="390" height="32"/>
+                                        <rect key="frame" x="0.0" y="517.33333333333337" width="375" height="30.666666666666629"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Save Comments"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="brh-fp-od1">
-                                        <rect key="frame" x="0.0" y="575.33333333333326" width="390" height="64"/>
+                                        <rect key="frame" x="0.0" y="548" width="375" height="60.666666666666629"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Borrow"/>
+                                        <connections>
+                                            <action selector="borrowTapped:" destination="7k9-bx-xFg" eventType="touchUpInside" id="yaw-zf-Vy3"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -827,14 +830,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Cz9-5O-AJ9">
-                                <rect key="frame" x="0.0" y="88" width="390" height="673"/>
+                                <rect key="frame" x="0.0" y="88" width="375" height="641"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="u1A-EM-d9B">
-                                        <rect key="frame" x="0.0" y="0.0" width="390" height="269.33333333333331"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="256.33333333333331"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PaH-9c-nGP">
-                                        <rect key="frame" x="0.0" y="269.33333333333331" width="390" height="67.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="256.33333333333331" width="375" height="64.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Take Photo"/>
                                         <connections>
@@ -842,28 +845,28 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Make" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vlX-Vk-zuU" userLabel="Bike Make Field">
-                                        <rect key="frame" x="0.0" y="336.66666666666669" width="390" height="33.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="320.66666666666669" width="375" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Model" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nNn-xe-y9X" userLabel="Bike Model Field">
-                                        <rect key="frame" x="0.0" y="370" width="390" height="33.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="352.66666666666669" width="375" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bike Lock Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xZ0-yF-Xy1" userLabel="Bike Lock Code Field">
-                                        <rect key="frame" x="0.0" y="403.66666666666669" width="390" height="33.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="384.66666666666669" width="375" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A Bike Image is Required" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AtR-j2-qbS" userLabel="Error Message">
-                                        <rect key="frame" x="0.0" y="437.33333333333337" width="390" height="67.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="416.66666666666669" width="375" height="64"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" systemColor="systemRedColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fwM-y3-Wyz">
-                                        <rect key="frame" x="0.0" y="504.66666666666669" width="390" height="87.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="480.66666666666657" width="375" height="83.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="Click for Release of Interest in Bike"/>
                                         <connections>
@@ -871,7 +874,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5iX-IT-JaQ">
-                                        <rect key="frame" x="0.0" y="592.33333333333337" width="390" height="80.666666666666629"/>
+                                        <rect key="frame" x="0.0" y="564" width="375" height="77"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Add Bike"/>
                                         <connections>
@@ -1062,10 +1065,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="uuw-nn-1lD">
-                                <rect key="frame" x="39" y="115.66666666666669" width="312" height="612.66666666666652"/>
+                                <rect key="frame" x="37.666666666666657" y="112.33333333333331" width="300" height="587.33333333333348"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Release of Interest" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bkh-kj-e6E">
-                                        <rect key="frame" x="0.0" y="0.0" width="312" height="112"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="300" height="112"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="112" id="XUz-TI-7mv"/>
                                         </constraints>
@@ -1074,20 +1077,20 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0UY-uc-eth">
-                                        <rect key="frame" x="0.0" y="119.99999999999997" width="312" height="374.66666666666663"/>
+                                        <rect key="frame" x="0.0" y="120" width="300" height="101.66666666666669"/>
                                         <string key="text">Please note that by selecting the switch below you are hearby releasing all interest in your bike.  From this point forward this bike will be owned by the Bike Kollective.</string>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="FSG-tQ-PTV">
-                                        <rect key="frame" x="0.0" y="502.66666666666669" width="312" height="40.666666666666686"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="FSG-tQ-PTV">
+                                        <rect key="frame" x="0.0" y="229.66666666666669" width="300" height="291.00000000000006"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijQ-Ly-7jh" userLabel="Accept Switch">
-                                                <rect key="frame" x="0.0" y="0.0" width="44.333333333333336" height="40.666666666666664"/>
+                                                <rect key="frame" x="0.0" y="130" width="44" height="31"/>
                                             </switch>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agree to release interest in the bike." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrv-s4-8Bq">
-                                                <rect key="frame" x="42.333333333333343" y="0.0" width="269.66666666666663" height="40.666666666666664"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agree to release interest in the bike." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrv-s4-8Bq">
+                                                <rect key="frame" x="42" y="125.00000000000001" width="258" height="40.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -1096,7 +1099,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pv2-5X-T9B">
-                                        <rect key="frame" x="0.0" y="551.33333333333337" width="312" height="61.333333333333371"/>
+                                        <rect key="frame" x="0.0" y="528.66666666666663" width="300" height="58.666666666666629"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Confirm"/>
                                         <connections>

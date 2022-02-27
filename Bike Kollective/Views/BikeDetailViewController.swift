@@ -7,6 +7,8 @@
 
 import UIKit
 import MapKit
+import FirebaseAuth
+import FirebaseFirestore
 
 class BikeDetailViewController: UIViewController {
 
@@ -22,25 +24,19 @@ class BikeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("IN BIKE DETAIL VIEW CONTROLLER")
-        print(bike)
-        print("BIKE MAKE")
-        print(bike.make)
         
+        // Display the bike make and model.
         bikeMake.text = bike.make
         bikeModel.text = bike.model
-//        bikeRating.text = bike.rating
         
+        // Display the bikes rating.
         bikeRating.image = getBikeRating()
      
-        print("TAGS")
-        print(bike.tags)
+        // Display the bikes tags.
         bikeTags.text = bike.tags.joined(separator: ", ")
         
+        // Display the bikes location
         getMapLocation()
-        
-//        bikeMapLocation.centerCoordinate.latitude = bike.location.coordinate.latitude
-//        bikeMapLocation.centerCoordinate.longitude = bike.location.coordinate.longitude
         
     }
     
@@ -58,7 +54,12 @@ class BikeDetailViewController: UIViewController {
         }
         
         // Get the average rating of the bikes.
-        avgRating = Double(sum / bike.rating.count)
+        if bike.rating.count != 0 {
+            avgRating = Double(sum / bike.rating.count)
+        }
+        else {
+            avgRating = 0
+        }
         
         // Find and return the correct image.
         switch avgRating {
@@ -88,10 +89,12 @@ class BikeDetailViewController: UIViewController {
     
     func getMapLocation() {
         
+        // set up the location of the bike and display it on the map.
         let displayLocation = MKPointAnnotation()
         displayLocation.coordinate = CLLocationCoordinate2D(latitude: bike.location.coordinate.latitude, longitude: bike.location.coordinate.longitude)
         bikeMapLocation.addAnnotation(displayLocation)
         
+        // Zoom in closer on the map.
         let bikeLocationLatLong = CLLocation(latitude: bike.location.coordinate.latitude, longitude: bike.location.coordinate.longitude)
         let mapZoom = MKCoordinateRegion(center: bikeLocationLatLong.coordinate, latitudinalMeters: 500, longitudinalMeters: 500)
         bikeMapLocation.setRegion(mapZoom, animated: true)
@@ -99,14 +102,72 @@ class BikeDetailViewController: UIViewController {
     }
     
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    @IBAction func borrowTapped(_ sender: Any) {
+        
+        // get the current user.
+        let firebaseUser = Auth.auth().currentUser
+//        if firebaseUser.checked_out_bike == nil {
+//            userAlreadyHasBikeCheckedOutAlert(bikeLockCode: <#T##String#>)
+//        }
+        
+        
+        // get the current time and date to save in firestore.
+        let currentTimeStamp = NSDate().timeIntervalSince1970
+        let timeInterval = TimeInterval(currentTimeStamp)
+        let time = NSDate(timeIntervalSince1970: TimeInterval(timeInterval))
+        
+        // Connect to firestore database
+        let database = Firestore.firestore()
+        
+        // Mark bike as checked out.
+        database.collection("Bikes").document(bike.name).updateData([
+            "checked_out": true]) {
+            error in if let error = error {
+                print("ERROR: \(error)")
+            } else {
+                print("Bike successfuly checked out")
+            }
+        }
+        
+        // Save bike ID and check out time to user
+//        let firebaseUser = Auth.auth().currentUser
+        database.collection("Users").document(firebaseUser!.uid).updateData([
+            "checked_out_bike": bike.name,
+            "time_checked_out": time]) {
+                    error in if let error = error {
+                        print("ERROR: \(error)")
+                    } else {
+                        print("Bike added to the user collection")
+                    }
+                }
+        
+        // give the user the bike lock code
+        bikeCheckOutSuccessAlert(bikeLockCode: bike.bike_lock_code)
+        
     }
-    */
 
+    
+    func bikeCheckOutSuccessAlert(bikeLockCode: String) {
+        //Create the success alert message to pop up.
+        let successAlert = UIAlertController(title: "Success", message: "Bike Lock Code: \(bikeLockCode) ", preferredStyle: UIAlertController.Style.alert)
+        
+        //Create the button to get rid of the alert.
+        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        //Present the alert to the user.
+        self.present(successAlert, animated: true, completion: nil)
+    }
+    
+    func userAlreadyHasBikeCheckedOutAlert() {
+        //Create the success alert message to pop up.
+        let successAlert = UIAlertController(title: "Failure", message: "You cannot check out another bike until you return the last one.", preferredStyle: UIAlertController.Style.alert)
+        
+        //Create the button to get rid of the alert.
+        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        
+        //Present the alert to the user.
+        self.present(successAlert, animated: true, completion: nil)
+    }
+    
+    
 }

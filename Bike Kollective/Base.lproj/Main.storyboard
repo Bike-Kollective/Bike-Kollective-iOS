@@ -726,7 +726,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Ehc-PR-JbZ">
                                 <rect key="frame" x="0.0" y="101.66666666666669" width="375" height="608.66666666666652"/>
                                 <subviews>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="InL-De-Lep">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="InL-De-Lep" customClass="BikeImageView" customModule="Bike_Kollective" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="213"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </imageView>
@@ -809,7 +809,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="hgr-iX-mq5"/>
                     <connections>
-                        <outlet property="bikeImage" destination="InL-De-Lep" id="HeE-Wo-rWc"/>
+                        <outlet property="bikeImage" destination="InL-De-Lep" id="Msp-Me-8hc"/>
                         <outlet property="bikeMake" destination="sQc-oG-gSV" id="arA-Yr-kVa"/>
                         <outlet property="bikeMapLocation" destination="xaS-6K-ESH" id="IAh-4x-qSc"/>
                         <outlet property="bikeModel" destination="LpD-OT-oFr" id="dgZ-b7-IVH"/>

@@ -14,7 +14,8 @@ class BikeDetailViewController: UIViewController {
 
     var bike: Bike!
     
-    @IBOutlet weak var bikeImage: UIImageView!
+    
+    @IBOutlet weak var bikeImage: BikeImageView!
     @IBOutlet weak var bikeMake: UILabel!
     @IBOutlet weak var bikeModel: UILabel!
     @IBOutlet weak var bikeRating: UIImageView!
@@ -24,6 +25,11 @@ class BikeDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Dislpay the bikes image.
+        if let imageURL = URL(string: bike.imageUrl) {
+            bikeImage.loadImage(from: imageURL)
+        }
         
         // Display the bike make and model.
         bikeMake.text = bike.make

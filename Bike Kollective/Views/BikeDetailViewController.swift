@@ -106,46 +106,53 @@ class BikeDetailViewController: UIViewController {
         
         // get the current user.
         let firebaseUser = Auth.auth().currentUser
-//        if firebaseUser.checked_out_bike == nil {
-//            userAlreadyHasBikeCheckedOutAlert(bikeLockCode: <#T##String#>)
-//        }
-        
-        
-        // get the current time and date to save in firestore.
-        let currentTimeStamp = NSDate().timeIntervalSince1970
-        let timeInterval = TimeInterval(currentTimeStamp)
-        let time = NSDate(timeIntervalSince1970: TimeInterval(timeInterval))
         
         // Connect to firestore database
         let database = Firestore.firestore()
-        
-        // Mark bike as checked out.
-        database.collection("Bikes").document(bike.name).updateData([
-            "checked_out": true]) {
-            error in if let error = error {
-                print("ERROR: \(error)")
-            } else {
-                print("Bike successfuly checked out")
+
+        let userReference = database.collection("Users").document(firebaseUser!.uid)
+
+        userReference.getDocument { (document, error) in
+            if let document = document, document.exists {
+
+                // Check to see if the user already has checked out a bike
+                if (document.get("checked_out_bike") != nil) {
+
+                    self.userAlreadyHasBikeCheckedOutAlert()
+                }
+                else {
+                    // get the current time and date to save in firestore.
+                    let currentTimeStamp = NSDate().timeIntervalSince1970
+                    let timeInterval = TimeInterval(currentTimeStamp)
+                    let time = NSDate(timeIntervalSince1970: TimeInterval(timeInterval))
+                    
+                    // Mark bike as checked out.
+                    database.collection("Bikes").document(self.bike.name).updateData([
+                        "checked_out": true]) {
+                        error in if let error = error {
+                            print("ERROR: \(error)")
+                        } else {
+                            print("Bike successfuly checked out")
+                        }
+                    }
+                    
+                    // Save bike ID and check out time to user
+                    database.collection("Users").document(firebaseUser!.uid).updateData([
+                        "checked_out_bike": self.bike.name,
+                        "time_checked_out": time]) {
+                                error in if let error = error {
+                                    print("ERROR: \(error)")
+                                } else {
+                                    print("Bike added to the user collection")
+                                    // give the user the bike lock code
+                                    self.bikeCheckOutSuccessAlert(bikeLockCode: self.bike.bike_lock_code)
+                                    
+                                }
+                            }
+                }
             }
         }
-        
-        // Save bike ID and check out time to user
-//        let firebaseUser = Auth.auth().currentUser
-        database.collection("Users").document(firebaseUser!.uid).updateData([
-            "checked_out_bike": bike.name,
-            "time_checked_out": time]) {
-                    error in if let error = error {
-                        print("ERROR: \(error)")
-                    } else {
-                        print("Bike added to the user collection")
-                    }
-                }
-        
-        // give the user the bike lock code
-        bikeCheckOutSuccessAlert(bikeLockCode: bike.bike_lock_code)
-        
     }
-
     
     func bikeCheckOutSuccessAlert(bikeLockCode: String) {
         //Create the success alert message to pop up.
@@ -160,13 +167,13 @@ class BikeDetailViewController: UIViewController {
     
     func userAlreadyHasBikeCheckedOutAlert() {
         //Create the success alert message to pop up.
-        let successAlert = UIAlertController(title: "Failure", message: "You cannot check out another bike until you return the last one.", preferredStyle: UIAlertController.Style.alert)
+        let failureAlert = UIAlertController(title: "Failure", message: "You cannot check out another bike until you return the last one.", preferredStyle: UIAlertController.Style.alert)
         
         //Create the button to get rid of the alert.
-        successAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        failureAlert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
         
         //Present the alert to the user.
-        self.present(successAlert, animated: true, completion: nil)
+        self.present(failureAlert, animated: true, completion: nil)
     }
     
     

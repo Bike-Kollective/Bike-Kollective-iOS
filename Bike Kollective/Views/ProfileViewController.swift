@@ -10,33 +10,38 @@ import Alamofire
 import AlamofireImage
 import FirebaseAuth
 import Foundation
+import MapKit
+import CoreLocation
 
 class ProfileViewController: UIViewController {
 
     @IBOutlet weak var profilePhoto: UIImageView!
     @IBOutlet weak var fullName: UILabel!
     @IBOutlet weak var memberSince: UILabel!
+    @IBOutlet weak var userLocation: MKMapView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        displayUserInfo()
         
-        
-    }
-    
-    private func displayUserInfo() {
         // get the user information - set name, memberSince and profile photo
         let firebaseUser = Auth.auth().currentUser
         
         guard
+            let userId = firebaseUser?.uid,
             let name = firebaseUser?.displayName,
             let dateJoined = firebaseUser?.metadata.creationDate,
             let profilePicURL = firebaseUser?.photoURL
         else { return }
+        // Do any additional setup after loading the view.
+        displayUserInfo(userId: userId, name: name, dateJoined: dateJoined, profilePicUrl: profilePicURL)
         
         
+    }
+    @IBAction func parkBike(_ sender: Any) {
+        
+    }
+    
+    private func displayUserInfo(userId: String, name: String, dateJoined: Date, profilePicUrl: URL) {
         // format the firebase date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY"
@@ -44,7 +49,7 @@ class ProfileViewController: UIViewController {
         fullName.text = name
         memberSince.text = dateFormatter.string(from: dateJoined)
         
-        profilePhoto.af.setImage(withURL: profilePicURL, filter: RoundedCornersFilter(radius: 15.0))
+        profilePhoto.af.setImage(withURL: profilePicUrl, filter: RoundedCornersFilter(radius: 15.0))
     }
     
     /*

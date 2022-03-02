@@ -329,6 +329,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Park Bike"/>
+                                        <connections>
+                                            <action selector="parkBike:" destination="4bD-vZ-jNn" eventType="touchUpInside" id="AcZ-Rj-u1C"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -410,6 +413,7 @@
                         <outlet property="fullName" destination="kXc-am-UFP" id="C3p-Tc-ZNL"/>
                         <outlet property="memberSince" destination="lH5-ej-7Ov" id="2mV-CE-zQS"/>
                         <outlet property="profilePhoto" destination="ejx-aC-OqV" id="N4h-jM-8Yf"/>
+                        <outlet property="userLocation" destination="g75-3W-fQC" id="Tt4-WR-EIg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQb-ad-zb2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1117,10 +1121,10 @@
                                         <rect key="frame" x="0.0" y="229.66666666666669" width="300" height="291.00000000000006"/>
                                         <subviews>
                                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ijQ-Ly-7jh" userLabel="Accept Switch">
-                                                <rect key="frame" x="0.0" y="130" width="302" height="31"/>
+                                                <rect key="frame" x="0.0" y="130" width="44" height="31"/>
                                             </switch>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Agree to release interest in the bike." textAlignment="center" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wrv-s4-8Bq">
-                                                <rect key="frame" x="300" y="135.33333333333331" width="0.0" height="20.333333333333343"/>
+                                                <rect key="frame" x="42" y="125.00000000000001" width="258" height="40.666666666666671"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>

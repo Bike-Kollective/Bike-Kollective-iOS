@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		1BF2D5F1701CFCADB7685969 /* Pods_Bike_Kollective.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1FB053D87B2756C98814475C /* Pods_Bike_Kollective.framework */; };
 		764A526E872D5B0011335982 /* Pods_Bike_KollectiveTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 580AE6589FA5FDE7D159D485 /* Pods_Bike_KollectiveTests.framework */; };
+		BF2C4E3E27CEF1F000B0571F /* MKbike.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF2C4E3D27CEF1F000B0571F /* MKbike.swift */; };
 		BF5B6B192797B396000BFFF5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B182797B396000BFFF5 /* LoginViewController.swift */; };
 		BF5B6B1B2797B3B7000BFFF5 /* AddBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */; };
 		BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */; };
@@ -66,6 +67,7 @@
 		99716E313B835826C4D39B81 /* Pods-Bike Kollective.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective.debug.xcconfig"; path = "Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective.debug.xcconfig"; sourceTree = "<group>"; };
 		9D97D8F2179F2B353F91655F /* Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig"; path = "Target Support Files/Pods-Bike Kollective-Bike KollectiveUITests/Pods-Bike Kollective-Bike KollectiveUITests.release.xcconfig"; sourceTree = "<group>"; };
 		A20631FD1C85C400611FDED4 /* Pods-Bike Kollective.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike Kollective.release.xcconfig"; path = "Target Support Files/Pods-Bike Kollective/Pods-Bike Kollective.release.xcconfig"; sourceTree = "<group>"; };
+		BF2C4E3D27CEF1F000B0571F /* MKbike.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKbike.swift; sourceTree = "<group>"; };
 		BF5B6B182797B396000BFFF5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BF5B6B1A2797B3B7000BFFF5 /* AddBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddBikeViewController.swift; sourceTree = "<group>"; };
 		BF5B6B1C2797B3CA000BFFF5 /* BikeDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BikeDetailViewController.swift; sourceTree = "<group>"; };
@@ -255,6 +257,7 @@
 			children = (
 				BF97B20027C18A60006B6E5B /* Bike.swift */,
 				FE87D39D27C57B0900E5B435 /* User.swift */,
+				BF2C4E3D27CEF1F000B0571F /* MKbike.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -542,6 +545,7 @@
 				FE94815A27A347610081F6DD /* EmailSignUpViewController.swift in Sources */,
 				FEB6D28727C804F4003092C3 /* GoToBannedUserView.swift in Sources */,
 				BF5C8A1227A0ECED00C6868F /* BikeCell.swift in Sources */,
+				BF2C4E3E27CEF1F000B0571F /* MKbike.swift in Sources */,
 				FE94815827A345130081F6DD /* LoginFieldViewControler.swift in Sources */,
 				FE4F25C027BDAE0D005B6161 /* GoToTabViewController.swift in Sources */,
 				FE87D39E27C57B0900E5B435 /* User.swift in Sources */,

@@ -331,6 +331,7 @@
                                         <buttonConfiguration key="configuration" style="filled" title="Park Bike"/>
                                         <connections>
                                             <action selector="parkBike:" destination="4bD-vZ-jNn" eventType="touchUpInside" id="AcZ-Rj-u1C"/>
+                                            <segue destination="Bzd-7e-HbA" kind="presentation" id="h74-sC-HPO"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -1165,10 +1166,115 @@
             </objects>
             <point key="canvasLocation" x="2940" y="1746.6824644549763"/>
         </scene>
+        <!--Park Bike View Controller-->
+        <scene sceneID="vWf-Cl-6E9">
+            <objects>
+                <viewController id="Bzd-7e-HbA" customClass="ParkBikeViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7lD-VD-M2i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZeL-0q-IKg">
+                                <rect key="frame" x="30" y="232" width="315" height="294"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JL3-ha-QSD">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNk-kA-N6J">
+                                                <rect key="frame" x="0.0" y="0.0" width="72" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="72" id="Yax-zB-HmP"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-uo-wZY" customClass="CosmosView" customModule="Cosmos">
+                                                <rect key="frame" x="102" y="0.0" width="213" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="1l8-wY-TJZ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                        <color key="value" systemColor="systemPurpleColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                        <real key="value" value="4"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                        <color key="value" systemColor="systemPurpleColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                        <color key="value" systemColor="systemPurpleColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                        <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments on Bike:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSl-iD-UKc">
+                                        <rect key="frame" x="0.0" y="60" width="315" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-mN-cgp">
+                                        <rect key="frame" x="0.0" y="104" width="315" height="120"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="120" id="Ot3-Oc-i58"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8K-XI-ZYL">
+                                        <rect key="frame" x="0.0" y="244" width="315" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hQ0-Wb-xBp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Park Bike"/>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You for Being a Part of the Bike Kollective!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqN-3C-zLg">
+                                <rect key="frame" x="30" y="124.66666666666667" width="315" height="57.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ufd-ZI-X5A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XqN-3C-zLg" firstAttribute="centerX" secondItem="7lD-VD-M2i" secondAttribute="centerX" id="BUY-7i-X3w"/>
+                            <constraint firstAttribute="trailing" secondItem="XqN-3C-zLg" secondAttribute="trailing" constant="30" id="MMp-RT-Kfq"/>
+                            <constraint firstItem="XqN-3C-zLg" firstAttribute="leading" secondItem="7lD-VD-M2i" secondAttribute="leading" constant="30" id="NWn-MD-Q6l"/>
+                            <constraint firstItem="ZeL-0q-IKg" firstAttribute="top" secondItem="XqN-3C-zLg" secondAttribute="bottom" constant="50" id="REi-Fv-X7Q"/>
+                            <constraint firstItem="ZeL-0q-IKg" firstAttribute="centerX" secondItem="7lD-VD-M2i" secondAttribute="centerX" id="V8v-6q-TkQ"/>
+                            <constraint firstItem="ZeL-0q-IKg" firstAttribute="leading" secondItem="ufd-ZI-X5A" secondAttribute="leading" constant="30" id="WDR-mg-U5P"/>
+                            <constraint firstItem="ufd-ZI-X5A" firstAttribute="trailing" secondItem="ZeL-0q-IKg" secondAttribute="trailing" constant="30" id="XDh-5M-4C5"/>
+                            <constraint firstItem="ZeL-0q-IKg" firstAttribute="centerY" secondItem="7lD-VD-M2i" secondAttribute="centerY" id="Zvh-fl-MLn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mP9-xb-q8B"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5T3-sE-qZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3481" y="939"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Dcd-mx-0Gy"/>
-        <segue reference="Mie-jj-7DB"/>
+        <segue reference="1bK-f3-RxV"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="arrow.clockwise.circle" catalog="system" width="128" height="121"/>
@@ -1186,6 +1292,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemPurpleColor">
+            <color red="0.68627450980392157" green="0.32156862745098042" blue="0.87058823529411766" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

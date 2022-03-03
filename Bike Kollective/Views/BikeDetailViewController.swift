@@ -145,6 +145,7 @@ class BikeDetailViewController: UIViewController {
                     // Save bike ID and check out time to user
                     database.collection("Users").document(firebaseUser!.uid).updateData([
                         "checked_out_bike": self.bike.name,
+                        "hasBike": true,
                         "time_checked_out": time]) {
                                 error in if let error = error {
                                     print("ERROR: \(error)")

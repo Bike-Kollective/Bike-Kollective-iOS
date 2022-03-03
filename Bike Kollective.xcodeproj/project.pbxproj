@@ -40,6 +40,7 @@
 		FEB6D28727C804F4003092C3 /* GoToBannedUserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB6D28627C804F4003092C3 /* GoToBannedUserView.swift */; };
 		FEB6D28927C8057A003092C3 /* BannedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEB6D28827C8057A003092C3 /* BannedUserViewController.swift */; };
 		FEC0164E27B074110027BA42 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEC0164D27B074110027BA42 /* SettingViewController.swift */; };
+		FECFA2B327D179E70037E73F /* ParkBikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FECFA2B227D179E70037E73F /* ParkBikeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -103,6 +104,7 @@
 		FEB6D28627C804F4003092C3 /* GoToBannedUserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoToBannedUserView.swift; sourceTree = "<group>"; };
 		FEB6D28827C8057A003092C3 /* BannedUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannedUserViewController.swift; sourceTree = "<group>"; };
 		FEC0164D27B074110027BA42 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		FECFA2B227D179E70037E73F /* ParkBikeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParkBikeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +175,7 @@
 				BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */,
 				BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */,
 				F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */,
+				FECFA2B227D179E70037E73F /* ParkBikeViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				FEB6D28927C8057A003092C3 /* BannedUserViewController.swift in Sources */,
 				FE87D39C27C57AB700E5B435 /* AccidentWaiverViewController.swift in Sources */,
 				BFBAF740278E1F61004B80EB /* AppDelegate.swift in Sources */,
+				FECFA2B327D179E70037E73F /* ParkBikeViewController.swift in Sources */,
 				BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */,
 				FE4F25BE27BDAD57005B6161 /* GoToLoginView.swift in Sources */,
 				BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */,

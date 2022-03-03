@@ -16,18 +16,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bike Kollective" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VQY-pu-Sf2">
-                                <rect key="frame" x="108" y="428.5" width="198" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="ybS-Kk-Xuw">
+                                <rect key="frame" x="79" y="320" width="256" height="256"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="256" id="NB0-Ce-8Wx"/>
+                                    <constraint firstAttribute="width" constant="256" id="tiP-s7-sHa"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="VQY-pu-Sf2" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="M6u-Ql-EPT"/>
-                            <constraint firstItem="VQY-pu-Sf2" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="im3-OY-gYy"/>
+                            <constraint firstItem="ybS-Kk-Xuw" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="XwD-pQ-aU5"/>
+                            <constraint firstItem="ybS-Kk-Xuw" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="psT-9s-FNI"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -37,6 +38,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="launch" width="1024" height="1024"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

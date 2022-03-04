@@ -48,9 +48,7 @@ class BikeDetailViewController: UIViewController {
     
     // Get the bike average bike rating and return the corrisponding image
     func getBikeRating() -> UIImage {
-        print("BIKE RATING")
-        print(bike.rating)
-        
+
         let avgRating : Double
         var sum = 0
         

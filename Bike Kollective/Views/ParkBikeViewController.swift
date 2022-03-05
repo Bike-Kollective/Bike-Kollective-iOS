@@ -26,6 +26,8 @@ class ParkBikeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        print("bikeId \(bikeId)")
+        print("userId \(userId)")
         // connect to firebase
         db = Firestore.firestore()
         
@@ -48,6 +50,8 @@ class ParkBikeViewController: UIViewController {
         updateBikeDetails(bikeId: self.bikeId, comment: self.comment, bikeRating: self.bikeRating, lat: self.latitude, lon: self.longitude)
         // make sure to update the user's bike related fields
         updateUserBikeFields(userId: self.userId)
+        // now go back to provfile view
+        goToTabViewController()
         
     }
     

@@ -297,7 +297,7 @@
         <!--Profile View Controller-->
         <scene sceneID="UYk-HJ-Wjh">
             <objects>
-                <viewController id="4bD-vZ-jNn" customClass="ProfileViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileView" id="4bD-vZ-jNn" customClass="ProfileViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zop-h5-ea9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -384,7 +384,7 @@
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Park Bike"/>
                                         <connections>
-                                            <segue destination="Bzd-7e-HbA" kind="presentation" id="pvz-ng-JGa"/>
+                                            <segue destination="Bzd-7e-HbA" kind="presentation" identifier="ShowParkBikeVC" id="pvz-ng-JGa"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -412,7 +412,7 @@
                     <navigationItem key="navigationItem" id="c0S-1s-Xfk">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="YKm-Hg-lyT">
                             <connections>
-                                <segue destination="v8a-UR-vdG" kind="show" id="Ugi-kk-xRI"/>
+                                <segue destination="v8a-UR-vdG" kind="show" identifier="ShowSettingsVC" id="Ugi-kk-xRI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1220,7 +1220,7 @@
                                                         <color key="value" name="AccentColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
-                                                        <integer key="value" value="1"/>
+                                                        <integer key="value" value="0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
                                                         <real key="value" value="1"/>
@@ -1238,7 +1238,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-mN-cgp">
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-mN-cgp">
                                         <rect key="frame" x="0.0" y="104" width="315" height="120"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="120" id="Ot3-Oc-i58"/>
@@ -1287,14 +1287,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5T3-sE-qZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3481" y="939"/>
+            <point key="canvasLocation" x="3044" y="1022"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Ca7-uo-wZY">
-            <size key="intrinsicContentSize" width="154" height="30"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="zoT-Wl-uEf"/>
         <segue reference="1bK-f3-RxV"/>

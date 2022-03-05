@@ -32,8 +32,8 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     var currentLatitude: Double = 41.8789
     var currentLongitude: Double = 87.6359
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    override func viewWillAppear(_: Bool) {
+        super.viewWillAppear(true)
         
         // connect to firebase
         let db = Firestore.firestore()
@@ -67,7 +67,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
                     self.bikeId = document.get("checked_out_bike") as! String
                     print(self.bikeId)
                     self.userId = userId
-                    self.displayBikeData(bikeId: self.bikeId, db: db)
+                    self.displayBikePic(bikeId: self.bikeId, db: db)
                     self.borrowedBike.arrangedSubviews[1].isHidden = true  // go to bikes reminder
                     self.borrowedBike.arrangedSubviews[2].isHidden = false // Bike Picture
                     self.borrowedBike.arrangedSubviews[3].isHidden = false // Time Due
@@ -85,6 +85,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         
         
     }
+
     
     // using CLLocationManagerDelegate method to get user's current lcoation and coordiate
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
@@ -112,11 +113,17 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         
     }
     
-    private func displayBikeData(bikeId: String, db: Firestore) -> Void {
+    
+    private func displayBikePic(bikeId: String, db: Firestore) -> Void {
         print("bikeid: \(bikeId)")
         let bikeRef = db.collection("Bikes").document(bikeId)
-        
-    
+        bikeRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+                let picURLString = document.get("imageURL") as! String
+                let picURL = URL(string: picURLString)
+                self.bikePhoto.af.setImage(withURL: picURL!, filter: RoundedCornersFilter(radius: 15.0))
+            }
+        }
     }
     
     
@@ -143,11 +150,17 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         let currentLatitude = self.currentLatitude
         let currentLongitude = self.currentLongitude
         
-        let parkBikeVC = segue.destination as! ParkBikeViewController
-        parkBikeVC.bikeId = currentBikeId
-        parkBikeVC.userId = currentUserId
-        parkBikeVC.latitude = currentLatitude
-        parkBikeVC.longitude = currentLongitude
+        if segue.identifier == "ShowParkBikeVC" {
+            let parkBikeVC = segue.destination as! ParkBikeViewController
+            parkBikeVC.bikeId = currentBikeId
+            parkBikeVC.userId = currentUserId
+            parkBikeVC.latitude = currentLatitude
+            parkBikeVC.longitude = currentLongitude
+        }
+        /*
+        if segue.identifier == "ShowSettingsVC" {
+            let settingsVC = segue.destination as! SettingViewController
+        }*/
     }
     
 }

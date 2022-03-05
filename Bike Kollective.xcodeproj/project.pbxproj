@@ -27,6 +27,7 @@
 		BFBAF757278E1F64004B80EB /* Bike_KollectiveTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF756278E1F64004B80EB /* Bike_KollectiveTests.swift */; };
 		BFBAF761278E1F64004B80EB /* Bike_KollectiveUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF760278E1F64004B80EB /* Bike_KollectiveUITests.swift */; };
 		BFBAF763278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */; };
+		BFFBF00827D2FB3200EBA81E /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFFBF00727D2FB3200EBA81E /* FilterViewController.swift */; };
 		C04FCC0CFE8DEE8AF7E90BCE /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */; };
 		F8585CB727C314F500B422F9 /* ReleaseOfInterestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */; };
 		FE4F25BE27BDAD57005B6161 /* GoToLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4F25BD27BDAD57005B6161 /* GoToLoginView.swift */; };
@@ -90,6 +91,7 @@
 		BFBAF75C278E1F64004B80EB /* Bike KollectiveUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Bike KollectiveUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BFBAF760278E1F64004B80EB /* Bike_KollectiveUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITests.swift; sourceTree = "<group>"; };
 		BFBAF762278E1F64004B80EB /* Bike_KollectiveUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bike_KollectiveUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		BFFBF00727D2FB3200EBA81E /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReleaseOfInterestViewController.swift; sourceTree = "<group>"; };
 		F915E7C4FC6866EA3BB2F223 /* Pods_Bike_Kollective_Bike_KollectiveUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Bike_Kollective_Bike_KollectiveUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F972A83EB351DE00922D7BEE /* Pods-Bike KollectiveTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Bike KollectiveTests.release.xcconfig"; path = "Target Support Files/Pods-Bike KollectiveTests/Pods-Bike KollectiveTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -175,7 +177,9 @@
 				BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */,
 				BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */,
 				F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */,
+
 				FECFA2B227D179E70037E73F /* ParkBikeViewController.swift */,
+				BFFBF00727D2FB3200EBA81E /* FilterViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -560,6 +564,7 @@
 				BF5B6B1D2797B3CA000BFFF5 /* BikeDetailViewController.swift in Sources */,
 				FE4F25BE27BDAD57005B6161 /* GoToLoginView.swift in Sources */,
 				BFBAF742278E1F61004B80EB /* SceneDelegate.swift in Sources */,
+				BFFBF00827D2FB3200EBA81E /* FilterViewController.swift in Sources */,
 				BF5B6B232797B3FF000BFFF5 /* ProfileViewController.swift in Sources */,
 				BF5B6B212797B3EA000BFFF5 /* ListViewController.swift in Sources */,
 				F8585CB727C314F500B422F9 /* ReleaseOfInterestViewController.swift in Sources */,

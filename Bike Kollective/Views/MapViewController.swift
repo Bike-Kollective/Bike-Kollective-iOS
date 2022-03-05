@@ -38,19 +38,41 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         loadData()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+    }
+    
+    // MARK: Data Handling
+    
     private func setLocation() {
+        let radius = defaults.integer(forKey: "distance") == 0 ? 15.0 : Double(defaults.integer(forKey: "distance"))
+        let measure = defaults.integer(forKey: "measure") == 0 ? 1609.3 : 1000.0
         currentLocation = CLLocation(latitude: 41.8781, longitude: 87.6298)
         if locationManager.authorizationStatus == .authorizedWhenInUse || locationManager.authorizationStatus == .authorizedAlways {
             locationManager.startUpdatingLocation()
             currentLocation = locationManager.location ?? CLLocation(latitude: 41.8781, longitude: 87.6298)
             print("Coords: \(String(describing: currentLocation))")
         }
-        let region = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: 1609 * 20, longitudinalMeters: 1609 * 20)
+        let region = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: measure * radius * 2, longitudinalMeters: measure * radius * 2)
         bikeMap.setRegion(region, animated: true)
+        let cameraRegion = MKCoordinateRegion(center: currentLocation.coordinate, latitudinalMeters: measure * radius * 5, longitudinalMeters: measure * radius * 6)
+        bikeMap.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: cameraRegion), animated: true)
+        let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: measure * radius * 10)
+        bikeMap.setCameraZoomRange(zoomRange, animated: true)
     }
 
     
     private func loadData() {
+        var tag: String
+        if (defaults.string(forKey: "tag") != nil) && defaults.string(forKey:"tag") != "Choose..." {
+            tag = defaults.string(forKey: "tag")!
+        } else {
+            tag = ""
+        }
+        let radius = defaults.integer(forKey: "distance") == 0 ? 15.0 : Double(defaults.integer(forKey: "distance"))
+        let measure = defaults.integer(forKey: "measure") == 0 ? 1609.3 : 1000.0
+        self.bikeMap.removeAnnotations(bikeMap.annotations)
         db.collection("Bikes").whereField("checked_out", isEqualTo: false).getDocuments() {
             (query, err) in
                             if let err = err {
@@ -71,11 +93,46 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                                                         self.bikes.append(bikeMK)
                                                     }
                                                 }
+                                if tag == "" {
+                                    for doc in query!.documents {
+                                        let data = doc.data()
+                                        var locale = CLLocation()
+                                        if let coords = data["location"] {
+                                            let point = coords as! GeoPoint
+                                            locale = CLLocation(latitude: point.latitude, longitude: point.longitude)
+                                            let distance: Double = self.currentLocation.distance(from: locale)
+                                            let milesAway: Double = round((distance / measure) * 10) / 10.0
+                                            if milesAway <= radius {
+                                                let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
+                                                let bikeMK = MKbike(bike: bike, coordinate: locale.coordinate)
+                                                self.bikes.append(bikeMK)
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    for doc in query!.documents {
+                                        let data = doc.data()
+                                        var locale = CLLocation()
+                                        if let coords = data["location"] {
+                                            let point = coords as! GeoPoint
+                                            locale = CLLocation(latitude: point.latitude, longitude: point.longitude)
+                                            let distance: Double = self.currentLocation.distance(from: locale)
+                                            let milesAway: Double = round((distance / measure) * 10) / 10.0
+                                            let tags = data["tags"] as! [String]
+                                            if milesAway <= radius && tags.contains(tag) {
+                                                let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
+                                                let bikeMK = MKbike(bike: bike, coordinate: locale.coordinate)
+                                                self.bikes.append(bikeMK)
+                                            }
+                                        }
+                                    }
                                 }
                                 self.bikeMap.addAnnotations(self.bikes)
                             }
         }
     }
+    
+    // MARK: Search Bar
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         self.mapSearchBar.becomeFirstResponder()
@@ -90,6 +147,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        let radius = defaults.integer(forKey: "distance") == 0 ? 15.0 : Double(defaults.integer(forKey: "distance"))
+        let measure = defaults.integer(forKey: "measure") == 0 ? 1609.3 : 1000.0
         if let address = self.mapSearchBar.text {
             let geocoder = CLGeocoder()
             geocoder.geocodeAddressString(address) {(placemarks, error) in
@@ -100,7 +159,11 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
                 let location = placemarks?.first?.location
                 self.currentLocation = location ?? self.currentLocation
                 self.bikeMap.delegate = self
-                let region = MKCoordinateRegion(center: self.currentLocation.coordinate, latitudinalMeters: 1609 * 16, longitudinalMeters: 1609 * 16)
+                let region = MKCoordinateRegion(center: self.currentLocation.coordinate, latitudinalMeters: measure * radius * 2, longitudinalMeters: measure * radius * 2)
+                let cameraRegion = MKCoordinateRegion(center: self.currentLocation.coordinate, latitudinalMeters: measure * radius * 5, longitudinalMeters: measure * radius * 6)
+                let zoomRange = MKMapView.CameraZoomRange(maxCenterCoordinateDistance: measure * radius * 10)
+                self.bikeMap.setCameraZoomRange(zoomRange, animated: true)
+                self.bikeMap.setCameraBoundary(MKMapView.CameraBoundary(coordinateRegion: cameraRegion), animated: true)
                 self.bikeMap.setRegion(region, animated: true)
                 self.loadData()
             }
@@ -108,6 +171,8 @@ class MapViewController: UIViewController, MKMapViewDelegate, CLLocationManagerD
         self.mapSearchBar.showsCancelButton = false
         self.mapSearchBar.resignFirstResponder()
     }
+    
+    // MARK: Map
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
         guard let annotation = annotation as? MKbike else { return nil }

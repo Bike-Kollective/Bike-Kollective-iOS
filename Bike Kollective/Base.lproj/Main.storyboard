@@ -533,7 +533,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="148"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Make/Model" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob9-ro-OFa">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Make/Model" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ob9-ro-OFa">
                                                     <rect key="frame" x="130" y="9.9999999999999982" width="158.33333333333337" height="19.333333333333329"/>
                                                     <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
                                                     <nil key="textColor"/>
@@ -641,7 +641,7 @@
                     <navigationItem key="navigationItem" id="iH8-Bd-1us">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="DzG-Eg-FPn">
                             <connections>
-                                <segue destination="vuK-ba-zYO" kind="presentation" id="1bK-f3-RxV"/>
+                                <segue destination="vuK-ba-zYO" kind="presentation" modalPresentationStyle="fullScreen" id="1bK-f3-RxV"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Bike" id="Rwa-eF-9DY">
@@ -717,7 +717,7 @@
                     <navigationItem key="navigationItem" id="HF7-fA-9Kd">
                         <barButtonItem key="leftBarButtonItem" title="Filter" id="EnO-B1-UtA">
                             <connections>
-                                <segue destination="vuK-ba-zYO" kind="presentation" id="Mie-jj-7DB"/>
+                                <segue destination="vuK-ba-zYO" kind="presentation" modalPresentationStyle="fullScreen" id="Mie-jj-7DB"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Add Bike" id="ti5-Xt-5OD">
@@ -735,29 +735,117 @@
             </objects>
             <point key="canvasLocation" x="1418.840579710145" y="939.50892857142856"/>
         </scene>
-        <!--View Controller-->
+        <!--Filter View Controller-->
         <scene sceneID="K51-Y2-JY3">
             <objects>
-                <viewController id="vuK-ba-zYO" sceneMemberID="viewController">
+                <viewController id="vuK-ba-zYO" customClass="FilterViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zSU-OZ-9bk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaR-q2-Fa7">
-                                <rect key="frame" x="20" y="20" width="60" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Filter" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YaR-q2-Fa7">
+                                <rect key="frame" x="20" y="64" width="60" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="PTb-5Z-HIF">
+                                <rect key="frame" x="20" y="137.66666666666666" width="190" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="3rS-in-en5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W1b-aA-qWP">
+                                <rect key="frame" x="230" y="139" width="125" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="125" id="OJc-zf-WFE"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="mi."/>
+                                    <segment title="km."/>
+                                </segments>
+                            </segmentedControl>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QsT-lC-qZg">
+                                <rect key="frame" x="20" y="255" width="337" height="34"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Distance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44R-FW-lsT">
+                                <rect key="frame" x="265" y="104" width="90" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by Tag" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ud-3O-cud">
+                                <rect key="frame" x="304" y="220" width="51" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XKn-9c-Coa">
+                                <rect key="frame" x="20" y="394" width="335" height="31"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Apply"/>
+                                <connections>
+                                    <action selector="applyFilter:" destination="vuK-ba-zYO" eventType="touchUpInside" id="5Ii-G4-XIN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="l0X-tQ-pTK">
+                                <rect key="frame" x="20" y="349" width="335" height="31"/>
+                                <color key="tintColor" systemColor="systemGrayColor"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Reset"/>
+                                <connections>
+                                    <action selector="resetFilters:" destination="vuK-ba-zYO" eventType="touchUpInside" id="Vyf-bS-LxM"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="chevron.down.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zlk-8U-yRJ">
+                                <rect key="frame" x="337" y="255.99999999999997" width="18" height="32.666666666666686"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="18" id="MNt-Vg-ADz"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="8vx-kN-CkH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="YaR-q2-Fa7" firstAttribute="leading" secondItem="8vx-kN-CkH" secondAttribute="leading" constant="20" id="1pY-Hr-n38"/>
+                            <constraint firstItem="W1b-aA-qWP" firstAttribute="leading" secondItem="PTb-5Z-HIF" secondAttribute="trailing" constant="20" id="7Qt-aI-v1w"/>
+                            <constraint firstItem="zlk-8U-yRJ" firstAttribute="bottom" secondItem="QsT-lC-qZg" secondAttribute="bottom" id="8Nf-6c-UKo"/>
+                            <constraint firstItem="W1b-aA-qWP" firstAttribute="centerY" secondItem="PTb-5Z-HIF" secondAttribute="centerY" id="9TC-Q9-sdd"/>
+                            <constraint firstItem="8vx-kN-CkH" firstAttribute="trailing" secondItem="44R-FW-lsT" secondAttribute="trailing" constant="20" id="CpQ-49-M4M"/>
+                            <constraint firstItem="l0X-tQ-pTK" firstAttribute="top" secondItem="QsT-lC-qZg" secondAttribute="bottom" constant="60" id="CuV-3L-2JK"/>
+                            <constraint firstItem="44R-FW-lsT" firstAttribute="top" secondItem="8vx-kN-CkH" secondAttribute="top" constant="60" id="Hmc-6Q-2dX"/>
+                            <constraint firstItem="W1b-aA-qWP" firstAttribute="top" secondItem="44R-FW-lsT" secondAttribute="bottom" constant="14" id="MCK-MT-WcS"/>
+                            <constraint firstItem="8vx-kN-CkH" firstAttribute="trailing" secondItem="l0X-tQ-pTK" secondAttribute="trailing" constant="20" id="O0R-Dw-Ybg"/>
+                            <constraint firstItem="8vx-kN-CkH" firstAttribute="trailing" secondItem="XKn-9c-Coa" secondAttribute="trailing" constant="20" id="O1I-qU-eIc"/>
+                            <constraint firstItem="YaR-q2-Fa7" firstAttribute="top" secondItem="8vx-kN-CkH" secondAttribute="top" constant="20" id="QFZ-LG-11P"/>
+                            <constraint firstItem="XKn-9c-Coa" firstAttribute="top" secondItem="l0X-tQ-pTK" secondAttribute="bottom" constant="14" id="RUg-zs-ybS"/>
+                            <constraint firstItem="zlk-8U-yRJ" firstAttribute="leading" secondItem="QsT-lC-qZg" secondAttribute="trailing" constant="-20" id="TI6-Rd-gxL"/>
+                            <constraint firstItem="PTb-5Z-HIF" firstAttribute="leading" secondItem="8vx-kN-CkH" secondAttribute="leading" constant="20" id="Wt6-vc-Xr6"/>
+                            <constraint firstItem="2Ud-3O-cud" firstAttribute="top" secondItem="W1b-aA-qWP" secondAttribute="bottom" constant="50" id="Zsw-gr-P0o"/>
+                            <constraint firstItem="W1b-aA-qWP" firstAttribute="leading" secondItem="PTb-5Z-HIF" secondAttribute="trailing" constant="20" id="aBf-Dz-nfX"/>
+                            <constraint firstItem="8vx-kN-CkH" firstAttribute="trailing" secondItem="2Ud-3O-cud" secondAttribute="trailing" constant="20" id="aNV-tn-sxa"/>
+                            <constraint firstItem="l0X-tQ-pTK" firstAttribute="leading" secondItem="8vx-kN-CkH" secondAttribute="leading" constant="20" id="boO-gI-LVf"/>
+                            <constraint firstItem="zlk-8U-yRJ" firstAttribute="top" secondItem="QsT-lC-qZg" secondAttribute="top" id="cth-gy-b4m"/>
+                            <constraint firstItem="QsT-lC-qZg" firstAttribute="leading" secondItem="8vx-kN-CkH" secondAttribute="leading" constant="20" id="dzx-tS-jj8"/>
+                            <constraint firstItem="8vx-kN-CkH" firstAttribute="trailing" secondItem="W1b-aA-qWP" secondAttribute="trailing" constant="20" id="etN-0e-M1f"/>
+                            <constraint firstItem="XKn-9c-Coa" firstAttribute="leading" secondItem="8vx-kN-CkH" secondAttribute="leading" constant="20" id="xHe-qE-6ZQ"/>
+                            <constraint firstItem="QsT-lC-qZg" firstAttribute="top" secondItem="2Ud-3O-cud" secondAttribute="bottom" constant="14" id="yP9-Dl-Ybu"/>
+                            <constraint firstItem="8vx-kN-CkH" firstAttribute="trailing" secondItem="zlk-8U-yRJ" secondAttribute="trailing" constant="20" id="zlo-sI-aYp"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="distanceField" destination="PTb-5Z-HIF" id="rhF-Xh-SUK"/>
+                        <outlet property="measureSelect" destination="W1b-aA-qWP" id="1m9-j7-CaU"/>
+                        <outlet property="tagField" destination="QsT-lC-qZg" id="ljJ-Dt-ZAX"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrd-hb-d6m" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="986.95652173913049" y="1747.7678571428571"/>
+            <point key="canvasLocation" x="986.39999999999998" y="1747.536945812808"/>
         </scene>
         <!--Bike Detail View Controller-->
         <scene sceneID="xG7-QM-M7W">
@@ -1305,6 +1393,7 @@
     <resources>
         <image name="arrow.clockwise.circle" catalog="system" width="128" height="121"/>
         <image name="bicycle" catalog="system" width="128" height="78"/>
+        <image name="chevron.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <namedColor name="AccentColor">
@@ -1321,6 +1410,9 @@
         </systemColor>
         <systemColor name="systemGray6Color">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemRedColor">
             <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

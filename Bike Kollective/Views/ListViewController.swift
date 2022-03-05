@@ -52,6 +52,11 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
         refreshment.attributedTitle = NSAttributedString(string: "Pull to refresh")
         listView.refreshControl = refreshment
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        loadData()
+    }
 
     // MARK: Data Handling
     
@@ -72,25 +77,51 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     private func loadData() {
+        var tag: String
+        if (defaults.string(forKey: "tag") != nil) && defaults.string(forKey:"tag") != "Choose..." {
+            tag = defaults.string(forKey: "tag")!
+        } else {
+            tag = ""
+        }
+        let radius = defaults.integer(forKey: "distance") == 0 ? 15.0 : Double(defaults.integer(forKey: "distance"))
+        let measure = defaults.integer(forKey: "measure") == 0 ? 1609.3 : 1000.0
         db.collection("Bikes").whereField("checked_out", isEqualTo: false).getDocuments() {
             (query, err) in
                             if let err = err {
                                 print("Error getting documents: \(err)")
                             } else {
                                 self.bikes = [Bike]()
-                                for doc in query!.documents {
-                                    let data = doc.data()
-                                    var locale = CLLocation()
-                                    if let coords = data["location"] {
-                                                    let point = coords as! GeoPoint
-                                                    locale = CLLocation(latitude: point.latitude, longitude: point.longitude)
-                                                    let distance: Double = self.currentLocation.distance(from: locale)
-                                                    let milesAway: Double = round((distance / 1609.3) * 10) / 10.0
-                                                    if milesAway <= 25.0 {
-                                                        let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
-                                                        self.bikes.append(bike)
-                                                    }
-                                                }
+                                if tag == "" {
+                                    for doc in query!.documents {
+                                        let data = doc.data()
+                                        var locale = CLLocation()
+                                        if let coords = data["location"] {
+                                            let point = coords as! GeoPoint
+                                            locale = CLLocation(latitude: point.latitude, longitude: point.longitude)
+                                            let distance: Double = self.currentLocation.distance(from: locale)
+                                            let milesAway: Double = round((distance / measure) * 10) / 10.0
+                                            if milesAway <= radius {
+                                                let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
+                                                self.bikes.append(bike)
+                                            }
+                                        }
+                                    }
+                                } else {
+                                    for doc in query!.documents {
+                                        let data = doc.data()
+                                        var locale = CLLocation()
+                                        if let coords = data["location"] {
+                                            let point = coords as! GeoPoint
+                                            locale = CLLocation(latitude: point.latitude, longitude: point.longitude)
+                                            let distance: Double = self.currentLocation.distance(from: locale)
+                                            let milesAway: Double = round((distance / measure) * 10) / 10.0
+                                            let tags = data["tags"] as! [String]
+                                            if milesAway <= radius && tags.contains(tag) {
+                                                let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
+                                                self.bikes.append(bike)
+                                            }
+                                        }
+                                    }
                                 }
                                 self.listView.reloadData()
                                 self.refreshment.endRefreshing()
@@ -184,7 +215,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
             let item = bikes[indexPath.row]
             cell.modelLabel.text = "\(item.make) \(item.model)"
             cell.tagsLabel.text = item.tags.joined(separator: ", ")
-            cell.distanceLabel.text = "\(item.distance)mi. away"
+            cell.distanceLabel.text = "\(item.distance)\(defaults.integer(forKey: "measure") == 0 ? "mi." : "km.") away"
             if let imgUrl = URL(string: item.imageUrl) {
                 cell.picView.loadImage(from: imgUrl)
             }

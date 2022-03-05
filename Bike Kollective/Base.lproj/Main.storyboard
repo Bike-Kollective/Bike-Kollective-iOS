@@ -181,7 +181,7 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DSt-gU-RWh">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="DSt-gU-RWh">
                                         <rect key="frame" x="0.0" y="48.666666666666686" width="315" height="160"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
@@ -1381,11 +1381,6 @@
             <point key="canvasLocation" x="3044" y="1022"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="Ca7-uo-wZY">
-            <size key="intrinsicContentSize" width="154" height="30"/>
-        </designable>
-    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="zoT-Wl-uEf"/>
         <segue reference="1bK-f3-RxV"/>

@@ -32,7 +32,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         bikeMakeField.delegate = self
         bikeModelField.delegate = self
         bikeCodeField.delegate = self
@@ -91,13 +91,18 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         // Check for keyboard notifications
         if notification.name == UIResponder.keyboardWillShowNotification || notification.name == UIResponder.keyboardWillChangeFrameNotification{
+
             view.frame.origin.y = -keyboardSize.height
         }
         else {
-            view.frame.origin.y = 0
+            let safeAreaBottom = additionalSafeAreaInsets.bottom
+            print("SAFE AREA BOTTOM")
+            print(safeAreaBottom)
+            print(view.frame.origin.y = (tabBarController?.view.bounds.height)!)
+            view.frame.origin.y = tabBarController!.preferredContentSize.height
         }
                 
-//        print("Keyboard will show: \(notification.name.rawValue)")
+        print("Keyboard will show: \(notification.name.rawValue)")
     }
     
     // Makes the keyboard dissapear after the user hits return after input.

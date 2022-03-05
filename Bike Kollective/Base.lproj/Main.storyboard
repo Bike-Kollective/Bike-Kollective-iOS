@@ -401,7 +401,7 @@
                         <constraints>
                             <constraint firstItem="lht-kR-chj" firstAttribute="leading" secondItem="7OE-w7-Gcn" secondAttribute="leading" constant="20" id="59J-Xt-7z6"/>
                             <constraint firstItem="w1x-7h-v5O" firstAttribute="leading" secondItem="7OE-w7-Gcn" secondAttribute="leading" constant="20" id="7Nj-pw-CMN"/>
-                            <constraint firstItem="lht-kR-chj" firstAttribute="top" secondItem="w1x-7h-v5O" secondAttribute="bottom" constant="20" id="9BL-EB-ywW"/>
+                            <constraint firstItem="lht-kR-chj" firstAttribute="top" secondItem="w1x-7h-v5O" secondAttribute="bottom" constant="15" id="9BL-EB-ywW"/>
                             <constraint firstItem="w1x-7h-v5O" firstAttribute="top" secondItem="7OE-w7-Gcn" secondAttribute="top" constant="10" id="BBM-76-tgM"/>
                             <constraint firstItem="w1x-7h-v5O" firstAttribute="centerX" secondItem="Zop-h5-ea9" secondAttribute="centerX" id="Bnq-fw-Ito"/>
                             <constraint firstItem="lht-kR-chj" firstAttribute="centerX" secondItem="Zop-h5-ea9" secondAttribute="centerX" id="Hko-QP-EdW"/>
@@ -1205,7 +1205,7 @@
                                                         <color key="value" name="AccentColor"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="rating">
-                                                        <real key="value" value="4"/>
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
                                                         <integer key="value" value="5"/>
@@ -1221,6 +1221,12 @@
                                                     </userDefinedRuntimeAttribute>
                                                     <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
                                                         <integer key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                        <real key="value" value="0.0"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </view>
@@ -1247,6 +1253,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="filled" title="Park Bike"/>
+                                        <connections>
+                                            <action selector="returnBike:" destination="Bzd-7e-HbA" eventType="touchUpInside" id="m40-8Y-BpO"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -1271,6 +1280,10 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="mP9-xb-q8B"/>
+                    <connections>
+                        <outlet property="bikeComments" destination="Qga-mN-cgp" id="D1S-J0-Poc"/>
+                        <outlet property="ratingStars" destination="Ca7-uo-wZY" id="qze-7j-BBk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5T3-sE-qZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1279,7 +1292,7 @@
     </scenes>
     <designables>
         <designable name="Ca7-uo-wZY">
-            <size key="intrinsicContentSize" width="170" height="30"/>
+            <size key="intrinsicContentSize" width="154" height="30"/>
         </designable>
     </designables>
     <inferredMetricsTieBreakers>

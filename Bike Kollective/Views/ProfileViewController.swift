@@ -140,10 +140,14 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         // Pass the selected object to the new view controller.
         let currentBikeId = self.bikeId
         let currentUserId = self.userId
+        let currentLatitude = self.currentLatitude
+        let currentLongitude = self.currentLongitude
         
         let parkBikeVC = segue.destination as! ParkBikeViewController
         parkBikeVC.bikeId = currentBikeId
         parkBikeVC.userId = currentUserId
+        parkBikeVC.latitude = currentLatitude
+        parkBikeVC.longitude = currentLongitude
     }
     
 }

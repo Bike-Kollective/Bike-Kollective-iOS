@@ -14,6 +14,7 @@ struct Bike {
     let model: String
     let rating: [Int]
     let tags: [String]
+    let comments: [String]
     let location: CLLocation
     let distance: Double
     let imageUrl: String

@@ -6,12 +6,19 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseFirestore
 
 class ParkBikeViewController: UIViewController {
 
+    var bikeId: String = ""
+    var userId: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        print("bikeId \(self.bikeId)")
+        print("userId \(self.userId)")
         // Do any additional setup after loading the view.
     }
     

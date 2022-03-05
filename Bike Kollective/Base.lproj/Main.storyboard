@@ -4,6 +4,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -296,48 +297,11 @@
         <!--Profile View Controller-->
         <scene sceneID="UYk-HJ-Wjh">
             <objects>
-                <viewController id="4bD-vZ-jNn" customClass="ProfileViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileView" id="4bD-vZ-jNn" customClass="ProfileViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Zop-h5-ea9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lht-kR-chj">
-                                <rect key="frame" x="20" y="455.33333333333331" width="335" height="253.66666666666669"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borrowed Bike" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkK-d6-AlM">
-                                        <rect key="frame" x="0.0" y="0.0" width="335" height="25.333333333333332"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XFL-93-l7c">
-                                        <rect key="frame" x="0.0" y="35.333333333333371" width="335" height="128"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="128" id="oin-bG-8P8"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Due: XX:XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-iA-4WA">
-                                        <rect key="frame" x="0.0" y="173.33333333333331" width="335" height="20.333333333333343"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtO-Rj-Dan">
-                                        <rect key="frame" x="0.0" y="203.66666666666669" width="335" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="50" id="bX1-f2-JUj"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="filled" title="Park Bike"/>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="XFL-93-l7c" secondAttribute="trailing" id="45k-pi-52h"/>
-                                    <constraint firstItem="XFL-93-l7c" firstAttribute="leading" secondItem="lht-kR-chj" secondAttribute="leading" id="8Gk-CJ-XMn"/>
-                                    <constraint firstItem="XFL-93-l7c" firstAttribute="top" secondItem="TkK-d6-AlM" secondAttribute="bottom" constant="10" id="HhL-1q-jLx"/>
-                                    <constraint firstItem="LEa-iA-4WA" firstAttribute="top" secondItem="XFL-93-l7c" secondAttribute="bottom" constant="10" id="Ug9-bT-FhJ"/>
-                                </constraints>
-                            </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="w1x-7h-v5O">
                                 <rect key="frame" x="20" y="88" width="335" height="358.66666666666674"/>
                                 <subviews>
@@ -385,13 +349,59 @@
                                     <constraint firstAttribute="trailing" secondItem="g75-3W-fQC" secondAttribute="trailing" id="lBo-VV-pPB"/>
                                 </constraints>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="lht-kR-chj">
+                                <rect key="frame" x="20" y="468.99999999999989" width="335" height="309.33333333333326"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Borrowed Bike:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TkK-d6-AlM">
+                                        <rect key="frame" x="0.0" y="0.0" width="335" height="25.333333333333332"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No Borrowed Bikes! Go to the Bikes tab to find a bike to borrow!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GzF-fR-htc">
+                                        <rect key="frame" x="0.0" y="35.333333333333314" width="335" height="45.666666666666657"/>
+                                        <fontDescription key="fontDescription" type="italicSystem" pointSize="19"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="XFL-93-l7c">
+                                        <rect key="frame" x="0.0" y="90.999999999999943" width="335" height="128"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="128" id="oin-bG-8P8"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Due: XX:XX" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LEa-iA-4WA">
+                                        <rect key="frame" x="0.0" y="228.99999999999994" width="335" height="20.333333333333343"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dtO-Rj-Dan">
+                                        <rect key="frame" x="0.0" y="259.33333333333331" width="335" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="bX1-f2-JUj"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Park Bike"/>
+                                        <connections>
+                                            <segue destination="Bzd-7e-HbA" kind="presentation" identifier="ShowParkBikeVC" id="pvz-ng-JGa"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="XFL-93-l7c" secondAttribute="trailing" id="45k-pi-52h"/>
+                                    <constraint firstItem="XFL-93-l7c" firstAttribute="leading" secondItem="lht-kR-chj" secondAttribute="leading" id="8Gk-CJ-XMn"/>
+                                    <constraint firstItem="XFL-93-l7c" firstAttribute="top" secondItem="TkK-d6-AlM" secondAttribute="bottom" constant="10" id="HhL-1q-jLx"/>
+                                    <constraint firstItem="LEa-iA-4WA" firstAttribute="top" secondItem="XFL-93-l7c" secondAttribute="bottom" constant="10" id="Ug9-bT-FhJ"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="7OE-w7-Gcn"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="lht-kR-chj" firstAttribute="leading" secondItem="7OE-w7-Gcn" secondAttribute="leading" constant="20" id="59J-Xt-7z6"/>
                             <constraint firstItem="w1x-7h-v5O" firstAttribute="leading" secondItem="7OE-w7-Gcn" secondAttribute="leading" constant="20" id="7Nj-pw-CMN"/>
-                            <constraint firstItem="7OE-w7-Gcn" firstAttribute="bottom" secondItem="lht-kR-chj" secondAttribute="bottom" constant="20" id="9eo-40-e2c"/>
+                            <constraint firstItem="lht-kR-chj" firstAttribute="top" secondItem="w1x-7h-v5O" secondAttribute="bottom" constant="15" id="9BL-EB-ywW"/>
                             <constraint firstItem="w1x-7h-v5O" firstAttribute="top" secondItem="7OE-w7-Gcn" secondAttribute="top" constant="10" id="BBM-76-tgM"/>
                             <constraint firstItem="w1x-7h-v5O" firstAttribute="centerX" secondItem="Zop-h5-ea9" secondAttribute="centerX" id="Bnq-fw-Ito"/>
                             <constraint firstItem="lht-kR-chj" firstAttribute="centerX" secondItem="Zop-h5-ea9" secondAttribute="centerX" id="Hko-QP-EdW"/>
@@ -402,14 +412,18 @@
                     <navigationItem key="navigationItem" id="c0S-1s-Xfk">
                         <barButtonItem key="rightBarButtonItem" title="Settings" id="YKm-Hg-lyT">
                             <connections>
-                                <segue destination="v8a-UR-vdG" kind="show" id="Ugi-kk-xRI"/>
+                                <segue destination="v8a-UR-vdG" kind="show" identifier="ShowSettingsVC" id="Ugi-kk-xRI"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="bikePhoto" destination="XFL-93-l7c" id="zMr-5T-MK6"/>
+                        <outlet property="borrowedBike" destination="lht-kR-chj" id="q4F-BI-PvT"/>
                         <outlet property="fullName" destination="kXc-am-UFP" id="C3p-Tc-ZNL"/>
                         <outlet property="memberSince" destination="lH5-ej-7Ov" id="2mV-CE-zQS"/>
                         <outlet property="profilePhoto" destination="ejx-aC-OqV" id="N4h-jM-8Yf"/>
+                        <outlet property="timeDue" destination="LEa-iA-4WA" id="z7e-Z5-YfF"/>
+                        <outlet property="userLocation" destination="g75-3W-fQC" id="Tt4-WR-EIg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wQb-ad-zb2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1249,7 +1263,129 @@
             </objects>
             <point key="canvasLocation" x="2940" y="1746.6824644549763"/>
         </scene>
+        <!--Park Bike View Controller-->
+        <scene sceneID="vWf-Cl-6E9">
+            <objects>
+                <viewController id="Bzd-7e-HbA" customClass="ParkBikeViewController" customModule="Bike_Kollective" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7lD-VD-M2i">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZeL-0q-IKg">
+                                <rect key="frame" x="30" y="217" width="315" height="324"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JL3-ha-QSD">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bike Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNk-kA-N6J">
+                                                <rect key="frame" x="0.0" y="0.0" width="108.66666666666667" height="40"/>
+                                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ca7-uo-wZY" customClass="CosmosView" customModule="Cosmos">
+                                                <rect key="frame" x="138.66666666666663" y="0.0" width="176.33333333333337" height="40"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="1l8-wY-TJZ"/>
+                                                </constraints>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledColor">
+                                                        <color key="value" name="AccentColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="rating">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="totalStars">
+                                                        <integer key="value" value="5"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="starSize">
+                                                        <real key="value" value="30"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="emptyBorderColor">
+                                                        <color key="value" name="AccentColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="filledBorderColor">
+                                                        <color key="value" name="AccentColor"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="fillMode">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="starMargin">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="minTouchRating">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                            </view>
+                                        </subviews>
+                                    </stackView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Comments on Bike:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSl-iD-UKc">
+                                        <rect key="frame" x="0.0" y="60" width="315" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-SX-Qnu">
+                                        <rect key="frame" x="0.0" y="104" width="315" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="150" id="oG7-ZW-TEQ"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8K-XI-ZYL">
+                                        <rect key="frame" x="0.0" y="274" width="315" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="hQ0-Wb-xBp"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Park Bike"/>
+                                        <connections>
+                                            <action selector="returnBike:" destination="Bzd-7e-HbA" eventType="touchUpInside" id="m40-8Y-BpO"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You for Being a Part of the Bike Kollective!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqN-3C-zLg">
+                                <rect key="frame" x="30" y="109.66666666666667" width="315" height="57.333333333333329"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="ufd-ZI-X5A"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="XqN-3C-zLg" firstAttribute="centerX" secondItem="7lD-VD-M2i" secondAttribute="centerX" id="BUY-7i-X3w"/>
+                            <constraint firstAttribute="trailing" secondItem="XqN-3C-zLg" secondAttribute="trailing" constant="30" id="MMp-RT-Kfq"/>
+                            <constraint firstItem="XqN-3C-zLg" firstAttribute="leading" secondItem="7lD-VD-M2i" secondAttribute="leading" constant="30" id="NWn-MD-Q6l"/>
+                            <constraint firstItem="ZeL-0q-IKg" firstAttribute="top" secondItem="XqN-3C-zLg" secondAttribute="bottom" constant="50" id="REi-Fv-X7Q"/>
+                            <constraint firstItem="ZeL-0q-IKg" firstAttribute="centerX" secondItem="7lD-VD-M2i" secondAttribute="centerX" id="V8v-6q-TkQ"/>
+                            <constraint firstItem="ZeL-0q-IKg" firstAttribute="leading" secondItem="ufd-ZI-X5A" secondAttribute="leading" constant="30" id="WDR-mg-U5P"/>
+                            <constraint firstItem="ufd-ZI-X5A" firstAttribute="trailing" secondItem="ZeL-0q-IKg" secondAttribute="trailing" constant="30" id="XDh-5M-4C5"/>
+                            <constraint firstItem="ZeL-0q-IKg" firstAttribute="centerY" secondItem="7lD-VD-M2i" secondAttribute="centerY" id="Zvh-fl-MLn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="mP9-xb-q8B"/>
+                    <connections>
+                        <outlet property="comments" destination="jFZ-SX-Qnu" id="Etv-Yh-QiQ"/>
+                        <outlet property="ratingStars" destination="Ca7-uo-wZY" id="qze-7j-BBk"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5T3-sE-qZm" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3044" y="1022"/>
+        </scene>
     </scenes>
+    <designables>
+        <designable name="Ca7-uo-wZY">
+            <size key="intrinsicContentSize" width="154" height="30"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="zoT-Wl-uEf"/>
         <segue reference="1bK-f3-RxV"/>
@@ -1260,6 +1396,9 @@
         <image name="chevron.down.circle.fill" catalog="system" width="128" height="121"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
+        <namedColor name="AccentColor">
+            <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

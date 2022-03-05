@@ -22,6 +22,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     @IBOutlet weak var userLocation: MKMapView!
     @IBOutlet weak var borrowedBike: UIStackView!
     @IBOutlet weak var bikePhoto: UIImageView!
+    @IBOutlet weak var timeDue: UILabel!
     
     var db: Firestore!
     var hasBike: Bool = false
@@ -68,6 +69,9 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
                     print(self.bikeId)
                     self.userId = userId
                     self.displayBikePic(bikeId: self.bikeId, db: db)
+                    
+                    let bikeDate = self.getTimeDue(document: document)
+                    // print("BIKE TIMESTAMP TO DATE: \(bikeDate)")
                     self.borrowedBike.arrangedSubviews[1].isHidden = true  // go to bikes reminder
                     self.borrowedBike.arrangedSubviews[2].isHidden = false // Bike Picture
                     self.borrowedBike.arrangedSubviews[3].isHidden = false // Time Due
@@ -100,8 +104,30 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
         displayUserLocation(latitude: self.currentLatitude, longitude: self.currentLongitude)
     }
     
+    // function that will get the timestamp, and then return it as human readable time - for when the bike is due
+    private func getTimeDue(document: DocumentSnapshot) {
+        let bikeTimestamp = document.get("time_checked_out") as! Timestamp
+        
+        let bikeDate = bikeTimestamp.dateValue()
+        
+        print("bike time interval:\(bikeDate)")
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "MMM d, h:mm a"
+        
+        var dateComponent = DateComponents()
+        dateComponent.day = 1
+        
+        guard let bikeDueDate = Calendar.current.date(byAdding: dateComponent, to: bikeDate) else { return }
+        let bikeDueDateString = dateFormatter.string(from: bikeDueDate)
+        
+        timeDue.text = "Time Due: \(bikeDueDateString)"
+        
+        
+    }
+    
     // gets the user location to display on the map
-    private func displayUserLocation(latitude: Double, longitude: Double) -> Void{
+    private func displayUserLocation(latitude: Double, longitude: Double) -> Void {
         let locationMarker = CLLocationCoordinate2D(latitude: latitude, longitude: longitude)
         let mapAnnotation = MKPointAnnotation()
         mapAnnotation.coordinate = locationMarker
@@ -128,7 +154,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     
     
     
-    private func displayUserInfo(userId: String, name: String, dateJoined: Date, profilePicUrl: URL) {
+    private func displayUserInfo(userId: String, name: String, dateJoined: Date, profilePicUrl: URL) -> Void {
         // format the firebase date
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MM/dd/YYYY"

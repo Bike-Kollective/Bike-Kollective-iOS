@@ -422,6 +422,7 @@
                         <outlet property="fullName" destination="kXc-am-UFP" id="C3p-Tc-ZNL"/>
                         <outlet property="memberSince" destination="lH5-ej-7Ov" id="2mV-CE-zQS"/>
                         <outlet property="profilePhoto" destination="ejx-aC-OqV" id="N4h-jM-8Yf"/>
+                        <outlet property="timeDue" destination="LEa-iA-4WA" id="z7e-Z5-YfF"/>
                         <outlet property="userLocation" destination="g75-3W-fQC" id="Tt4-WR-EIg"/>
                     </connections>
                 </viewController>

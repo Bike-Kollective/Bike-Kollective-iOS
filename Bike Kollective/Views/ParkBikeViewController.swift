@@ -13,7 +13,7 @@ import Cosmos
 class ParkBikeViewController: UIViewController {
 
     @IBOutlet weak var ratingStars: CosmosView!
-    @IBOutlet weak var bikeComments: UITextField!
+    @IBOutlet weak var comments: UITextView!
     
     var db:Firestore!
     var bikeId: String = ""
@@ -31,6 +31,9 @@ class ParkBikeViewController: UIViewController {
         // connect to firebase
         db = Firestore.firestore()
         
+        comments.layer.borderWidth = 0.5
+        comments.layer.borderColor = UIColor.black.cgColor
+        
         // gets the rating value when the user
         ratingStars.didFinishTouchingCosmos = { rating in
             self.bikeRating = rating
@@ -44,7 +47,7 @@ class ParkBikeViewController: UIViewController {
         // dimiss the view controller, thus going back profile view controller
         self.dismiss(animated: true, completion: nil)
         
-        self.comment = bikeComments.text ?? ""
+        self.comment = comments.text ?? ""
         
         // make sure to update the bike's fields
         updateBikeDetails(bikeId: self.bikeId, comment: self.comment, bikeRating: self.bikeRating, lat: self.latitude, lon: self.longitude)

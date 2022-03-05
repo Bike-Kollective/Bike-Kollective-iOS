@@ -1184,7 +1184,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ZeL-0q-IKg">
-                                <rect key="frame" x="30" y="232" width="315" height="294"/>
+                                <rect key="frame" x="30" y="217" width="315" height="324"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="JL3-ha-QSD">
                                         <rect key="frame" x="0.0" y="0.0" width="315" height="40"/>
@@ -1239,16 +1239,18 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="leading" contentVerticalAlignment="top" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Qga-mN-cgp">
-                                        <rect key="frame" x="0.0" y="104" width="315" height="120"/>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jFZ-SX-Qnu">
+                                        <rect key="frame" x="0.0" y="104" width="315" height="150"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="Ot3-Oc-i58"/>
+                                            <constraint firstAttribute="height" constant="150" id="oG7-ZW-TEQ"/>
                                         </constraints>
+                                        <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q8K-XI-ZYL">
-                                        <rect key="frame" x="0.0" y="244" width="315" height="50"/>
+                                        <rect key="frame" x="0.0" y="274" width="315" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="hQ0-Wb-xBp"/>
                                         </constraints>
@@ -1261,7 +1263,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Thank You for Being a Part of the Bike Kollective!" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XqN-3C-zLg">
-                                <rect key="frame" x="30" y="124.66666666666667" width="315" height="57.333333333333329"/>
+                                <rect key="frame" x="30" y="109.66666666666667" width="315" height="57.333333333333329"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -1282,7 +1284,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="mP9-xb-q8B"/>
                     <connections>
-                        <outlet property="bikeComments" destination="Qga-mN-cgp" id="D1S-J0-Poc"/>
+                        <outlet property="comments" destination="jFZ-SX-Qnu" id="Etv-Yh-QiQ"/>
                         <outlet property="ratingStars" destination="Ca7-uo-wZY" id="qze-7j-BBk"/>
                     </connections>
                 </viewController>
@@ -1291,6 +1293,11 @@
             <point key="canvasLocation" x="3044" y="1022"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="Ca7-uo-wZY">
+            <size key="intrinsicContentSize" width="154" height="30"/>
+        </designable>
+    </designables>
     <inferredMetricsTieBreakers>
         <segue reference="zoT-Wl-uEf"/>
         <segue reference="1bK-f3-RxV"/>

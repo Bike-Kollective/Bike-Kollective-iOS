@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import Cosmos
+import UserNotifications
 
 class ParkBikeViewController: UIViewController {
 
@@ -22,6 +23,8 @@ class ParkBikeViewController: UIViewController {
     var longitude: Double = 0.0
     var comment: String = ""
     var bikeRating: Double!
+    
+    let notificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -53,6 +56,8 @@ class ParkBikeViewController: UIViewController {
         updateBikeDetails(bikeId: self.bikeId, comment: self.comment, bikeRating: self.bikeRating, lat: self.latitude, lon: self.longitude)
         // make sure to update the user's bike related fields
         updateUserBikeFields(userId: self.userId)
+        // make sure all the local notifications are deleted
+        notificationCenter.removeAllPendingNotificationRequests()
         // now go back to provfile view
         goToTabViewController()
         

@@ -11,6 +11,7 @@ import FirebaseAuth
 import FirebaseCore
 import GoogleSignIn
 import GoogleMaps
+import UserNotifications
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -42,10 +43,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         if document.get("banned") as! Bool {
                             goToBannedUserView()
                         } else {
-                            goToTabViewController()
+                            if document.get("hasBike") as! Bool {
+                                // check if the bike is overdue!
+                                self.checkIfOverdue(userReference: userRef, userDocument: document)
+                            } else {
+                                goToTabViewController()
+                            }
                         }
                     }
                 }
+            }
+        }
+        
+        // ask user for permission to send notifications
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        // this asks the user for permission to send notifications
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            // permission not granted
+            if !granted {
+                print("Error - permission not granted!\(String(describing: error?.localizedDescription))")
             }
         }
         
@@ -62,6 +79,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         return true
+    }
+    
+    func checkIfOverdue(userReference: DocumentReference, userDocument: DocumentSnapshot) {
+        // get the time bike was checkout
+        let bikeTimestamp = userDocument.get("time_checked_out") as! Timestamp
+        var dateComponent = DateComponents()
+        dateComponent.day = 1
+        dateComponent.minute = 30
+        let bikeDate = bikeTimestamp.dateValue()
+        // set the date that the user has to check out the bike by to 1 day and 30 min after the time it was checked out
+        guard let bikeParkDueDate = Calendar.current.date(byAdding: dateComponent, to: bikeDate) else { return }
+        // now check
+        if bikeParkDueDate < Date() {
+            userReference.updateData(["banned": true])
+            goToBannedUserView()
+            return
+        } else {
+            goToTabViewController()
+            return
+        }
+        
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

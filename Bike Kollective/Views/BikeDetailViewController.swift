@@ -7,13 +7,15 @@
 
 import UIKit
 import MapKit
+// import Foundation
 import FirebaseAuth
 import FirebaseFirestore
+import UserNotifications
 
 class BikeDetailViewController: UIViewController {
 
     var bike: Bike!
-    
+    let notificationCenter = UNUserNotificationCenter.current()
     
     @IBOutlet weak var bikeImage: BikeImageView!
     @IBOutlet weak var bikeMake: UILabel!
@@ -156,10 +158,61 @@ class BikeDetailViewController: UIViewController {
                                     
                                 }
                             }
+                    
+                    // MARK: SET UP NOTIFICATIONS
+                    // turn the NSDate to date
+                    let timeDue = time as Date
+                    let dateFormatter = DateFormatter()
+                    dateFormatter.dateFormat = "MMM d, h:mm a"
+                    // get the date that it is due
+                    guard let bikeDueDate = Calendar.current.date(byAdding: .day, value: 1, to: timeDue) else { return }
+                    let bikeDueDateString = dateFormatter.string(from: bikeDueDate)
+                    
+                    // MARK: INITIAL NOTIFICATION AFTER THEY BORROW A BIKE
+                    let firstNotificationTime = Date().addingTimeInterval(100)
+                    self.createNotification(title: "Thank you for using the Bike Kollective", content: "Your bike is due at \(bikeDueDateString)", notificationDate: firstNotificationTime)
+                    
+                    // MARK: ONE HOUR LEFT NOTIFICATION
+                    guard let oneHrLeftDate = Calendar.current.date(byAdding: .hour, value: -1, to: bikeDueDate) else { return }
+                    self.createNotification(title: "Parking Reminder", content: "Reminder: you have 1 hour left before you need to park the bike!", notificationDate: oneHrLeftDate)
+
+                    // MARK: FINAL NOTIFICATION FOR USER TELLING THEM THEIR TIME IS UP
+                    self.createNotification(title: "Time's Up!", content: "Your time is up, please park the bike within 30 minutes!", notificationDate: bikeDueDate)
                 }
             }
         }
     }
+    
+    // function that will create notifications
+    func createNotification(title: String, content: String, notificationDate: Date) -> Void{
+        self.notificationCenter.getNotificationSettings { (settings) in
+            // means that user has allowed use to send notificiations
+            if (settings.authorizationStatus == .authorized) {
+                let notificationContent = UNMutableNotificationContent()
+                notificationContent.title = title
+                notificationContent.body = content
+                
+                // very first notification
+                
+                let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: notificationDate)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content:  notificationContent, trigger: trigger)
+                
+                // now add the notification request to the notification center
+                self.notificationCenter.add(request) { (error) in
+                    // check if there is error
+                    if error != nil {
+                        print("ERROR WITH NOTIFICATION\(String(describing: error))")
+                    } else {
+                        print("NOTIFICATIONS ARE WORKINGGGGG??")
+                    }
+                    
+                }
+            }
+        }
+    }
+    
+    
     
     func bikeCheckOutSuccessAlert(bikeLockCode: String) {
         //Create the success alert message to pop up.

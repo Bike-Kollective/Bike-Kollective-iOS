@@ -8,6 +8,7 @@
 import UIKit
 import GoogleSignIn
 import Firebase
+import FirebaseFirestore
 import FirebaseCore
 import FirebaseAuth
 
@@ -17,12 +18,14 @@ class LoginViewController: UIViewController {
     // @IBOutlet weak var signInButton: GIDSignInButton!
     
     var db: Firestore!
+    let notificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // connect to Firestore
         db = Firestore.firestore()
+        // ask user for permission to display notifications
     }
     
     // function to handle Google Sign in on tap of googlesigninbutton
@@ -84,7 +87,13 @@ class LoginViewController: UIViewController {
                 if document.get("banned") as! Bool {
                     goToBannedUserView()
                 } else {
-                    goToTabViewController()
+                    // if they have a bike, and it is past overdue, go to
+                    if document.get("hasBike") as! Bool {
+                        // check if the bike is overdue!
+                        self.checkIfOverdue(userReference: userRef, userDocument: document)
+                    } else {
+                        goToTabViewController()
+                    }
                 }
                
             } else {
@@ -97,6 +106,26 @@ class LoginViewController: UIViewController {
         
     }
     
+    private func checkIfOverdue(userReference: DocumentReference, userDocument: DocumentSnapshot) {
+        // get the time bike was checkout
+        let bikeTimestamp = userDocument.get("time_checked_out") as! Timestamp
+        var dateComponent = DateComponents()
+        dateComponent.day = 1
+        dateComponent.minute = 30
+        let bikeDate = bikeTimestamp.dateValue()
+        // set the date that the user has to check out the bike by to 1 day and 30 min after the time it was checked out
+        guard let bikeParkDueDate = Calendar.current.date(byAdding: dateComponent, to: bikeDate) else { return }
+        // now check
+        if bikeParkDueDate < Date() {
+            userReference.updateData(["banned": true])
+            goToBannedUserView()
+            return
+        } else {
+            goToTabViewController()
+            return
+        }
+        
+    }
 
     
     /*

@@ -167,6 +167,7 @@
 				FEB6D28827C8057A003092C3 /* BannedUserViewController.swift */,
 				FEC0164D27B074110027BA42 /* SettingViewController.swift */,
 				BF5B6B222797B3FF000BFFF5 /* ProfileViewController.swift */,
+				FECFA2B227D179E70037E73F /* ParkBikeViewController.swift */,
 				FE94815927A347600081F6DD /* EmailSignUpViewController.swift */,
 				BF97B20227C18ACD006B6E5B /* BikeImageView.swift */,
 				FE94815727A345130081F6DD /* LoginFieldViewControler.swift */,
@@ -177,8 +178,6 @@
 				BF5B6B1E2797B3D7000BFFF5 /* MapViewController.swift */,
 				BF5B6B202797B3EA000BFFF5 /* ListViewController.swift */,
 				F8585CB627C314F500B422F9 /* ReleaseOfInterestViewController.swift */,
-
-				FECFA2B227D179E70037E73F /* ParkBikeViewController.swift */,
 				BFFBF00727D2FB3200EBA81E /* FilterViewController.swift */,
 			);
 			path = Views;

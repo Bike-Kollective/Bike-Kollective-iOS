@@ -189,6 +189,35 @@ class BikeDetailViewController: UIViewController {
         }
     }
     
+    // function that will create notifications
+    func createNotification(title: String, content: String, notificationDate: Date) -> Void{
+        self.notificationCenter.getNotificationSettings { (settings) in
+            // means that user has allowed use to send notificiations
+            if (settings.authorizationStatus == .authorized) {
+                let notificationContent = UNMutableNotificationContent()
+                notificationContent.title = title
+                notificationContent.body = content
+                
+                // very first notification
+                
+                let dateComp = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: notificationDate)
+                let trigger = UNCalendarNotificationTrigger(dateMatching: dateComp, repeats: false)
+                let request = UNNotificationRequest(identifier: UUID().uuidString, content:  notificationContent, trigger: trigger)
+                
+                // now add the notification request to the notification center
+                self.notificationCenter.add(request) { (error) in
+                    // check if there is error
+                    if error != nil {
+                        print("ERROR WITH NOTIFICATION\(String(describing: error))")
+                    } else {
+                        print("NOTIFICATIONS ARE WORKINGGGGG??")
+                    }
+                    
+                }
+            }
+        }
+    }
+    
     func bikeCheckOutSuccessAlert(bikeLockCode: String) {
         //Create the success alert message to pop up.
         let successAlert = UIAlertController(title: "Success", message: "Bike Lock Code: \(bikeLockCode) ", preferredStyle: UIAlertController.Style.alert)

@@ -70,7 +70,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
                     self.userId = userId
                     self.displayBikePic(bikeId: self.bikeId, db: db)
                     
-                    let bikeDate = self.getTimeDue(document: document)
+                    self.getTimeDue(document: document)
                     // print("BIKE TIMESTAMP TO DATE: \(bikeDate)")
                     self.borrowedBike.arrangedSubviews[1].isHidden = true  // go to bikes reminder
                     self.borrowedBike.arrangedSubviews[2].isHidden = false // Bike Picture
@@ -95,7 +95,7 @@ class ProfileViewController: UIViewController, CLLocationManagerDelegate {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let location = locations.first else {
             print("no location")
-            return 
+            return
         }
         
         self.currentLatitude = location.coordinate.latitude

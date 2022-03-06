@@ -53,42 +53,60 @@ class SettingViewController: UIViewController {
     
     // 'disconnects' the users google account from the app - all user data will be deleted
     @IBAction func disconnectGoogleAccount(_ sender: Any) {
-        // create actionsheet
-        let deleteAction = UIAlertAction(title: "Confirm Delete", style: .destructive) { (action) in
-            GIDSignIn.sharedInstance.disconnect { error in
-                guard error == nil else { return }
-                // account disconnect - do backend cleanup i.e. deleting user data
-                
-                // get the current user and delete with the deleteWithCompletion method?
-                let user = Auth.auth().currentUser
-                guard let userId = user?.uid else { return }
-                
-                user?.delete { error in
-                    if let error = error {
-                        print("error with account deletion: \(error)")
-                    } else {
-                        // account deleted
-                        print("account deleted succesfully")
-                        // delete rest of user data from firestore
-                        self.deleteFirestoreAccountData(userId: userId)
-                        // to the log in screen
-                        goToLoginView()
+        // check if the user has a bike checked out - if so they need to return the bike first - give them an alert
+        let user = Auth.auth().currentUser
+        guard let userId = user?.uid else { return }
+        let userRef = db.collection("Users").document(userId)
+        
+        userRef.getDocument { (document, error) in
+            if let document = document, document.exists {
+
+                // Check to see if the user already has checked out a bike
+                if (document.get("hasBike") as! Bool) {
+                    let understoodAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
+                        print("Pressed Understood")
                     }
+                    let bikeStillCheckoutAlert = UIAlertController(title: "Cannot Delete Account", message: "Must return borrowed bike prior to account deletion", preferredStyle: .alert)
+                    bikeStillCheckoutAlert.addAction(understoodAction)
+                    
+                    self.present(bikeStillCheckoutAlert, animated: true)
+                } else {
+                    // create actionsheet
+                    let deleteAction = UIAlertAction(title: "Confirm Delete", style: .destructive) { (action) in
+                        GIDSignIn.sharedInstance.disconnect { error in
+                            guard error == nil else { return }
+                            // account disconnect - do backend cleanup i.e. deleting user data
+                            
+
+                            
+                            user?.delete { error in
+                                if let error = error {
+                                    print("error with account deletion: \(error)")
+                                } else {
+                                    // account deleted
+                                    print("account deleted succesfully")
+                                    // delete rest of user data from firestore
+                                    self.deleteFirestoreAccountData(userId: userId)
+                                    // to the log in screen
+                                    goToLoginView()
+                                }
+                            }
+                        }
+                    }
+                    
+                    let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+                        print("Cancelled Delete")
+                    }
+                    
+                    // create the actionsheet and add the actions
+                    let deleteAlert = UIAlertController(title: "Confirm Account Deletion", message: "WARNING: THIS ACTION CANNOT BE UNDONE!", preferredStyle: .actionSheet)
+                    deleteAlert.addAction(deleteAction)
+                    deleteAlert.addAction(cancelAction)
+                    
+                    self.present(deleteAlert, animated: true)
                 }
             }
         }
-        
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
-            print("Cancelled Delete")
-        }
-        
-        // create the actionsheet and add the actions
-        let deleteAlert = UIAlertController(title: "Confirm Account Deletion", message: "WARNING: THIS ACTION CANNOT BE UNDONE!", preferredStyle: .actionSheet)
-        deleteAlert.addAction(deleteAction)
-        deleteAlert.addAction(cancelAction)
-        
-        self.present(deleteAlert, animated: true)
-        
     }
     
     // deletes user data from the Users collection

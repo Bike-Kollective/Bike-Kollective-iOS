@@ -67,7 +67,7 @@ class SettingViewController: UIViewController {
                     let understoodAction = UIAlertAction(title: "Cancel", style: .default) { (action) in
                         print("Pressed Understood")
                     }
-                    let bikeStillCheckoutAlert = UIAlertController(title: "Cannot Delete Account", message: "Must borrowed bike prior to account deletion", preferredStyle: .alert)
+                    let bikeStillCheckoutAlert = UIAlertController(title: "Cannot Delete Account", message: "Must return borrowed bike prior to account deletion", preferredStyle: .alert)
                     bikeStillCheckoutAlert.addAction(understoodAction)
                     
                     self.present(bikeStillCheckoutAlert, animated: true)

@@ -42,10 +42,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         if document.get("banned") as! Bool {
                             goToBannedUserView()
                         } else {
-                            goToTabViewController()
+                            if document.get("hasBike") as! Bool {
+                                // check if the bike is overdue!
+                                self.checkIfOverdue(userReference: userRef, userDocument: document)
+                            } else {
+                                goToTabViewController()
+                            }
                         }
                     }
                 }
+            }
+        }
+        
+        // ask user for permission to send notifications
+        let notificationCenter = UNUserNotificationCenter.current()
+        
+        // this asks the user for permission to send notifications
+        notificationCenter.requestAuthorization(options: [.alert, .sound, .badge]) { (granted, error) in
+            // permission not granted
+            if !granted {
+                print("Error - permission not granted!\(String(describing: error?.localizedDescription))")
             }
         }
         

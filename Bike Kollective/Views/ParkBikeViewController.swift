@@ -22,7 +22,7 @@ class ParkBikeViewController: UIViewController {
     var latitude: Double = 0.0
     var longitude: Double = 0.0
     var comment: String = ""
-    var bikeRating: Double!
+    var bikeRating: Double = 0
     let notificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
@@ -39,7 +39,7 @@ class ParkBikeViewController: UIViewController {
         // gets the rating value when the user
         ratingStars.didFinishTouchingCosmos = { rating in
             self.bikeRating = rating
-            print(self.bikeRating!)
+            print(self.bikeRating)
         }
         
         

@@ -9,11 +9,12 @@ import UIKit
 import MapKit
 import FirebaseAuth
 import FirebaseFirestore
+import UserNotifications
 
 class BikeDetailViewController: UIViewController {
 
     var bike: Bike!
-    
+    let notificationCenter = UNUserNotificationCenter.current()
     
     @IBOutlet weak var bikeImage: BikeImageView!
     @IBOutlet weak var bikeMake: UILabel!

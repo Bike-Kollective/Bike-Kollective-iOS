@@ -101,7 +101,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                                             let distance: Double = self.currentLocation.distance(from: locale)
                                             let milesAway: Double = round((distance / measure) * 10) / 10.0
                                             if milesAway <= radius {
-                                                let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
+                                                let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], comments: data["comments"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
                                                 self.bikes.append(bike)
                                             }
                                         }
@@ -117,7 +117,7 @@ class ListViewController: UIViewController, UITableViewDelegate, UITableViewData
                                             let milesAway: Double = round((distance / measure) * 10) / 10.0
                                             let tags = data["tags"] as! [String]
                                             if milesAway <= radius && tags.contains(tag) {
-                                                let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
+                                                let bike = Bike(name: doc.documentID, make: data["make"] as! String, model: data["model"] as! String, rating: data["rating"] as! [Int], tags: data["tags"] as! [String], comments: data["comments"] as! [String], location: locale, distance: milesAway, imageUrl: data["imageURL"] as! String, bike_lock_code: data["bike_lock_code"] as! String)
                                                 self.bikes.append(bike)
                                             }
                                         }

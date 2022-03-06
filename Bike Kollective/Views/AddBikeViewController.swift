@@ -282,6 +282,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
                 // Create the array for ratings and tags
                 let ratingArray = [Int]()
                 let tagsArray = [String]()
+                let commentsArray = [String]()
                 
                 // Get the current location
                 let currentLocation = GeoPoint(latitude: self.currentLatitude!, longitude: self.currentLongitude!)
@@ -295,6 +296,7 @@ class AddBikeViewController: UIViewController, UIImagePickerControllerDelegate, 
                     "bike_lock_code": self.bikeCodeField.text!,
                     "missing": false, "rating": ratingArray,
                     "tags": tagsArray,
+                    "comments": commentsArray,
                     "release_of_interest": self.userReleaseOfInterest,
                     "imageURL": uploadImageURL]) {
                     error in if let error = error {

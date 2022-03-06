@@ -34,6 +34,7 @@ class AccidentWaiverViewController: UIViewController {
             email: email,
             signedWaiver: true,
             isBanned: false,
+            hasBike: false,
             bikeId: nil)
         // add the user
         addUserToDatabase(userId: userId, newUser: newUser)

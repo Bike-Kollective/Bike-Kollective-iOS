@@ -226,6 +226,7 @@ PODS:
   - BoringSSL-GRPC/Implementation (0.0.7):
     - BoringSSL-GRPC/Interface (= 0.0.7)
   - BoringSSL-GRPC/Interface (0.0.7)
+  - Cosmos (23.0.0)
   - Firebase/Auth (6.34.0):
     - Firebase/CoreOnly
     - FirebaseAuth (~> 6.9.2)
@@ -359,6 +360,7 @@ PODS:
 
 DEPENDENCIES:
   - AlamofireImage
+  - Cosmos
   - Firebase/Auth
   - Firebase/Core
   - Firebase/Firestore
@@ -374,6 +376,7 @@ SPEC REPOS:
     - AlamofireImage
     - AppAuth
     - BoringSSL-GRPC
+    - Cosmos
     - Firebase
     - FirebaseAnalytics
     - FirebaseAuth
@@ -402,6 +405,7 @@ SPEC CHECKSUMS:
   AlamofireImage: 34a2d90b0e5fe6a5605f85ae4b7b01e784c60192
   AppAuth: 31bcec809a638d7bd2f86ea8a52bd45f6e81e7c7
   BoringSSL-GRPC: 8edf627ee524575e2f8d19d56f068b448eea3879
+  Cosmos: b5c6a9a637e28a061b54c8f8b1d8529d7d4db73f
   Firebase: c23a36d9e4cdf7877dfcba8dd0c58add66358999
   FirebaseAnalytics: 3bb096873ee0d7fa4b6c70f5e9166b6da413cc7f
   FirebaseAuth: c92d49ada7948d1a23466e3db17bc4c2039dddc3
@@ -424,6 +428,6 @@ SPEC CHECKSUMS:
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 3113f7f76903778cf4a0586bd1ab89329a0b7b97
 
-PODFILE CHECKSUM: d23810bafb3af8b9ea3836d62011b594ef6ac829
+PODFILE CHECKSUM: 94e9c0e6e31ebba9a1a24742a29602aa522b3058
 
 COCOAPODS: 1.11.2

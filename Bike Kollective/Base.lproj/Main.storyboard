@@ -40,6 +40,13 @@
                                     </view>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch" translatesAutoresizingMaskIntoConstraints="NO" id="iDL-AO-qQv">
+                                <rect key="frame" x="57" y="162" width="300" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="HoT-SO-CZG"/>
+                                    <constraint firstAttribute="width" constant="300" id="hb2-eK-YWY"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -49,6 +56,8 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="jXe-Jm-7Mf" secondAttribute="trailing" constant="40" id="8h9-dO-wHT"/>
                             <constraint firstItem="oKL-ni-J0f" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ClD-Wo-3gg"/>
                             <constraint firstItem="jXe-Jm-7Mf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Xxk-aG-NYA"/>
+                            <constraint firstItem="iDL-AO-qQv" firstAttribute="top" secondItem="oKL-ni-J0f" secondAttribute="bottom" constant="20" id="htp-58-vQN"/>
+                            <constraint firstItem="iDL-AO-qQv" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="i6x-33-U9G"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="J1w-1l-ECR"/>
@@ -1225,6 +1234,7 @@
         <image name="arrow.clockwise.circle" catalog="system" width="128" height="121"/>
         <image name="bicycle" catalog="system" width="128" height="78"/>
         <image name="chevron.down.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="launch" width="1024" height="1024"/>
         <image name="map" catalog="system" width="128" height="110"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <namedColor name="AccentColor">

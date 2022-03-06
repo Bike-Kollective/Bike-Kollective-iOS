@@ -21,6 +21,7 @@ class BikeDetailViewController: UIViewController {
     @IBOutlet weak var bikeRating: UIImageView!
     @IBOutlet weak var bikeTags: UILabel!
     @IBOutlet weak var bikeMapLocation: MKMapView!
+    @IBOutlet weak var bikeCommentTableView: UITableView!
     
     
     override func viewDidLoad() {
@@ -39,10 +40,13 @@ class BikeDetailViewController: UIViewController {
         bikeRating.image = getBikeRating()
      
         // Display the bikes tags.
-        bikeTags.text = bike.tags.joined(separator: ", ")
+        bikeTags.text = getBikeTags()
         
         // Display the bikes location
         getMapLocation()
+        
+        // Set up the comment table view
+        bikeCommentTableView.dataSource = self
         
     }
     
@@ -89,6 +93,31 @@ class BikeDetailViewController: UIViewController {
             return UIImage(named: "regular_5")!
         }
         
+    }
+    
+    func getBikeTags() -> String {
+        
+        // Display the bike tags.  Only display 5
+        if bike.tags.count > 5 {
+            var count = 0
+            var bikeTagString = ""
+            for tag in bike.tags {
+                print(tag)
+                if count < 5 {
+                    if count < 4 {
+                        bikeTagString += "\(tag), "
+                    }
+                    else {
+                        bikeTagString += "\(tag)"
+                    }
+                }
+                count += 1
+            }
+            return bikeTagString
+        }
+        else {
+            return bike.tags.joined(separator: ", ")
+        }
     }
     
     func getMapLocation() {
@@ -182,4 +211,35 @@ class BikeDetailViewController: UIViewController {
     }
     
     
+}
+
+extension BikeDetailViewController: UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        // Check to see if there are comments.  If there are display that many cells.  If not
+        // display one cell.
+        if bike.comments.count > 0 {
+            return bike.comments.count
+        }
+        else {
+            return 1
+        }
+
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        // Check to see if there are any comments and if yes display them.  If not display no comments.
+        if bike.comments.count > 0 {
+            let commentCell = tableView.dequeueReusableCell(withIdentifier: "Comment_Cell", for: indexPath)
+            commentCell.textLabel?.text = bike.comments[indexPath.row]
+            return commentCell
+        }
+        else {
+            let commentCell = tableView.dequeueReusableCell(withIdentifier: "Comment_Cell", for: indexPath)
+            commentCell.textLabel?.text = "No Comments"
+            return commentCell
+        }
+    }
 }

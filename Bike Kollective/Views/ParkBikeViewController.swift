@@ -9,6 +9,7 @@ import UIKit
 import Firebase
 import FirebaseFirestore
 import Cosmos
+import UserNotifications
 
 class ParkBikeViewController: UIViewController {
 
@@ -22,6 +23,7 @@ class ParkBikeViewController: UIViewController {
     var longitude: Double = 0.0
     var comment: String = ""
     var bikeRating: Double!
+    let notificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +50,8 @@ class ParkBikeViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
         
         self.comment = comments.text ?? ""
-        
+        // remove any scheduled local notification reminders about parking the bike
+        notificationCenter.removeAllPendingNotificationRequests()
         // make sure to update the bike's fields
         updateBikeDetails(bikeId: self.bikeId, comment: self.comment, bikeRating: self.bikeRating, lat: self.latitude, lon: self.longitude)
         // make sure to update the user's bike related fields
